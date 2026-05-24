@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+
+  <!-- PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Vocabolario">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#1a3a5c">
+  <meta name="application-name" content="Vocabolario FR-IT">
+  <meta name="description" content="Apprenez le vocabulaire français-italien avec des flashcards">
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFhM2E1YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3R5bGU9InN0b3AtY29sb3I6IzJhNWE4YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM4QjFBMUEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDx0ZXh0IHg9IjI1NiIgeT0iMjAwIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIxNjAiIGZvbnQtd2VpZ2h0PSJib2xkIgogICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPkZSPC90ZXh0PgogIDxsaW5lIHgxPSI4MCIgeTE9IjI1NiIgeDI9IjQzMiIgeTI9IjI1NiIgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjYiLz4KICA8dGV4dCB4PSIyNTYiIHk9IjM0MCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMTYwIiBmb250LXdlaWdodD0iYm9sZCIKICAgIGZpbGw9IiNmNWMwNjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPklUPC90ZXh0Pgo8L3N2Zz4=">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFhM2E1YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3R5bGU9InN0b3AtY29sb3I6IzJhNWE4YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM4QjFBMUEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDx0ZXh0IHg9IjI1NiIgeT0iMjAwIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIxNjAiIGZvbnQtd2VpZ2h0PSJib2xkIgogICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPkZSPC90ZXh0PgogIDxsaW5lIHgxPSI4MCIgeTE9IjI1NiIgeDI9IjQzMiIgeTI9IjI1NiIgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjYiLz4KICA8dGV4dCB4PSIyNTYiIHk9IjM0MCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMTYwIiBmb250LXdlaWdodD0iYm9sZCIKICAgIGZpbGw9IiNmNWMwNjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPklUPC90ZXh0Pgo8L3N2Zz4=">
+  <link rel="manifest" id="pwa-manifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Vocabolario Français–Italiano</title>
+<style>
+:root{--fr:#1a3a5c;--it:#8B1A1A;--cream:#f5f0e8;--gold:#c9a84c;--green:#2a7a2a;--shadow:rgba(0,0,0,0.15);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{min-height:100vh;font-family:Georgia,serif;background:var(--cream);color:#222;
+  display:flex;flex-direction:column;align-items:center;padding:20px 12px 100px;transition:background .3s,color .3s;}
+body.night{background:#1a1a2e;color:#e0e0e0;}
+
+/* header */
+header{text-align:center;margin-bottom:14px;position:relative;width:100%;max-width:540px;}
+header h1{font-size:clamp(1.2rem,4vw,2rem);color:var(--fr);}
+header h1 span{color:var(--it);font-style:italic;}
+.night header h1{color:#7ea8d8;} .night header h1 span{color:#e88;}
+.header-btns{position:absolute;top:0;right:0;display:flex;gap:6px;}
+.icon-btn{background:none;border:none;font-size:1.4rem;cursor:pointer;padding:4px;border-radius:8px;
+  min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;}
+.icon-btn:hover{background:rgba(0,0,0,.08);}
+
+/* streak */
+.streak-bar{background:linear-gradient(90deg,#ff6b35,#f7c59f);color:white;border-radius:50px;
+  padding:6px 18px;font-size:.9rem;margin-bottom:12px;display:none;align-items:center;gap:6px;
+  box-shadow:0 2px 8px rgba(255,107,53,.3);}
+
+/* tabs */
+.tabs-wrapper{width:100%;max-width:540px;position:relative;margin-bottom:14px;}
+.tabs{display:flex;gap:5px;flex-wrap:nowrap;overflow-x:auto;
+  -webkit-overflow-scrolling:touch;width:100%;padding-bottom:4px;
+  scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{font-family:Georgia,serif;font-size:.85rem;border:2px solid #ccc;border-radius:50px;
+  padding:7px 13px;cursor:pointer;background:white;color:#555;transition:all .18s;
+  min-height:42px;flex-shrink:0;white-space:nowrap;}
+.night .tab{background:#1a2a4a;color:#aaa;border-color:#334;}
+.tab.active{background:var(--fr);color:white;border-color:var(--fr);}
+.tab:hover:not(.active){border-color:var(--fr);color:var(--fr);}
+/* scroll hint arrows */
+.tabs-wrapper::after{content:'›';position:absolute;right:0;top:50%;transform:translateY(-60%);
+  font-size:1.4rem;color:#ccc;pointer-events:none;background:linear-gradient(to right,transparent,var(--cream) 60%);
+  padding-left:20px;line-height:1;}
+.night .tabs-wrapper::after{background:linear-gradient(to right,transparent,#1a1a2e 60%);}
+
+/* stats bar */
+.stats-bar{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;font-size:.85rem;color:#666;}
+.night .stats-bar{color:#aaa;}
+.sv-good{color:var(--green);font-weight:bold;} .sv-bad{color:var(--it);font-weight:bold;} .sv-neu{color:var(--fr);font-weight:bold;}
+
+/* categories */
+.cat-chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:12px;max-width:540px;}
+.cat-chip{font-family:Georgia,serif;font-size:.78rem;border:1.5px solid #ccc;border-radius:50px;
+  padding:6px 12px;cursor:pointer;background:white;color:#666;transition:all .18s;min-height:36px;}
+.night .cat-chip{background:#1a2a4a;color:#aaa;border-color:#334;}
+.cat-chip.active{background:var(--gold);color:white;border-color:var(--gold);}
+
+/* filter */
+.filter-bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center;margin-bottom:12px;font-size:.88rem;}
+.filter-bar label{color:#666;}
+select,input[type=text],textarea{font-family:Georgia,serif;font-size:16px;
+  border:1.5px solid #ccc;border-radius:8px;padding:8px 12px;background:white;color:#333;}
+.night select,.night input[type=text],.night textarea{background:#1a2a4a;color:#ccc;border-color:#334;}
+
+/* progress */
+.progress-bar{width:100%;max-width:480px;height:5px;background:#e0d9cc;border-radius:99px;margin-bottom:8px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--fr),var(--gold));border-radius:99px;transition:width .4s;}
+.card-counter{text-align:center;color:#888;font-size:.88rem;margin-bottom:10px;}
+.night .card-counter{color:#aaa;}
+.card-counter strong{color:var(--fr);}
+
+/* card */
+.card-zone{width:100%;max-width:480px;perspective:1200px;margin-bottom:14px;}
+.card-wrapper{width:100%;aspect-ratio:3/2;position:relative;transform-style:preserve-3d;
+  transition:transform .6s cubic-bezier(.42,0,.58,1);cursor:pointer;user-select:none;}
+.card-wrapper.flipped{transform:rotateY(180deg);}
+@keyframes swipeRight{to{transform:translateX(120%) rotate(15deg);opacity:0;}}
+@keyframes swipeLeft{to{transform:translateX(-120%) rotate(-15deg);opacity:0;}}
+.card-wrapper.swipe-right{animation:swipeRight .35s forwards;}
+.card-wrapper.swipe-left{animation:swipeLeft .35s forwards;}
+.face{position:absolute;inset:0;border-radius:20px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;padding:20px;box-shadow:0 8px 40px var(--shadow);}
+.face-front{background:linear-gradient(145deg,#1e4472,#1a3a5c);color:white;}
+.face-back{background:linear-gradient(145deg,#a02020,#8B1A1A);color:white;transform:rotateY(180deg);}
+.face-label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;opacity:.65;margin-bottom:6px;}
+.face-word{font-size:clamp(1.5rem,5vw,2.4rem);font-weight:700;text-align:center;line-height:1.2;}
+.face-hint{font-size:.76rem;opacity:.5;margin-top:8px;font-style:italic;}
+.speak-btn{margin-top:12px;background:rgba(255,255,255,.18);color:white;
+  border:1.5px solid rgba(255,255,255,.35);border-radius:50px;padding:8px 18px;
+  font-size:.88rem;cursor:pointer;display:flex;align-items:center;gap:4px;
+  transition:background .18s;font-family:Georgia,serif;min-height:40px;}
+.speak-btn:hover{background:rgba(255,255,255,.3);}
+.srs-badge{position:absolute;top:10px;right:12px;font-size:.72rem;
+  background:rgba(255,255,255,.25);color:white;border-radius:50px;padding:2px 8px;}
+.swipe-hints{display:flex;justify-content:space-between;width:100%;max-width:480px;
+  font-size:.75rem;color:#999;margin-bottom:8px;padding:0 4px;}
+.night .swipe-hints{color:#666;}
+
+/* buttons */
+button{font-family:Georgia,serif;font-size:1rem;border:none;border-radius:8px;
+  padding:10px 18px;cursor:pointer;transition:all .18s;min-height:44px;}
+.know-row{display:flex;gap:14px;justify-content:center;margin-bottom:14px;padding:0 4px;}
+.btn-know,.btn-dontknow{border-radius:50px;font-weight:600;flex:1;max-width:200px;min-height:54px;font-size:1.05rem;}
+.btn-know{background:#e8f5e8;color:var(--green);border:2px solid var(--green);}
+.btn-know:hover,.btn-know:active{background:var(--green);color:white;}
+.btn-dontknow{background:#fbe8e8;color:var(--it);border:2px solid var(--it);}
+.btn-dontknow:hover,.btn-dontknow:active{background:var(--it);color:white;}
+.nav-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:8px;}
+.btn-nav{background:white;color:var(--fr);border:2px solid var(--fr);border-radius:50px;}
+.btn-nav:hover,.btn-nav:active{background:var(--fr);color:white;}
+.night .btn-nav{background:#1a2a4a;color:#7ea8d8;border-color:#7ea8d8;}
+.btn-shuffle{background:white;color:var(--gold);border:2px solid var(--gold);border-radius:50px;}
+.btn-shuffle:hover,.btn-shuffle:active{background:var(--gold);color:white;}
+.night .btn-shuffle{background:#1a2a4a;}
+.btn-auto{background:white;color:var(--green);border:2px solid var(--green);border-radius:50px;}
+.btn-auto:hover,.btn-auto.active{background:var(--green);color:white;}
+.night .btn-auto{background:#1a2a4a;}
+.btn-primary{background:var(--fr);color:white;border-radius:8px;}
+.btn-primary:hover,.btn-primary:active{background:#254e7a;}
+.night .btn-primary{background:#0f3460;}
+.btn-danger{background:#fbe8e8;color:var(--it);border:1.5px solid var(--it);border-radius:8px;}
+.btn-danger:hover{background:var(--it);color:white;}
+
+/* auto controls */
+.auto-controls{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:6px;}
+.auto-controls label{color:#777;font-size:.85rem;font-style:italic;}
+.auto-controls select{min-height:44px;}
+.speed-row{text-align:center;color:#888;font-size:.83rem;margin-bottom:14px;}
+.night .speed-row{color:#aaa;}
+.speed-row input[type=range]{vertical-align:middle;margin:0 6px;height:28px;width:110px;}
+
+/* quiz */
+.quiz-zone{width:100%;max-width:480px;}
+.quiz-score{text-align:center;color:#888;font-size:.88rem;margin-bottom:8px;}
+.night .quiz-score{color:#aaa;}
+.quiz-score strong{color:var(--fr);}
+.quiz-card{background:white;border-radius:20px;padding:22px 18px;
+  box-shadow:0 8px 40px var(--shadow);margin-bottom:14px;text-align:center;}
+.night .quiz-card{background:#16213e;}
+.quiz-question{font-size:.73rem;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:8px;}
+.quiz-word{font-size:clamp(1.4rem,5vw,2.2rem);font-weight:700;color:var(--fr);margin-bottom:4px;}
+.night .quiz-word{color:#7ea8d8;}
+.quiz-choices{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;}
+.quiz-btn{font-family:Georgia,serif;font-size:.9rem;border:2px solid #ddd;border-radius:12px;
+  padding:12px 8px;cursor:pointer;background:white;transition:all .2s;line-height:1.3;min-height:52px;}
+.night .quiz-btn{background:#1a2a4a;color:#ccc;border-color:#334;}
+.quiz-btn:hover,.quiz-btn:active{border-color:var(--fr);color:var(--fr);}
+.quiz-btn.correct{background:#e8f5e8;border-color:var(--green);color:var(--green);}
+.quiz-btn.wrong{background:#fbe8e8;border-color:var(--it);color:var(--it);}
+.quiz-btn.reveal{background:#eef4ff;border-color:var(--fr);color:var(--fr);}
+.quiz-result{font-size:1rem;margin-top:12px;font-weight:bold;min-height:24px;}
+
+/* stats */
+.stats-page{width:100%;max-width:520px;}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;}
+.stat-card{background:white;border-radius:14px;padding:16px;box-shadow:0 4px 16px var(--shadow);text-align:center;}
+.night .stat-card{background:#16213e;}
+.stat-card .big{font-size:1.9rem;font-weight:700;}
+.stat-card .lbl{font-size:.76rem;color:#888;margin-top:3px;font-style:italic;}
+.stat-card.green .big{color:var(--green);} .stat-card.red .big{color:var(--it);}
+.stat-card.blue .big{color:var(--fr);} .stat-card.gold .big{color:var(--gold);}
+.review-section h3{color:var(--fr);margin-bottom:10px;font-size:1rem;}
+.night .review-section h3{color:#7ea8d8;}
+.word-chip{display:inline-block;background:#fbe8e8;color:var(--it);border-radius:8px;
+  padding:4px 10px;margin:2px;font-size:.82rem;cursor:pointer;min-height:32px;display:inline-flex;align-items:center;}
+.word-chip:hover{background:var(--it);color:white;}
+
+/* add / search */
+.panel{background:white;border-radius:16px;padding:20px;box-shadow:0 4px 16px var(--shadow);
+  width:100%;max-width:560px;}
+.night .panel{background:#16213e;}
+.panel h3{color:var(--fr);margin-bottom:12px;font-size:1.05rem;}
+.night .panel h3{color:#7ea8d8;}
+.add-row{display:flex;gap:8px;margin-bottom:6px;flex-wrap:wrap;}
+.add-row input{flex:1;min-width:120px;}
+.section-sep{border:none;border-top:1px solid #eee;margin:18px 0;}
+.night .section-sep{border-color:#223;}
+.feedback{margin-top:8px;color:var(--green);font-weight:bold;text-align:center;min-height:20px;font-size:.9rem;}
+
+/* search results */
+.sr-item{display:flex;justify-content:space-between;align-items:center;padding:10px 8px;
+  border-bottom:1px solid #eee;gap:8px;border-radius:8px;transition:background .15s;}
+.night .sr-item{border-color:#223;}
+.sr-item:hover{background:#f0ecf5;}
+.night .sr-item:hover{background:#1a2a4a;}
+.sr-fr{color:var(--fr);font-weight:bold;font-size:.95rem;}
+.night .sr-fr{color:#7ea8d8;}
+.sr-it{color:var(--it);font-size:.88rem;}
+.sr-btns{display:flex;gap:5px;flex-shrink:0;}
+.btn-sm{font-size:.8rem;padding:5px 10px;border-radius:50px;min-height:36px;
+  background:#eef4ff;color:var(--fr);border:1px solid #bdf;cursor:pointer;}
+.btn-sm:hover,.btn-sm:active{background:var(--fr);color:white;}
+
+/* vocab table */
+#vocab-table{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:4px;}
+#vocab-table th{background:var(--fr);color:white;padding:8px 10px;text-align:left;}
+#vocab-table th:last-child{text-align:center;}
+#vocab-tbody tr:nth-child(even){background:#fafaf8;}
+.night #vocab-tbody tr:nth-child(even){background:#1a2440;}
+#vocab-tbody td{padding:7px 8px;border-bottom:1px solid #eee;vertical-align:middle;}
+.night #vocab-tbody td{border-color:#223;color:#ccc;}
+.btn-del{background:#fbe8e8;color:var(--it);border:1px solid #f5c;border-radius:6px;
+  padding:4px 8px;font-size:.8rem;min-height:32px;cursor:pointer;}
+.btn-del:hover{background:var(--it);color:white;}
+.btn-go{background:#eef4ff;color:var(--fr);border:1px solid #bdf;border-radius:6px;
+  padding:4px 8px;font-size:.8rem;min-height:32px;cursor:pointer;}
+.btn-go:hover{background:var(--fr);color:white;}
+.tbl-info{text-align:center;font-size:.8rem;color:#aaa;margin-top:6px;}
+
+/* iOS unlock banner */
+#ios-banner{position:fixed;bottom:0;left:0;right:0;background:var(--fr);color:white;
+  text-align:center;padding:14px 16px;font-size:.95rem;z-index:999;cursor:pointer;
+  display:none;align-items:center;justify-content:center;gap:12px;
+  box-shadow:0 -4px 20px rgba(0,0,0,.25);}
+#ios-banner button{background:white;color:var(--fr);border:none;border-radius:50px;
+  padding:8px 20px;font-size:.95rem;font-family:Georgia,serif;font-weight:bold;min-height:40px;}
+
+/* confetti */
+#confetti-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;}
+
+.divider{width:50px;height:2px;background:linear-gradient(90deg,var(--fr),var(--it));border-radius:99px;margin:0 auto 18px;}
+.hidden{display:none!important;}
+
+@media(max-width:400px){
+  .quiz-choices{grid-template-columns:1fr;}
+  .add-row{flex-direction:column;}
+  .add-row input,.add-row button{width:100%;}
+}
+
+/* Splash screen */
+#splash {
+  position: fixed; inset: 0; z-index: 99999;
+  background: linear-gradient(145deg, #1a3a5c 0%, #1e4472 50%, #8B1A1A 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  transition: opacity .5s ease;
+}
+#splash.fade { opacity: 0; pointer-events: none; }
+#splash svg { width: 120px; height: 120px; margin-bottom: 24px;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,.4)); }
+#splash h1 { font-family: Georgia,serif; color: white; font-size: 1.8rem; margin-bottom: 6px; }
+#splash h1 span { color: #f5c060; font-style: italic; }
+#splash p { color: rgba(255,255,255,.65); font-size: .95rem; font-style: italic; }
+#splash .dot-loader { display: flex; gap: 8px; margin-top: 30px; }
+#splash .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.5);
+  animation: bounce .8s infinite alternate; }
+#splash .dot:nth-child(2) { animation-delay: .2s; }
+#splash .dot:nth-child(3) { animation-delay: .4s; }
+@keyframes bounce { from { transform: translateY(0); opacity:.5; } to { transform: translateY(-10px); opacity:1; } }
+
+
+/* Export/Import */
+.backup-zone { margin-top: 18px; border-top: 1px solid #eee; padding-top: 16px; }
+.night .backup-zone { border-color: #223; }
+.backup-zone h3 { color: var(--fr); margin-bottom: 10px; font-size: 1.05rem; }
+.night .backup-zone h3 { color: #7ea8d8; }
+.backup-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+.backup-row button { flex: 1; min-width: 140px; }
+.btn-export { background: #eef4ff; color: var(--fr); border: 2px solid var(--fr); border-radius: 10px; }
+.btn-export:hover { background: var(--fr); color: white; }
+.btn-import { background: #e8f5e8; color: var(--green); border: 2px solid var(--green); border-radius: 10px; }
+.btn-import:hover { background: var(--green); color: white; }
+.backup-info { font-size: .8rem; color: #aaa; font-style: italic; margin-top: 6px; }
+#import-file { display: none; }
+
+
+/* ── CONJUGAISON ── */
+.conj-zone { width:100%; max-width:520px; }
+.conj-card { background:white; border-radius:20px; padding:22px 18px;
+  box-shadow:0 8px 40px var(--shadow); margin-bottom:14px; }
+.night .conj-card { background:#16213e; }
+.conj-verb { font-size:clamp(1.6rem,5vw,2.4rem); font-weight:700; color:var(--fr);
+  text-align:center; margin-bottom:4px; }
+.night .conj-verb { color:#7ea8d8; }
+.conj-fr { font-size:.9rem; color:#888; text-align:center; font-style:italic; margin-bottom:14px; }
+.night .conj-fr { color:#aaa; }
+.conj-tense { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--gold); text-align:center; margin-bottom:12px; font-weight:bold; }
+.conj-table { width:100%; border-collapse:collapse; font-size:.95rem; }
+.conj-table td { padding:8px 10px; border-bottom:1px solid #f0ece4; }
+.night .conj-table td { border-color:#223; }
+.conj-table td:first-child { color:#888; font-style:italic; width:40%; }
+.night .conj-table td:first-child { color:#aaa; }
+.conj-table td:last-child { font-weight:600; color:#222; }
+.night .conj-table td:last-child { color:#e0e0e0; }
+.conj-table tr.highlight td { background:#fff8e8; border-radius:6px; }
+.night .conj-table tr.highlight td { background:#2a2a1a; }
+.conj-input-row { display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; }
+.conj-input { flex:1; min-width:160px; font-size:16px; border:2px solid #ddd;
+  border-radius:10px; padding:10px 14px; }
+.night .conj-input { background:#1a2a4a; color:#ccc; border-color:#334; }
+.conj-input.correct { border-color:var(--green); background:#e8f5e8; }
+.conj-input.wrong { border-color:var(--it); background:#fbe8e8; }
+.conj-feedback { text-align:center; font-size:1rem; font-weight:bold;
+  min-height:24px; margin-top:10px; }
+.conj-hint { font-size:.8rem; color:#aaa; text-align:center; margin-top:6px;
+  font-style:italic; cursor:pointer; text-decoration:underline; }
+.conj-hint:hover { color:var(--fr); }
+.tense-tabs { display:flex; gap:6px; flex-wrap:wrap; justify-content:center; margin-bottom:14px; }
+.tense-tab { font-family:Georgia,serif; font-size:.8rem; border:1.5px solid #ccc;
+  border-radius:50px; padding:5px 12px; cursor:pointer; background:white;
+  color:#666; transition:all .18s; min-height:34px; }
+.night .tense-tab { background:#1a2a4a; color:#aaa; border-color:#334; }
+.tense-tab.active { background:var(--gold); color:white; border-color:var(--gold); }
+.conj-score { text-align:center; color:#888; font-size:.88rem; margin-bottom:10px; }
+.night .conj-score { color:#aaa; }
+.conj-score strong { color:var(--fr); }
+
+</style>
+</head>
+<body>
+
+
+<div id="splash">
+  <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3a5c"/>
+      <stop offset="50%" style="stop-color:#2a5a8c"/>
+      <stop offset="100%" style="stop-color:#8B1A1A"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="100" fill="url(#bg)"/>
+  <text x="256" y="200" font-family="Georgia,serif" font-size="160" font-weight="bold"
+    fill="white" text-anchor="middle" dominant-baseline="middle">FR</text>
+  <line x1="80" y1="256" x2="432" y2="256" stroke="#c9a84c" stroke-width="6"/>
+  <text x="256" y="340" font-family="Georgia,serif" font-size="160" font-weight="bold"
+    fill="#f5c060" text-anchor="middle" dominant-baseline="middle">IT</text>
+</svg>
+  <h1>Vocabolario <span>FR–IT</span></h1>
+  <p>Votre vocabulaire, toujours avec vous</p>
+  <div class="dot-loader">
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+</div>
+
+<canvas id="confetti-canvas"></canvas>
+
+<header>
+  <h1>Vocabolario <span>Français – Italiano</span></h1>
+  <div class="header-btns">
+    <button class="icon-btn" id="btn-night" onclick="toggleNight()" title="Mode nuit">🌙</button>
+  </div>
+</header>
+
+<div id="streak-bar" class="streak-bar"></div>
+<div class="divider"></div>
+
+<div class="tabs-wrapper"><div class="tabs">
+  <button class="tab active" data-tab="flashcard" onclick="switchTab('flashcard')">🃏 Cartes</button>
+  <button class="tab" data-tab="quiz" onclick="switchTab('quiz')">❓ Quiz</button>
+  <button class="tab" data-tab="stats" onclick="switchTab('stats')">📊 Stats</button>
+  <button class="tab" data-tab="add" onclick="switchTab('add')">➕ Ajouter</button>
+  <button class="tab" data-tab="search" onclick="switchTab('search')">🔍 Recherche</button>
+  <button class="tab" data-tab="conj" onclick="switchTab('conj')">🔤 Conjugaison</button>
+</div></div>
+
+<div class="stats-bar">
+  🔵&nbsp;<span class="sv-neu" id="sb-unseen">—</span>&nbsp;non vus &nbsp;
+  ✅&nbsp;<span class="sv-good" id="sb-known">—</span>&nbsp;maîtrisés &nbsp;
+  ❌&nbsp;<span class="sv-bad" id="sb-unknown">—</span>&nbsp;à retravailler
+</div>
+
+<div class="cat-chips" id="cat-chips"></div>
+
+<div class="filter-bar">
+  <label>Afficher :</label>
+  <select id="filter-mode" onchange="applyFilter()">
+    <option value="all">Tous les mots</option>
+    <option value="unknown">❌ À retravailler</option>
+    <option value="known">✅ Maîtrisés</option>
+    <option value="unseen">🔵 Non vus</option>
+  </select>
+</div>
+
+<!-- FLASHCARD -->
+<div id="tab-flashcard">
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+  <div class="card-counter">Carte <strong id="cur">1</strong> / <strong id="tot">0</strong></div>
+  <div class="swipe-hints"><span>← ❌</span><span>↑ Retourner</span><span>✅ →</span></div>
+  <div class="card-zone">
+    <div class="card-wrapper" id="card" onclick="flipCard()">
+      <div class="face face-front">
+        <div class="face-label">🇫🇷 Français</div>
+        <div class="face-word" id="word-fr">—</div>
+        <div class="face-hint">Touchez pour retourner</div>
+        <button class="speak-btn" onclick="event.stopPropagation();speak('fr')">🔊 Écouter</button>
+        <span class="srs-badge" id="srs-badge"></span>
+      </div>
+      <div class="face face-back">
+        <div class="face-label">🇮🇹 Italiano</div>
+        <div class="face-word" id="word-it">—</div>
+        <div class="face-hint">Touchez pour revenir</div>
+        <button class="speak-btn" onclick="event.stopPropagation();speak('it')">🔊 Ascolta</button>
+      </div>
+    </div>
+  </div>
+  <div class="know-row">
+    <button class="btn-dontknow" onclick="markCard(false)">❌ Je ne sais pas</button>
+    <button class="btn-know" onclick="markCard(true)">✅ Je sais !</button>
+  </div>
+  <div class="nav-row">
+    <button class="btn-nav" onclick="prevCard()">← Préc.</button>
+    <button class="btn-shuffle" onclick="shuffleCards()">🔀 Mélanger</button>
+    <button class="btn-nav" onclick="nextCard()">Suiv. →</button>
+  </div>
+  <div class="nav-row" style="margin-top:6px;">
+    <button class="btn-auto" id="btn-auto" onclick="toggleAutoplay()">▶ Lecture auto</button>
+  </div>
+  <div class="auto-controls">
+    <label>Pause entre cartes :</label>
+    <select id="card-delay">
+      <option value="2">2 s</option><option value="3">3 s</option>
+      <option value="4" selected>4 s</option><option value="5">5 s</option>
+      <option value="7">7 s</option><option value="10">10 s</option>
+    </select>
+  </div>
+  <div class="speed-row">
+    Vitesse voix :
+    <input type="range" id="speed-slider" min="0.5" max="1.5" step="0.1" value="0.9"
+      oninput="updateSpeed(this.value)">
+    <span id="speed-label">0.9×</span>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="tab-quiz" class="hidden">
+  <div class="quiz-zone">
+    <div class="quiz-score">Score : <strong id="qs-score">0</strong> / <span id="qs-total">0</span></div>
+    <div class="quiz-card">
+      <div class="quiz-question" id="quiz-question">Quelle est la traduction italienne ?</div>
+      <div class="quiz-word" id="quiz-word">—</div>
+      <button class="speak-btn" style="margin:8px auto 0;background:rgba(26,58,92,.12);color:var(--fr);border-color:var(--fr);"
+        onclick="speakQuiz()">🔊 Écouter</button>
+      <div class="quiz-choices" id="quiz-choices"></div>
+      <div class="quiz-result" id="quiz-result"></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-nav" onclick="nextQuiz()">Suivant →</button>
+      <button class="btn-shuffle" onclick="toggleQuizDir()">🔄 <span id="quiz-dir-lbl">IT → FR</span></button>
+      <button class="btn-nav" onclick="resetQuiz()">🔁 Reset</button>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div id="tab-stats" class="hidden">
+  <div class="stats-page">
+    <div class="stats-grid">
+      <div class="stat-card blue"><div class="big" id="st-total">0</div><div class="lbl">mots au total</div></div>
+      <div class="stat-card gold"><div class="big" id="st-seen">0</div><div class="lbl">mots vus</div></div>
+      <div class="stat-card green"><div class="big" id="st-known">0</div><div class="lbl">✅ maîtrisés</div></div>
+      <div class="stat-card red"><div class="big" id="st-unknown2">0</div><div class="lbl">❌ à retravailler</div></div>
+      <div class="stat-card gold"><div class="big" id="st-pct">0%</div><div class="lbl">progression</div></div>
+      <div class="stat-card red"><div class="big" id="st-streak">🔥0</div><div class="lbl">jours de suite</div></div>
+    </div>
+    <div class="review-section">
+      <h3>❌ Mots à retravailler :</h3>
+      <div id="unknown-list"><em style="color:#aaa">Aucun pour l'instant</em></div>
+    </div>
+    <div style="text-align:center;margin-top:16px;">
+      <button class="btn-danger" onclick="resetStats()">🗑 Réinitialiser les statistiques</button>
+    </div>
+
+    <div class="backup-zone">
+      <h3>🔄 Synchroniser entre appareils</h3>
+      <div class="backup-row">
+        <button class="btn-export" onclick="exportProgress()">📤 Exporter ma progression</button>
+        <button class="btn-import" onclick="document.getElementById('import-file').click()">📥 Importer une progression</button>
+      </div>
+      <input type="file" id="import-file" accept=".json" onchange="importProgress(this)">
+      <div class="backup-row" style="margin-top:8px;">
+        <button class="btn-export" onclick="exportVocab()">📤 Exporter mon vocabulaire</button>
+        <button class="btn-import" onclick="document.getElementById('import-vocab-file').click()">📥 Importer du vocabulaire</button>
+      </div>
+      <input type="file" id="import-vocab-file" accept=".json,.txt,.csv" onchange="importVocab(this)">
+      <p class="backup-info">
+        💡 Exportez sur un appareil, importez sur l'autre pour tout synchroniser.<br>
+        La progression inclut vos ✅ / ❌ et votre streak. Le vocabulaire inclut tous vos mots ajoutés.
+      </p>
+      <div class="feedback" id="backup-feedback"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ADD -->
+<div id="tab-add" class="hidden">
+  <div class="panel">
+    <h3>➕ Ajouter un mot</h3>
+    <div class="add-row">
+      <input type="text" id="add-fr" placeholder="🇫🇷 Mot français">
+      <input type="text" id="add-it" placeholder="🇮🇹 Traduzione italiana">
+      <button class="btn-primary" onclick="addOne()">Ajouter</button>
+    </div>
+    <div class="feedback" id="add-feedback"></div>
+
+    <hr class="section-sep">
+    <h3>📋 Importer en masse</h3>
+    <p style="font-size:.8rem;color:#aaa;font-style:italic;margin-bottom:8px;">
+      Format : <strong>français;italien</strong> — un mot par ligne.<br>
+      Séparateurs acceptés : <strong>;</strong> <strong>=</strong> <strong>tabulation</strong>
+    </p>
+    <textarea id="add-bulk" style="width:100%;height:100px;resize:vertical;margin-bottom:8px;"
+      placeholder="bonjour;ciao&#10;merci;grazie&#10;maison;casa"></textarea>
+    <button class="btn-primary" onclick="addBulk()">📥 Importer</button>
+
+    <hr class="section-sep">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+      <h3 style="margin:0;">📚 Vocabulaire (<span id="vocab-count">0</span> mots)</h3>
+      <input type="text" id="tbl-filter" placeholder="Filtrer…" oninput="renderTable()" style="width:130px;padding:6px 10px;">
+    </div>
+    <div style="overflow-x:auto;">
+      <table id="vocab-table">
+        <thead><tr>
+          <th>🇫🇷 Français</th><th>🇮🇹 Italiano</th><th style="text-align:center;width:80px;">✏️</th>
+        </tr></thead>
+        <tbody id="vocab-tbody"></tbody>
+      </table>
+    </div>
+    <div class="tbl-info" id="tbl-info"></div>
+    <div class="nav-row" style="margin-top:8px;">
+      <button class="btn-nav" onclick="tblPrev()">← Préc.</button>
+      <button class="btn-nav" onclick="tblNext()">Suiv. →</button>
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH -->
+<div id="tab-search" class="hidden">
+  <div class="panel">
+    <h3>🔍 Rechercher un mot</h3>
+    <input type="text" id="search-q" placeholder="Tapez en français ou en italien…"
+      oninput="doSearch()" style="width:100%;margin-bottom:14px;">
+    <div id="search-results"><em style="color:#aaa;font-style:italic;">Tapez pour rechercher…</em></div>
+  </div>
+</div>
+
+
+<!-- CONJUGAISON -->
+<div id="tab-conj" class="hidden">
+  <div class="conj-zone">
+    <div class="conj-score">Score : <strong id="cj-score">0</strong> / <span id="cj-total">0</span></div>
+    <div class="tense-tabs" id="tense-tabs"></div>
+    <div class="conj-card" id="conj-card">
+      <div class="conj-verb" id="cj-verb">—</div>
+      <div class="conj-fr" id="cj-fr">—</div>
+      <div class="conj-tense" id="cj-tense-label">Présent</div>
+      <table class="conj-table" id="cj-table"></table>
+      <div class="conj-input-row">
+        <input type="text" class="conj-input" id="cj-input"
+          placeholder="Tapez la forme demandée…"
+          oninput="checkConj()" autocomplete="off" autocorrect="off" spellcheck="false">
+        <button class="btn-primary" onclick="nextConj()">Suivant →</button>
+      </div>
+      <div class="conj-feedback" id="cj-feedback"></div>
+      <div class="conj-hint" onclick="showConjHint()">💡 Voir la réponse</div>
+    </div>
+    <div class="nav-row" style="margin-top:6px;">
+      <button class="btn-shuffle" onclick="shuffleConj()">🔀 Autre verbe</button>
+      <button class="btn-nav" onclick="resetConj()">🔁 Reset score</button>
+    </div>
+  </div>
+</div>
+
+<!-- iOS banner -->
+<div id="ios-banner">
+  🔇 La voix est bloquée par iOS
+  <button onclick="unlockAudio()">🔊 Activer le son</button>
+</div>
+
+<script>
+
+// ═══════════════════════════════════════════════
+//  DATA
+// ═══════════════════════════════════════════════
+const VOCAB = [["Bonne nouvelle", "Buona notizia"], ["Mauvaise nouvelle", "La cativa notizia"], ["La boite", "La scatola"], ["Quelle surprise", "Che sorpresa"], ["Plus c'est, mieux c'est", "Di piu è meglio"], ["Semaine passée", "La scorsa (o) settimana"], ["Vraiment", "davero"], ["Je suis voltesolé.e", "Mi spiacie"], ["écouter", "Ascoltare"], ["Touche (téléphone)", "Il tasto"], ["Une chambre", "Una stanza, camera"], ["Un réveil objet", "Una sveglia"], ["répondre", "Rispondere"], ["laisser", "Lasciare"], ["Acheter", "Comprare (reg) (comprato, comprando)"], ["presser", "Premere premuto"], ["Je suis perdu", "sono perso"], ["Oublier", "Dimanticare, dimanticarsi VR"], ["Demander", "chiedere chiesto"], ["penser", "Pensare VR"], ["Décevoirdeçu", "Deludaredeluso"], ["L'été", "L'estate, le estati NF"], ["plage", "spiaggia"], ["jeune", "Giovane, giovani"], ["Le quartier", "Il quartiere"], ["choisir", "Scegliere scelto"], ["aimer", "amare"], ["S'habiller", "Vestirsi, vestire"], ["meilleur", "migliore"], ["pire", "piggiore"], ["La provision, la réserve", "La riserva"], ["accepter", "accetare"], ["réserver", "prenotare"], ["savoir", "Sapere VI, ho saputo"], ["Paraitre sembler", "Sembrare VR"], ["arbre", "Albero"], ["refuser", "Rifiutare VR"], ["Commencer (l'activité)", "Avviare (l'attivitA)"], ["Arrêter l'activité", "Chiudere l'attivitA"], ["Quel dommage", "Che peccato!"], ["Depuis peu", "Da poco"], ["Depuis longtemps", "Da tanto"], ["Donner un pourboire", "Dare la mancia"], ["A cote de", "Di fianco a..."], ["Plus c'est mieux c'est", "Di più è meglio"], ["En baisse", "In calo"], ["En hausse", "In aumento"], ["Se tromper", "Sbagliare"], ["La peur", "La paura"], ["La prison", "La prigione"], ["quitter", "Lasciare VR"], ["Les ciseaux", "Le forbici"], ["Le client", "L'ospité"], ["Je m'excuse, je suis désolé", "Mi dispiace, mi spiace"], ["améliorer", "Migliorare"], ["montrer", "Mostrare"], ["Ça ne presse pas", "Non c'è fretta"], ["Bien fait", "Ben fatto"], ["Depuis quelques jours", "Da qualche giorno, mese"], ["Fais moi voir", "Fammi vedere"], ["inconnu", "Sconosciuto a"], ["Le chiffre", "La cifra"], ["pleurer", "Piangere"], ["Rester, s'arrêter", "Fermarsi"], ["décevoir", "Deludere, ho deluso"], ["rester", "Rimanere VIRimasto a"], ["vide", "Vuoto vuota"], ["plein", "Pieno piena"], ["Envoyer", "Inviare"], ["offrir", "Regalare"], ["Un cadeau", "un regalo"], ["Disparition", "sparizione i"], ["Inexpliqué", "Inspiegabili"], ["Pertinent", "ovvio"], ["Le motif", "il motivo"], ["Sembler paraitre", "parere Vr"], ["Voler", "rubare"], ["Jallais dire", "stavo per dire"], ["initialement", "In origine"], ["Une petite maison", "Una casina"], ["Petit cheval", "Cavallino"], ["Justeb excatement", "Proprio"], ["L'image", "L'immagine"], ["Le réveilRéveille toi", "RisveglioSvegliati"], ["Remarquer s'apercevoir", "Accorgere"], ["Je me lave les dents", "Mi lavo i denti"], ["Je me réveilleJe suis réveillé", "Mi sveglioSono svegliato"], ["Je me lèveJe suis levé", "Mi alzoSono alzato"], ["Je m'habilleJe suis habillé", "Mi vestoSono vestitovestire"], ["Je prends ma douche", "faccio la doccia"], ["Je me raseJe suis rasé", "Mi rado la barbaSono radetoradere"], ["Je vais au litJe suis au lit", "Vado al lettoSono al letto"], ["Je m'endorsJe suis endormie", "Mi addormentoSono addormentatoaddormentare"], ["Je me déshabilleJe suis déshabillé", "Mi spoglioSono spogliato"], ["Je me couche", "Mi sdraiosdraiarsi"], ["objet", "Ogetto"], ["Brosse (à dents)", "Lo uno spazzolino (da denti)"], ["miroir", "Lo uno specchio"], ["revenir", "Tornare"], ["La lumière", "la luce"], ["Le réveil", "il risveglio"], ["Un oeilJeter un coup d’œil", "Un occhio un'occhiata"], ["une souris", "un topo"], ["Le tableau", "Il quadro"], ["Peindre", "Dipingere dipinto"], ["deviner", "Indovinare"], ["J'avais raison", "Avevo regione"], ["Fermeture", "la chiusura"], ["Mais", "però"], ["Se permettre", "permettersi"], ["Diminuer", "Diminuire"], ["Je suis parti depuis 1 semaine (début d'une action et non une durée)", "Sono partito una settimana fa"], ["Je vis à l'hotel depuis 1 semaine (action commencée dans le passée et non finie)", "È da una settimana che vivo all'hotel = vivo all'hotel da una settimanaÈ da/Sono + durée +che + verbe au présent OUDa (dalle) + date"], ["Je suis coincé dans les embouteillages depuis 10 h ce matin", "Sono bloccato nel traffico dalle 10 di questa mattina"], ["La réunion commence dans 5 mn", "La riunione inizia fra 5 minuti"], ["J'aurai 60 ans dans 3 mois", "Compio 60 anni tra 3 mese"], ["Peux tu m'aider", "Puoi aiutarmi?"], ["Charger les bagages", "Caricare i bagagli"], ["aider", "Aiutare VR"], ["recommencer", "Ricominciare"], ["Se passer, arriver", "succedere"], ["Qu est ce qui se passe", "(che) cosa succede"], ["Laisse (laissez) un message", "Lascia (lasciate) un messagigo"], ["secrétaire", "Segreteria"], ["Le signal", "Il segnale"], ["Une image", "Un immagine"], ["couteau", "Coltello"], ["fourchette", "Forchetta"], ["cuiller", "cucchiaio"], ["Ranger", "riordinare"], ["Le linge", "i panni"], ["Eteindre", "spegnere"], ["Ne travaille pas", "non lavorare (inf.)"], ["Le roti", "l'arrosto"], ["Je dois m en aller de la maison", "devo andarmene di casa"], ["Je m en vais", "me ne vado"], ["L attente", "l'attesa"], ["Une augmentation", "un aumentato"], ["Une ordonnance", "una ricetta medica"], ["Avec le sourire", "con i sorriso"], ["Le cousin cousine", "Il cugino la cugina"], ["Porter un toast, trinquer", "Brindare"], ["neiger", "nevicare"], ["La neige", "La neve"], ["Plus queMoins que", "Più di quantoMeno di quanto"], ["essayer", "Provare"], ["Etre fou", "Essere fuori di testa"], ["surement", "Sicuramente"], ["Suivre mener", "Seguire"], ["Douteux se", "Dubbio dubbia"], ["Les doutes", "I dubbi"], ["Je ne crois plus", "Non mi fido più del Non credo più"], ["La décision", "La decisione"], ["La proposiion", "La proposta"], ["proposer", "Proporre"], ["Peser", "pesare"], ["Revoir repasser", "Ripassare"], ["Entre", "Fra tra"], ["La voiture me plaitLes voitures me plaisent", "Mi piace la macchinaMi piacciono le macchine"], ["Tu me plaitLei gli piace", "Tu mi piaci (mi piace)Lei gli piace (gli piace lei)"], ["CuillerPetite cuiller", "Un CucchiaioUn Cucchiaino"], ["Pendant", "Mentre"], ["Les couverts", "Le posate"], ["Douter", "Dubitare"], ["Chaise", "Une sedia"], ["Je doute de toi", "Dubito di te"], ["S'assoir", "SedersiÈ Seduto ta su una sedia"], ["Faire peur effrayer", "SpaventareÈ spaventano"], ["Depuis quelques mois", "Da qualche mese"], ["trinquer", "Brindare"], ["Sposa sposo sposi", "Épouse x"], ["Trinquonx aus=x époux", "Bridiamo agli sposi"], ["craindre", "Temere"], ["Je crains que", "Témoin che"], ["docteur", "Dottore dottoressa"], ["malade", "Malato malata"], ["Infirmier ère", "Infermiero a"], ["espérer", "sperare"], ["Surprendre étonner", "Sorprendere"], ["Lire", "Leggere letto leggendo"], ["Mettre", "Mettere messo mettendo"], ["Conseil", "Consiglio"], ["La fièvre", "La febbre"], ["Même", "Stesso a"], ["Le diagnostic", "La diagnosi"], ["Dépense frais cout", "La spesa"], ["Danser", "Ballare"], ["Symptome", "Sintomo"], ["Elle est enceinte", "È incinta"], ["L'amitié", "L'amicizia"], ["Entendre écouter", "Sentire intendere"], ["Le mariage", "Il matrimonio"], ["Souvent", "Spesso"], ["En faveur de", "A favore di"], ["La presse", "La stampa"], ["La secrétaire", "La segreteria"], ["Le cadeau", "L'omaggio"], ["RDV", "Appuntamento"], ["Malheureusement", "Purtroppo"], ["Au milieu", "In mezzo"], ["Un mail", "Una mail"], ["Faire les courses", "Fare la spesa"], ["Je vais faire les courses", "Sto per fare la spesaVado a dare la spesa"], ["Je vais aller faire les courses", "Sto per andare a fare la spesa"], ["Un bonbon", "Una caramella"], ["Prêter", "Prestare"], ["Le T shirt", "La maglietta"], ["La chanson", "La canzone"], ["Je n'ai plus besoin de ce plat", "Non mi serve più quel piatto"], ["Je n'ai plus confiance", "Non mi fido più di del"], ["La confiance", "La fiducia"], ["Avoir confiance", "Fidarsi"], ["J'ai perdu la confiance", "Ho perso la fiducia"], ["Falloir", "Servire"], ["Il faut 2 tables", "Serve 2 tavoli"], ["Avion", "Il aereo"], ["Une adresse", "Un indirizzo"], ["Être capable, réussir", "Riescere"], ["Profiter deProfite de tes vac", "GodersiGoditi la vacanza"], ["Même pas, pas un seul", "Neanche (devant un nom précédé d'un article"], ["Il n'y a pas un seul client dans l'hôtelIl n'y a aucun client", "Non c'è neanche un cliente in hotelNon c'è nessun cliente"], ["Aucun e, personne", "Nessun a o (devant nom singulier sans article"], ["Je n'ai aucun diplôme", "Non ho nessuna formazione"], ["QuelquesAucun eQuleques amiesQuelques lives", "Qualche + nom singNessuno aQualche amicaQualche libro"], ["Quelqu'unPersonne", "Qualcuno aNessuno(pas de pluriel)"], ["Animal( aux", "Animale (e"], ["Trouver", "trovare"], ["De toutes façons", "Ad ogni modo"], ["pleuvoir", "piovere"], ["pleuvieux", "pioviccica"], ["Petit e", "Piccolo a"], ["Moyen nne", "Medio media"], ["Le juge", "Il giudice"], ["L'accusé", "L'imputato"], ["Il me semble", "Mi sembra"], ["Je (ne) pensa (pas)", "(non) penso"], ["Je (ne) crois (pas)", "(non) credo"], ["J'estime", "Ritengo"], ["J'espère", "Spero, mi auguro"], ["Il est possible", "È possibile, puö essere"], ["Je crains", "Temo"], ["Stressé e", "Ansio ansia"], ["Il est vrai que", "È vero che"], ["Je suis sûr e que", "Sono sicuro a che"], ["Je suppose", "Suppongo"], ["Je ne sais pas si", "Non so se"], ["Je souhaite", "Mi auguro"], ["Il elle s'aperçoit", "Si accorge che"], ["Quelle malchance", "Che sfiga"], ["Le ciel", "Il cielo"], ["Soleil ensoleillé", "Il sole soleggiato a"], ["Nuage nuageux", "Una nuvola nuvoloso a"], ["Y avoir", "Esserci"], ["Il fera beau", "Farà bel tempo"], ["Il fera mauvais", "Farà brutto tempo"], ["Les lunettes", "Gli occhiali"], ["Yeux", "Occhio"], ["Garde", "Serbo guarda"], ["Je reviendrai lundi", "Sarö di ritorno Lunedï"], ["Dans qq mois", "Tra qualche mese"], ["Le répondeur (téléphonique)", "La segreteria Telefonica"], ["Différent", "Diverso a"], ["Pareil/ le la même", "Uguale"], ["Douleur", "Dolore"], ["L'autostop", "L'autostop"], ["Gaucher", "Mancino a"], ["Droitier", "Destrimano"], ["Je reste en attente de", "Rimango in attesa di"], ["Elle est en congé mat", "(lei) È in maternità"], ["Jusqu'à", "Fino a"], ["Ce ne sont pas tes affaires", "Non son affarari tuoi"], ["Tu devras te débrouiller tout seul", "Ti dovrai arrangiare da solo"], ["Tout de suite, sur le champ, rapidement", "Al volo"], ["Il elle me rend fou", "mi sta facendo imp"], ["Apprendre", "Imparare"], ["Je t'en prieJe vous en prie", "FiguratiSi fuguri"], ["Sac à dos", "Uno zaino"], ["Épaule", "La spalla"], ["Âne", "Asino"], ["Le code", "Codice"], ["Comportement conduite", "Condotta"], ["Certain e", "Alcuno a"], ["Dans la salle", "In sala"], ["Traverser", "Attraversare"], ["Monter", "Salire"], ["S'amuser", "Divertirsi"], ["Grandir", "Crescere (cresciuto)"], ["Médicament", "Un farmaco"], ["Au moins", "Almeno"], ["Combien je vous dois", "Quanto Le devo"], ["Le comprimé", "La compressa"], ["Orage", "Un temporale"], ["Assez", "Abbastanza"], ["Le bonheur", "La felicità"], ["Détester", "Odiare"], ["Continuer", "Seguitare"], ["Risquer", "Rischiare"], ["Le risque", "Il rischio"], ["La perte", "La perdita"], ["La terreur", "Il terrore"], ["dégoûtant", "Schifoso disgutoso"], ["À peine, dès que", "Appena"], ["éternuer", "Starnutire"], ["coude", "Il gomito"], ["tousser", "Tossire"], ["toucher", "Toccarsi toccare"], ["nourrir", "Nutrire"], ["Netoyer", "Pulire"], ["Ouvrir", "Aprire"], ["Se lever", "Alzarsi"], ["Attacher", "Allacciarsi"], ["Enlever", "Togliersi"], ["Quel soulagement", "Che sollievo"], ["Un instant", "Un attimo"], ["Les déchets", "I rifiuti"], ["La mairie", "Comune"], ["Reconnaissant", "Grato"], ["Embrasser", "abbracciare"], ["Savon", "sapone"], ["Tomber", "cadere"], ["Heureux se", "felice"], ["Satisfait", "soddisfatto a"], ["Ennuyeux", "noioso a"], ["FalloirIl faut", "OccorrereOccore"], ["Il est nécessaire de", "È necessario mangiare (sans di)"], ["Il est obligatoire de faire", "È obbligatorio fare"], ["Les cendres", "Le ceneri"], ["La loi", "La legge"], ["J'ai entendu que", "Ho sentito che"], ["On se tient au courant", "Ci sentiamo"], ["Je me suis senti mal", "Mi ho sentito male"], ["Sec sèche", "Asciutto a"], ["Frapper", "Bussare"], ["Pendant que tu y es", "Ghià che ci sei"], ["Est-ce que tu (vous)pars partez?", "Stai (sta) andando"], ["Donc", "Quindi"], ["Par terre", "Sul pavimento"], ["Il est debout", "È in piedi"], ["Combien tu mesures", "Quanto sei alto"], ["Combien tu pèses", "Quanto pesi"], ["Qu'est-ce qui se passe", "Cosa sta succedendo"], ["Le compte est bon", "I conti tornano!"], ["Se produire se passer", "Succedere"], ["Le maire", "Il sindaco a"], ["Bonne chanc", "In bocca al lupo!"], ["En suite", "In seguito"], ["La demande", "Le richiesta"], ["L'évènement", "L'evento"], ["À cause de", "A causa diPer colpa di"], ["L'argent", "I soldi"], ["Le poisson", "Il pesce"], ["La pêche", "La pesca"], ["Qui sait comment va Eric", "Chissà come sta Eric"], ["Acteuractrice", "Attore attoriAtrrice attrici"], ["Ça te dirait une pizzaÇa vous", "Ti va una pizzaLe (gli le)"], ["Allumer", "Ascendere"], ["Descendre", "Scendere"], ["Avir raison", "Avere ragione"], ["Avoir tort", "Avere torto"], ["Les fesses", "Il sedere"], ["Déçu", "Deluso a"], ["Se sentir", "Sentirsi"], ["Exténué", "Esausto a"], ["La fatigue", "La stanchezza"], ["Un pari", "Una scommessa"], ["Gagner", "Vincere vinto"], ["Perdre", "Perdere"], ["Parier", "ScommettereScommesso"], ["Disparaitre", "Sparire"], ["D'action", "D'azione"], ["La pluie", "La pioggia"], ["Les match de foot", "Le partite di calcio"], ["La faute", "La colpa"], ["Bavarder", "Chiacchiere"], ["Être pressé", "Essere di corsa"], ["Aller quelque part", "Andare in un luogo"], ["La crise", "La crisi le crisi"], ["A linterieur Qu’est-ce qu’il y a dans le sac", "DentroCosa c’è dentro il sacchetto"], ["bouge toi", "Muoviti"], ["Donner", "Dare dato"], ["Se depecher", "Sbrigarsi"], ["Bon travail", "Ottimo lavoro"], ["Coupe ongle", "Tagliaunghie"], ["Un appel", "Una chiamata"], ["loin", "Lontano"], ["Proche", "Vicino"], ["L'entraineur", "L'allenatore"], ["Donner un coup de mainDonne un…", "Dare un mano Da'un mano"], ["Conseiller", "Consigliere"], ["Plus de sport et une alimentation saine", "Più sport e una dieta sana"], ["Rassuré", "Sollevato"], ["Le soulagement", "Il sollievo"], ["Le journal cahier", "Il diario"], ["Un œuf des œufs Les œuf", "Un uovoDelle uova Le uova"], ["Habituellement", "Di solito"], ["Dessous Ci-dessous", "SottoQui sotto"], ["Cacher", "Nascondere"], ["Le nouvel an", "Il Capodanno"], ["Dessus", "Sopra"], ["Rechercher", "Ricercare"], ["La recherche", "La ricerca"], ["Mal de ventre", "Il mal di pancia"], ["Maigrir", "Dimagrire"], ["Le marché", "Il mercato"], ["En cachette", "Di nascosto"], ["Présent absent", "Presente Assente"], ["Le vaisseau spatiale", "La navicella spaziale"], ["Le service de navette", "Il servizio navetta"], ["Dépêche toi", "Sbrigati Muoviti muovetevi muoveDatti una mossa MuovitiSi muovaMoviamoci MoveteviSei davvero bravo Spostare"], ["Tu es vraiment doué", "Sei davvero bravo"], ["Déplacer", "Spostare"], ["En général Une blague La santé Le salutLa bêtise C’est n’importe quoi Une blague SalirPrier", "Di solitoUn scherzo La salute Il saluto La sciocchezza È una cavolata Un scherzo Sporcare Pregare"], ["Le chauffeur", "L'autista"], ["Le feu rouge", "Il semaforo"], ["Le survêtement de sport combinaison", "La tutta sportiva"], ["D’habitude", "Di i solito"], ["Cuisiner", "Cuoco cuoca"], ["Le poste", "La posizione"], ["Dessus sur", "Sopra"], ["Dessous sous", "Sotto"], ["En bas", "Giù"], ["En haut", "In alto"], ["Embaucher", "Assumere assunto"], ["Expliquer", "Spiegare"], ["Critique", "Recensione i"], ["La nourriture", "Il cibo"], ["Vaisselle", "Stoviglie"], ["Évier", "Lavello"], ["Lavabo", "Lavabo"], ["Un morceau Détester", "Un pezzo Odiare a"], ["Ignorer", "Ignorare"], ["Un employé", "Un impiegato"], ["Nager", "Nuotare"], ["Armoire", "Armadio"], ["Étagère", "Scaffale i"], ["Le manteau", "Il cappotto"], ["Commander", "Ordinare"], ["Pourriez-vous me conseiller un restaurant dans la ville", "Potrebbe consigliarmi alcuni ristoranti in città?"], ["À côté", "Qui accanto"], ["Devant", "Di fronte"], ["Derrière", "Dietro"], ["Écharpe", "Una sciarpa"], ["Agrandir étendre", "Ampliare"], ["Respecter", "Rispettare"], ["La construction bâtiment", "Edilizia"], ["Il faut", "Occorre"], ["Prendre soin s’occuper de", "Provvedere"], ["Régler arranger", "Sistemare"], ["Avoir besoin servir falloir Il faut 2 tables", "ServireIl faut 2 tables"], ["Périodiquement Systématiquement", "Periodicamente Sistematicamente"], ["La maison est aussi grande que", "La casa è tanto grande quanto"], ["Plus…queMoins…queAutant que Autant que Aussi…que", "Più…diMeno…diTanto quanto Tanto…quanto"], ["Anna est aussi grande que", "Anna è alta come"], ["Les bottes", "Gli stivali"], ["Découvrir", "Scoprire scoperto"], ["Convien vaut la salade", "Quanto viene l’insalata"], ["Profiter jouirProfitons", "Godere godersi Godiamoci Se godia"], ["Je n’en suis pas sur", "Non ne sono sicuro"], ["Il n’est pas revenu depuis 5 jours", "Sono 5 giorni che non torna Non torna da 5 giorni"], ["Annonce", "Un Classificato"], ["Pas mal", "Mica male"], ["Je suis d’accord", "Ci sto"], ["Ça te va", "Ci stai"], ["Toujours", "Sempre"], ["A condition que Pourvu que", "Sempre che"], ["Un bavardage BavardBavarder", "Una chiacchiera ChiacchieroneFare una chiacchierata"], ["Que me conseillez-vous", "Cosa mi consiglia"], ["L’environnement", "L’ambiente"], ["Vache", "Mucca mucche"], ["Cancer", "Cancro"], ["Un prêt", "Un prestito"], ["Le taux d’intérêt", "Il tasso d’interesse"], ["On dit on l'appelles", "Dicono, lo chiamano3° pers pluriel"], ["Saoule", "Ubriaco a"], ["C’est vrai, c’est vraiment ça", "Proprio così"], ["La blessure", "La ferita"], ["L’entreprise", "L’azienda"], ["Le facteur", "Il postino"], ["Confier", "Affidare"], ["La poche", "La tasca le tasche"], ["Remplacer", "Sostituire"], ["Le canard", "L anatre"], ["Un comptable", "Un contabile"], ["Le raisin", "L'uva"], ["ajouter", "Aggiungere"], ["Le salaire", "Lo stipendio"], ["Il faut que il me faut", "(Mi) Occorre che, bisogna che"], ["Les draps", "Le lenzuola"], ["Les serviettes", "Gli asciugamani"], ["Les rideaux", "Le tende"], ["Le serveur", "Il cameriere i"], ["La réputation", "La fama"], ["Je crois que tu as raison", "Credo che tu abbia ragione"], ["Selon moi", "Secondo me"], ["Un tapis", "Un tappeto"], ["A la suite de", "A seguito di"], ["Plaisanter", "Scherzere"], ["Tu plaisantes?", "Scherzi"], ["Il faut que", "Bisogna che occorre che"], ["(Personne ne s’y attendait", "Non se lo aspettava nessuno"], ["Connaître Reconnaître NaîtreAugmenter Croire grandir", "Conoscere Riconoscere Nascere AccrescereCrescere"], ["Table de nuit", "Comodino"], ["Tiroir", "Cassetto"], ["Poubelle", "La spazzatura"], ["Descendre monter", "Portare giù su"], ["Un petit truc", "Una cosina"], ["C’est ton votre tour C’est mon tour", "Tocca a te leiTocca a me"], ["Permis de conduire Licence", "Patente"], ["Abeille", "Una ape un’ape"], ["Excellent e", "Ottimo ottima"], ["La hauteur", "L’altezza"], ["Le meilleur", "Il meglio"], ["Le pire", "Il peggio"], ["Disparaître", "Scomparire"], ["Réfléchir", "Rifleterre"], ["CraindreUne feuille de papier", "TemereUn foglio"], ["Une feuille arbre", "Una foglia"], ["Sombre", "Scuro scura buio a"], ["Une couleur", "Un colore"], ["Soutien gorge", "Reggiseno"], ["Sein", "Il seno"], ["Le nettoyage", "La pulizia"], ["Panier corbeille", "Il cestino"], ["Excuse-moi", "Scusami"], ["Excusez-moi", "Mi scusi"], ["Regretter", "Pentersi"], ["Combien en voulez vous", "Quanti e ne vuole"], ["Paresseux", "Pigro"], ["Enveloppe", "Una busta"], ["Arrêtez !", "La smetta!"], ["Location de voiture", "Autonoleggio"], ["Noleggiare", "Louer"], ["Remercier Je vous remercie", "Ringraziare La ringrazio"], ["Comment ça se fait Mais pourquoi", "Come mai"], ["Sous-sol", "Il seminterrato"], ["Heureusement", "Fortunatamente"], ["Juste à côté", "Qui accanto"], ["Le vendeur", "Il commesso a"], ["Malheur", "La sfortuna"], ["Le reçu", "Il scontrino"], ["Un bon", "Un buono"], ["Un remboursement", "Un rimborso"], ["Arrêter", "Smetere"], ["Crier", "gridare"], ["Piquer", "Pungere"], ["Beau frère", "Il cognato"], ["Belle sœur", "La cognata"], ["Matelas", "Materasso"], ["Porter des vêtements", "Indossare dei vestiti"], ["Je suis grand", "Sono alto"], ["Faux incorrect", "Sbagliato a"], ["Serviette de table", "Tovagliolo"], ["En chèque", "In assegno"], ["En liquide", "In contanti"], ["Exposition art", "Una mostra"], ["Exposition geo", "Esposizione i"], ["Mouchoir", "Fazzoletto"], ["Poissonnerie", "Pescheria"], ["Poissonnier", "Pescivendolo"], ["Pâtisserie", "Pasticceria"], ["Pâtissier", "Pasticciere"], ["Charcuterie", "Salumeria"], ["Charcutier", "Salumerie"], ["Glacier", "Gelateria"], ["Boulangerie", "Panetteria panettiere"], ["Boucherie", "Macelleria"], ["Boucher", "Macellaio"], ["Fromagerie", "Negozio di formaggi"], ["Primeur légumes", "Negozio di verdura"], ["Petit déjeuner A 19 hMidi16 h sedici Soir", "La colazione Lo spuntino Il pranzo pranzare La merenda La cena cenare"], ["Veau bœuf", "Vitello manzo"], ["Canard", "l'anatra"], ["Lapin", "Il coniglio"], ["Le cochon", "Il maiale"], ["l'agneau", "l'agnello"], ["Huitre moule", "l'ostrica, la cozza"], ["Le fromage bleu", "Il formaggio verde"], ["Un œuf, des œufs", "Un'uovo, de le uova"], ["Un bol (grand, petit", "Una ciatola, una scodela"], ["Une tasse", "Una tazza"], ["Rendre restituer", "Restituire"], ["Baisse la musique", "Abbassare la musica"], ["La note", "L’appunto"], ["L’oiseau", "L’uccello"], ["On voit", "Si vedo (+sing)Si vedono (+plu)"], ["On mange la pizza On mange les huîtres", "Si mangia la pizzaSi mangiano le ostriche"], ["Le bouton", "Il pulsante"], ["Confirmer", "Confermare"], ["Annuler", "Annullare"], ["Je n’y arrive pas", "Non ci riesco"], ["Arriver pouvoir réussir parvenir", "Riuscire"], ["Un clavier", "Una tastiera"], ["L’écran", "Lo schermo"], ["Quand même", "Comunque lo spesso"], ["L'amende", "La multa"], ["Le passage (piéton)", "Le strisce pedonali"], ["Un achat", "Un acquisto"], ["Un dommage", "Un danno"], ["Combien de temps", "Quanto tempo"], ["Combien de temps tu pars", "Quanto tempo stai via"], ["J’ai hâte de", "Non vedo l’ora di"], ["Le parcours itinéraire", "Il percorso"], ["La réponse", "La risposta"], ["Non plus", "Nemmeno"], ["Appuyer sur, presser", "Premere"], ["Le placard", "La dispensa"], ["Les congés.", "Le ferie"], ["Parfois", "A volte"], ["J’ai à peine mangé", "Ho appena mangiato"], ["Le gain", "Il guadagno"], ["Je serai ravi", "Sarò lieto"], ["En faveur", "A favore"], ["Contre", "A sfavore"], ["De côté", "Da parte"], ["Des économies", "Dei risparmi"], ["Employé", "Impiegato"], ["Exigeant", "Esigente"], ["J’ai envie d’une pizza", "Ho voglia di un pizza"], ["Une explication", "Una spiegazione"], ["Il n’y a rien de pire", "Non c’è niente di peggio"], ["Le choix", "La scelta"], ["Le même", "Lo stesso"], ["Ou", "O oppure"], ["Sinon", "Sennò"], ["Plus…queMoins que Aussi) queAutant que", "Più …di dellaMeno di(Tanto) quanto Tanto quanto Tanti quanti"], ["Étant donné", "Data"], ["Si j’étais (phrase principale au condSi je suis Si je suis (phrase princ au futur", "Se fossi Se sono Se sarò Se fossi rico, comprerei una macchina Torno se non sono occupato Tornerò se non sarò occupato"], ["Si j’avais été", "Se fossi stato"], ["Confortable Inconfortable", "Comodo Scomodo"], ["D’accord Désaccord", "D’accordo Disaccordo"], ["Très mauvais Excellent", "PessimoOttimo"], ["Réconfortant Décourageant", "Confortante Sconfortante"], ["Encourageant", "Incoraggiante"], ["La certitude", "La sicurezza"], ["Bavard", "Chiacchierone"], ["Bavardage", "Chiacchiera"], ["Démarrer la voiture", "Avviare la macchina"], ["Tenir garder Je te garde une place", "Tenere tenersi Ti tengo un posto"], ["A propos", "Riguardo"], ["Mériter", "Meritare"], ["Récompenses", "Premio premi"], ["S’apercevoir remarquer", "Accorgersi accorto"], ["Assaisonner", "Condire"], ["Chauffer", "Scaldare"], ["Poêle", "Padella"], ["Casserole fait tou", "Pentola"], ["Passoire", "Scolapasta"], ["A la gym", "In palestra"], ["Si j’étais toi je ne fumerais pas", "Se fossi in te non fumerei"], ["La location", "L’affitto"], ["Partager", "Condividere"], ["Mouillé", "Bagnato"], ["La sécurité", "La sicurezza"], ["Faible", "Debolo"], ["Un trouble", "Un disordino"], ["Le soutien", "L’appoggio"], ["L’opinion publique", "L’opinione pubblica"], ["Demande", "Richiesta"], ["Apprécier", "Gradire"], ["Un soda", "Una bibita"], ["Il me faut", "Mi serve"], ["L’entretien d’embauche", "Il colloquio di lavoro"], ["Je refuse J’accepte", "Mi rifiutoAccetto"], ["Cependant", "Tuttavia"], ["Pour que", "Affinché"], ["Une boisson", "Una bevanda"], ["Il n’y a pas de quoi", "Non c’è di che"], ["Il suffit que", "Basta che"], ["Combien tu mesures Combien tu pèses", "Quanto sei altoQuanto pesi"], ["Quelle est ta taille", "Qual è tua statura"], ["La mesure d’un meuble", "La misura di um mobilo"], ["Tous les deux, les deux", "Entrambi entrambe"], ["Un doigt les doigts", "Un dito. Le dita"], ["Un cadre", "Un cornice"], ["A l’esprit en tête", "In mente"], ["Le portrait", "Il ritratto"], ["Un bon plan", "Un buon piano"], ["Retourner", "Rimandare"], ["Tant que", "Basta che"], ["Je le veux aussi", "Lo voglio pure (pur)"], ["Asseyez-vous svp", "Si sedia pure"], ["Hélas", "Ahimè"], ["L’artiste", "L’artista"], ["Cuire", "Cuocere"], ["Les frites", "Le patatine fritte"], ["Il y’a un instant", "Un attimo fa"], ["Limbecile", "L’imbranato"], ["Obtenir", "Ottenere"], ["Si j’avais du temps", "Se avessi tempo"], ["Délicieux", "Delizioso"], ["GraveDont de quiPour laquelle", "Serio.Di cuiPer cui"], ["Onze Douze Treize QuatorzeQuinze SeizeDix-septDix-huit Dix-neuf", "undicidodici tredici quattordiciquindicisedici diciassettediciottoDiciannove"], ["Agréable", "Piacevole"], ["Raccrocher Réponds raccroche", "Riattaccare Rispondi riattacca"], ["Elle est terrible!", "È tremenda"], ["Étourdi", "Sbadato a"], ["Prendre garde à qu’un qqch", "Badare a qualcuno qualcosa"], ["Avoir envie de J’ai envie de", "Aver voglia di"], ["J'ai envie de", "Ho vloglia di"], ["La place", "Il classificato"], ["Dieci", "Diec…esimo"], ["Superbe", "Stupendo a"], ["Horrible", "Orrendo a"], ["Je m'ennuie", "Sono annoiato"], ["Maudit", "Maledetto"], ["Prendre garde à", "badare a qualcosa qualcuno"], ["Le baton la canne de marche", "Il bastone"], ["Je ne l'ai pas esquivé", "Non l'ho schivato"], ["Un problème", "Un problema"], ["Je l'aime", "gli (le) voglio bene"], ["Avez-vous une table pour deux", "Avete un tavolo per due"], ["Une fois par an", "Una volta all’anno"], ["Habituer", "Assuefare"], ["Le mur intérieur", "La parete"], ["Le mur", "Il muro"], ["La partie", "La parte"], ["Aussi", "Pure pur"], ["Siete comodi", "Vous êtes confortable"], ["Atteindre", "Raggiungere"], ["Se moquer", "Prendere in giro"], ["Je suis occupé", "Sono impegnato occupato"], ["Faire semblant", "Fingersi"], ["Je fais semblant", "Fingo mi. Faccio finta"], ["Elle se fait passer pour un médecin", "Si finge un medico"], ["Par avance", "Anticipatamente"], ["Tremblement de terre", "Terremoto"], ["Des bouchons d’oreille", "Dei tappi per le orecchie"], ["Je les porte", "Li sto indossando"], ["Le problème", "Il problema"], ["Pendant ce temps", "Nel frattempo"], ["Arrêtez", "Smettere"], ["Ronfler", "Russare"], ["Une plainte", "Una lamentela"], ["Je dors comme un loir", "io dormo come un ghiro"], ["Faire d’une pierre deux coups", "prendere due piccioni con una fava"], ["Se plaindre", "Lamentarsi"], ["Tenir au courant", "Aggiornare"], ["Tiens-moi au courant", "Aggiornami"], ["Un coussin", "Un cuscino"], ["Une couverture", "Una coperta"], ["Les pantoufles", "Le pantofole"], ["Signaler", "Segnalare"], ["Amuse bouche", "Stuzzichino"], ["Voiture wagon", "La carrozza"], ["Un sujet de discussion", "Un argomento"], ["Hantée", "Infestata"], ["L’annonce", "L’annuncio"], ["A part", "Da parte"], ["La hauteur La largeur", "L’altezza La larghezza"], ["Une petite annonce", "Un classicato"], ["Ja paie par virement bancaire", "Pago con bonifico bancario"], ["La haut", "Lassù"], ["Là-bas", "Laggiù"], ["Je t’écris à propos de notre voyage", "Ti scrivo riguardo il nostro viaggio"], ["S’évanouir Je m’évanouis", "Svenire svenirsi Svengo"], ["Devenir", "Diventare"], ["Pour 6 moisPendant 2 ans", "Per sei mesi Per due anni"], ["Masculin féminin", "Maschile femminile"], ["Beaucoup de (fois)", "Un sacco di volte"], ["Le bureau", "L’ufficio"], ["In punto", "Précise"], ["Le trou", "Il buco"], ["ServietteTorchonPutain! S’enfuir s’échapperC’est cool Le cambriolage", "Asciugamano unUn asciugapiatti.Cazzo!ScappareChe figata!Il furto"], ["A l’heure Ponctuel En avance En retard", "In orarioPuntualeIn anticipoIn ritardo"], ["Un guichet portillon", "Uno sportello"], ["La goutte", "La goccia (le gocce)"], ["L'œuf", "L'uovo (la uova)"], ["Le collègue", "Il collega (i colleghi)"], ["La fleur", "Il fiore (i fiori)"], ["Unee gomme papier", "Un grattino"], ["Le salon", "Il salotto"], ["Une des framboise", "Un lampone dei..i"], ["Une aubergine", "Una melanzana"], ["Un poireau", "Un porro"], ["Un chou", "Un cavolo"], ["Les haricots", "I fagioli"], ["Les petits pois", "I piselli"], ["Le bracelet", "Il braccialetto"], ["La course compétition", "La gara"], ["Les équipes en compétition", "Le squadre in gara"], ["Chacun une", "Ognuno ognuna"], ["Maigre gras", "Magro grasso"], ["Pâle", "Pallid"], ["Raide", "Rapida"], ["Un plan de ville", "Una map"], ["Stressé", "Stresso"], ["Stressant", "Stressante"], ["Entre eux", "Traloro"], ["De temps en temps", "Di tanto a tanto"], ["Il faut 3 heures", "Ci vogliono 3 oro…occorano 3 ore"], ["Une canéro photo", "Una cineprese"], ["Des fois", "A volta"], ["Épais", "Spesso"], ["Le prêt bancaire", "Il prestito bancario"], ["Le prêt", "Il mutuo"], ["La banquier iere", "Il bianchere la bianchera"], ["Un mouton", "Una pecora"], ["Un bélier", "Un ariete"], ["Un agneau", "Un agnello"], ["Quelle cuisson ?", "cottura ?"], ["Bien cuite, médium, saignante", "Ben città , media , al sangue"], ["Ressentir", "Provare"], ["Un lapsus une oie", "Una papera"], ["Sauvage", "Selvaggio"], ["Une bonne résolution", "Un buon proposito"], ["Le plafond", "In soffitto"], ["Je n’ai pas fermé l’œil", "Non ho chiuso occhio"], ["Confortable", "Comodo"], ["Inconfortable", "Scomodo"], ["Que est-ce que tu fais la , en train de faire", "Cosa ci fa?"], ["Avoir les boules", "Che palle"], ["La cachette", "Il nascondiglio"], ["Fou folle", "Pazzo a. Il pazzo"], ["En tout lis", "Inoltre"], ["Maintenant", "Ormai oramai adesso"], ["Putain", "Cazzo"], ["Mince la vache", "Cavolo"], ["Il pleut", "Sta piovendo"], ["Les bandes dessinées", "I fumetti"], ["La déchèterie", "La discarica"], ["L’exigence les besoins", "L’esigenza le…e"], ["Une gueule de bois", "una sbornia"], ["Un succès", "Un successo"], ["Un vol agité", "Un volo bruscò"], ["Fêter", "Festeggiare festeggiato"], ["J’ai hâte d’aller en vacances", "non vedo l'ora (di andare in vacanza"], ["Pouvez-vous me prévenir quand on arrive", "Può avvisarmi (quando siamo arrivati,"], ["A l’heure", "In tempo"], ["Un compte bancaire", "Un conto in banca"], ["AdditionnerSoustraire Une additionUne soustraction", "Sommarre Sostrarre Un addizione Un sottrazione"], ["Plier", "Piegare"], ["Un mensonge", "Una bugia"], ["Tricher tromper trahir", "Ingannare"], ["Mentir", "Mentire"], ["Attraper", "Affarete"], ["La taille (buste )", "La vita"], ["Asseyez-vous je vous en prie", "Si sieda pure"], ["Sur lequelDontLequel, laquellePour le(la)quel", "Sopra cui, su cuiDi cuiIl quale, la qualePer cui"], ["Ruggero dont le travail…", "R il cui (il quale) lavoro è…"], ["R dont la profession", "R la cui (la quale) professione è"], ["L’entrepreneur", "l'imprenditore, l'imprenditrice"], ["Expert", "Esperto a"], ["On y est presque", "Ormai ci siamo"], ["Déjà désormaispresque", "Ormai"], ["Goûter", "Assagiare"], ["En plein air", "All’aria aperta"], ["Pas vraiment", "Non proprio"], ["Ranger (sa chambre", "Sistemare"], ["S’amuser", "Divertirsi"], ["Les mauvaise herbes", "Erbaccia erbacce"], ["Arroser", "Innaffiare"], ["Le chiffr d’affaires", "Il fatturato"], ["Un bouquet", "Un mazzo"], ["Maçon", "Muratore"], ["Une vue à couper le souffle", "Una vista a mozzare il fiato"], ["Un rond", "Un cerchio"], ["C’est rond", "E rotondo"], ["Sono colto", "Je suis cultivé"], ["Le puits", "Il pozzo"], ["Une gourde", "Una borraccia"], ["Une chanteuse", "Cantante"], ["Un ovale", "Un ovale"], ["Écran", "Lo schermo"], ["Imprimante", "Stampante"], ["Un linge chiffon", "Un panno"], ["En plus", "Inoltre"], ["Malgré", "Nonostante"], ["Le besoin l’exigence", "L esigenza"], ["Les flics", "Gli sbirri"], ["Le magazine la revue", "La rivista"], ["Déménager", "Traslocare"], ["Poser des questions", "Fare domande"], ["J’ai en tête", "Ho in mente"], ["Faire des progrès, s’améliorerJe pense que je fais des progrès", "Fare passi avanti Penso che sto facendo progressi"], ["L’absence", "L’assenza"], ["Pense y pensez y", "Pensaci pensateci"], ["Si j’étais toi", "Se fossi in te"], ["Un paquet", "Un pacco"], ["Longueur largeur profondeur", "Lunghezza larghezza profondità"], ["Tenir garder", "Tenere"], ["A été par lui", "È stato da lei"], ["Le Terrain", "Il terreno"], ["La terre", "La terra"], ["Les mollets", "I polpacci"], ["Le dos", "La schiena"], ["Empoisonner", "Avvelenare"], ["Le poison", "Il veleno"], ["Nocturnes", "Notturni"], ["Diurnes", "Diurni"], ["Le skieur", "Il sciatore"], ["Un chalet", "Una baita"], ["Une récompense", "Un premio premi"], ["La guitare Jouer de la guitare", "La chitarraSuonare le chitarra"], ["Rire", "Ridere vr riso"], ["Sur le net", "In rete mi"], ["La session a expiré", "La sessione scaduta"], ["Le nom utilisateur", "Il nome utente"], ["Le portail (internet)", "Il portale"], ["Commander ordonner", "Ordinare"], ["A lui même", "À se stesso"], ["La touche", "La pulsante il tasto"], ["La trêve accalmie", "La tregua"], ["Plus que toi (moins que)Plus gentil que", "Più di te (meno di)Più gentile di (del della)"], ["Aussi…que", "Tanto …quanto"], ["La querelle dispute", "La disputa"], ["La personne âgé", "L’anziano"], ["Le débat", "Il dibattito"], ["Fâché", "Arrabbiato"], ["Sucré salé amer", "Dolce salato amaro"], ["Un tire-bouchon", "Un cavatappi"], ["La glace", "Ghiaccio"], ["Le salon de coii", "Il salone"], ["Le coiffeur", "Il parrucchiere"], ["La coupe de cheveux", "Il taglio dei capelli"], ["Sèche cheveux", "Asciugacapelli"], ["Un peigne", "Un pettine"], ["Tu as besoin de quelque chose", "Ti serve qualcosa"], ["Sen aller", "Andarsene via"], ["Vas ten", "Viatene"], ["Allez-Vous en", "Andateneve"], ["S’ennuyer", "Annoiarsi"], ["Raccrocher", "Riagganciare"], ["Je suis foutu", "Sono fottuto"], ["Un bureau", "Una scrivania"], ["La lessive linge", "Il bucato"], ["Avoir le goût de, sentirLe vin à le goût de vinaigre Ce livre sent bon", "Sapere di, profuma di Il vino sa di aceto , profuma di aceto Questo libro sa di buono"], ["Un mot vulgaire Gros mot", "Una parole Volgare Una parolaccia"], ["Le linge de maison", "La biancheria"], ["Une lessive produit", "Un detersivo"], ["La pate", "La zampa"], ["Le paquet", "Il pacco"], ["Le film m’a beaucoup plu", "Il fim mi è piaciuto molto"], ["La joue", "La guancia la guancetta"], ["Piment", "Peperoncino"], ["Les boulettes de viande", "Le polpette"], ["À la sauce", "Al sugo"], ["Déclarer", "Dichiarare"], ["Les heures supplémentaires", "Gli straordinari"], ["Au fait de toute façon", "Comunque"], ["Non plus même pas", "Nemmeno"], ["Plonger", "Tuffarsi"], ["En arrière", "Indietro"], ["En avant", "Avanti"], ["Corbeille", "Un cestino"], ["La décharge", "La discarica"], ["Benne à ordures", "Il cassonetto"], ["La crème fouettée", "La panna montata"], ["La crème (cosmétique", "La crema"], ["Le film m’a plus", "Mi è piaciuto il film"], ["J’en avais marre", "Mi ero stufato"], ["Je suis embauché", "Sono assunto"], ["Se coiffer", "Pettinarsi"], ["Se relaxer", "Rilassarsi"], ["Le genoux", "Il ginocchio"], ["La hanche Le brasLes brasÀ l’arrièreDerrière Contraindre obliger", "L’anca le anche Il braccio Le braccia all’indietroDietro Costringere costretto"], ["Vulgaire", "Pacchiano a"], ["Affreux", "Orrendo"], ["Crêche", "il presepe"], ["PersonneAucunAucun problèmeRien n’est comme avant Je ne savais même pas Même pas", "Nessuno Nessun nessuna Nessun problema Niente è come primaNemmeno sapevo Nemmeno neanche"], ["AvancerReculer", "Andare avanti Andare indietro"], ["La tour les tours", "La torre le torri"], ["Amoureux Je suis tombé amoureux de toi", "Innamorato Mi sono innamorato di te"], ["N’importe lequel", "Qualsiasi di loro"], ["Peu importe Ça m’est égal", "Non è importa Non mi dispiace Non mi importa"], ["C’est un peu loin", "È un poco lontano"], ["Le fruit confit", "Il candito i canditi"], ["Au lieu de", "Invece che"], ["Le coffre", "Il baule"], ["Pourvu que", "Basta che"], ["Partout", "Dappertutto"], ["Chaque fois", "Ogni volta"], ["Le meilleur Le plus mauvais Le plus grandExcellentLe mieux Le pire", "Il migliore Il pessimo Il maggioreOttimoIl meglio Il peggio"], ["PuerQuelque chose pue", "PuzzareQualcosa puzza"], ["C’est degueulasse", "Fa schifo"], ["J’ai eu des hauts et des bas", "Ho avuto alti e bassi"], ["À la différence de. Contrairement à", "À différencia di"], ["Le niveau", "Il nivello"], ["La vie nocturne", "La movida"], ["J’ai dépensé 10€ tout rond", "Ho speso 20 tondi tondi"], ["C’est ça", "Ci sta"], ["Tout à fait", "Affatto"], ["c'est fatigaunt", "È una faticaÈ faticoso stancante"], ["Le gaspillage", "Lo spreco"], ["Le rapport", "La relazione"], ["Un service", "Un favore"], ["La clef les clefs", "La chiave le chiavi"], ["Contrairement a", "À differenza di"], ["L’enquête", "L’indagine"], ["Tout seul", "Da solo , da sola, da soli"], ["Coupable", "Colpevole"], ["L’incident", "Il fattaccio"], ["C’est un plaisir de te revoir", "È un piacere rivederti"], ["Un choix", "Una scelta"], ["Tout type de", "Qualsiasi tipo di"], ["Toute personne", "Qualsiasi ogni Qualunque persona"], ["La vallée la plaine", "La pianura"], ["L’arrière pays", "L’entroterra"], ["Le score", "Il punteggio"], ["Tout le monde", "Tutti quanti"], ["Emmener", "Portare"], ["Tu te moques de moi Perdre gacher du temps", "Mi prendi in giroSprecare tempo"], ["Je parie que je suis perdu", "Mi sa che mi sonon perso"], ["Tourne à gauche", "Fai una svolta a sinistra"], ["Tourner", "Svoltare"], ["Faire demi tour", "Fare un'inversione a U"], ["Un rond point", "Una rotatoria"], ["Embouteillage", "Un ingorgo"], ["Trottoir", "Marciapiede"], ["Un couple d'amis", "Un paio di amici"], ["Chef doeuvre", "Il capolavoro"], ["L'œuvre", "L'opera"], ["Les pates", "Le zampe"], ["Un coup de fil", "Une telefonata"], ["Un glaçon", "Un cubetto di ghiaccio"], ["Une paille", "Una cannuccia"], ["Poser mettreProposerExposerOpposer", "PorreProporre EsporreOppore Pongo poni pone poniamo ponete pongono"], ["Sois patient", "Sia ou zii? paziente"], ["Tout est pris en charge Je prends tout en charge", "Tutto è curato Mi prendo cura di tutto"], ["Ça me rend malade", "Mi fa schifo"], ["Au cas où", "Nel caso in cui"], ["Se comporter", "Comportarsi"], ["À la suite d’un accident", "a seguito di (un incidente"], ["Aussi également", "Pure"], ["Au milieu de nulle part", "In mezzo al nulla"], ["Murmure", "Il mormorio"], ["Ruisseau", "Un ruscello"], ["J’ai le cœur brisé", "Ho il cuore a pezzi"], ["Quelques étapes supplémentaires", "Ancora un paio di passi"], ["Une étape", "Un passo"], ["SuffireÇa te suffira", "BastareTi basterà"], ["Le sèche cheveux", "L’asciugacapelli Il phon"], ["L’aspirateur", "L’aspirapolvere"], ["La poussière Enlever la poussière Il nous faut plus de tempsÇa ne m’intéresse pas Une blague Rentrer", "La polvere Togliere la polvereCi serve più tempo Non mi importa Una battuta Rientrare"], ["Le gendre", "Il genero"], ["Le cousin", "Il cugino"], ["Le beau-frère", "Il cognato"], ["La belle sœur", "La cognata"], ["Belle mère père", "La suocera suocero"], ["La belle fille", "La nuora"], ["Le petit fils fille", "Il nipote"], ["C'est du gâteau", "È una passeggiata"], ["Mon diEU", "Dio moi"], ["AdaptéAttendre attenduC’est fouLa baffeAu fait tu as éteint la lumière Le papier toilette", "AdattoAttendere atteso Pazzesco La sberla A proposito hai spento (spegnere(la luce La carta igienica"], ["Faire marche arriere", "Fare retromarcia"], ["Tous es jours", "Ogni giornio"], ["Tous les 2 jours", "Ogni due gironi"], ["Le tableau de bord", "Il cruscotto"], ["Le rétroviseur", "Lo specchietto retrovisore"], ["La portière", "La portiera"], ["Rêver", "Sognare sognato"], ["La bonne personne", "L’uomo giusto la donna giusta"], ["La bonne heureLe bon poids", "L’ora giustaIl peso giusto"], ["Répondre correctement", "Rispondere giusto (risposto )"], ["Je je fais à ma façon", "Lo faccio a modo mio"], ["Attendre", "Atteso attesa"], ["Adapter", "Adatto adatta"], ["Plus que je pensais", "Più di quanto pensassi"], ["Plus que jimmaginais", "Più di quanto immaginassi"], ["Ni…ni", "Né. Né"], ["Mauvais", "Cattivo"], ["Très mauvais", "Pessimo"], ["Pire Le pire", "Peggio (Peggiore) , più cattivoIl peggio"], ["Meilleur que le tien", "Migliore (più buono)del tuo"], ["Mieux Le mieux", "Meglio Il meglio"], ["Excellent", "Ottimo"], ["E è l’aîné de leurs fils", "E il più grande/maggiore dei loro figli."], ["C’est la cadette", "E la più piccola/la minore"], ["Plus grand", "Maggiore/ più grande"], ["Copropriétaire", "Condominio"], ["Les factures", "Le rate"], ["Art de rueLe pire moment de ma vie Une journée très mauvaise Perdre rater", "Artisto di strada Il giorno peggiore della mia vita Un giorno pessimo Perdere perso"], ["Descendre (les escalliers)", "Scendere (sceso)"], ["Descendre les poubelles", "Portare giù la spazzatura"], ["Mettre au courant", "Aggiornare"], ["N attente", "In sospeso"], ["Il a semblé à", "È sembrato a"], ["Il nous a semble", "Ci è sembrato"], ["Le couple", "La coppia"], ["Attaquer en justice", "Fare causa"], ["Un gain", "Un guadagno"], ["La hausse, en hausse", "Il rialzo , in rialzo"], ["La baisse en baisse", "Il calo, in calo"], ["La bourse (monétaire)", "Il mercato azionario"], ["Les actions", "Le azioni"], ["UNE mission", "Un incarico"], ["Un balai", "Una scopa"], ["Une sepillière", "Un mocio, uno straccio"], ["La vitre", "Il vetro"], ["Ça m’est égal, peu importe", "Non importa, non mi interessa"], ["C’è n’est pas juste", "Non vale"], ["Sourd muet aveugle", "Sordo muto cieco"], ["Il faut aller Il faut 2 heures Il a fallu", "Bisogna (occorre) andareCi vogliono 2 ore C’è voluto, ci sono voluti (e)"], ["Un vol", "Un furto"], ["Le coffre (voiture)", "Un bagagliaio"], ["Un gros mot", "Una parolaccia"], ["Le chauffage", "Il riscaldamento"], ["Dans le langage courant", "Nel linguaggio quotidiano"], ["Devant toi", "Davanti a te"], ["Derrière moi", "Dietri di me"], ["Chasser", "cacciare"], ["c'est quoi ce bordel", "Che cazzo"], ["Taisez-vous et restez tranquille", "Zitti ( e) e buoni ( e)"], ["Fais-moi signe", "Batti un colpo"], ["Tant que. Jusqu’à ce que", "Finché"], ["Le prince la princesse", "Il principe la principessa"], ["Ne t’inquiète pas", "Non preoccuparti"], ["Déplacer un objet un rdv", "Spostare un oggetto un appuntamento"], ["Je dois y réfléchir", "Devo dormirci su"], ["Un électricien", "Un elettricista"], ["Un plombier", "Un idraulico"], ["Un charpentier", "Un carpentiere"], ["Un maçon", "Un muratore"], ["Un artisan", "Un artigiano"], ["Une cloison", "Una parata"], ["Un mur", "Un muro"], ["Un serrurier", "Un fabbro"], ["La serrure", "La serratura"], ["La cafetière", "La caffettiera"], ["Mince", "Cavolo"], ["Bordel", "Accidenti"], ["Bazar pagaille bordel", "Casino"], ["Quel bordel", "Che cazzo. Che casino"], ["Le passage piéton", "Le strisce pedonali"], ["Ravi de te connaître. Tout le plaisir est pour moi", "Piacere Di conoscerti. Piacere mio"], ["Par hasardTu n'as pas par hasard 10", "Per caso, micaNo hai mica 10"], ["Retourner chercher qqun", "Tornare a prendere (et non cercare)"], ["Le ménage (à la maison)", "Le faccende"], ["S'occuper de quelqu'unJe m'occupe de ma belle-mèreS'occuper des enfants", "Stare dietro a qualcuno. Sto dietro a mia suoceraStare dietro ai figli"], ["Une vie d'enfer", "Una vitaccia"], ["La fin de semaine", "Il fine settimana"], ["Faire la lessive, repasser", "Fare il bucato, stirare"], ["Un lave-vaisselle, un lave-linge", "Un lavastoviglie, une lavatrice"], ["La vaisselle", "Le stoviglie"], ["Le coût de la vie", "La carovita"], ["A quelle heure tu termines le travail, à midi et demi", "A che ora stacchi (staccare = détacher), alla mezza"], ["Heuresement", "Per fortuna"], ["Prévisions météo On prévoit du brouillard", "PrevedereSi prevede nebbia"], ["Le la journaliste", "Il la giornalista"], ["Qu’est ce que tu fais dans la vie", "Cosa fai nella vita"], ["La femme au foyer", "La casalinga"], ["La grève", "Lo sciopero"], ["'égalité", "L'uguaglianza"], ["Rester debout, veiller tard", "Stare su fino a tardi"], ["Tu es toujours parti", "Sei sempre via"], ["Fatigant", "Faticoso"], ["Gagner de l’argent du temps des points", "Guadagnare"], ["Aller voir (visiter) qqun", "Andare a trovare qualcuno"], ["Une femme de compagnie", "Una badante"], ["Une personne âgée", "Una persona anziana"], ["Âgé", "Anziano anziana"], ["S’occuper de", "Stare dietro"], ["Chaleur étouffante", "Un’afa"], ["Le bureau (table)", "La scrivania"], ["Rentrer à la maison", "Rincasare"], ["Plus tôt", "Prima"], ["Travailler tard", "Lavorare fino a tardi"], ["N’importe qui", "Chiunque"], ["N’importe quelle personne Une personne quelconque", "Qualsiasi persona una persona qualsiasi"], ["N’importe quelle boisson Une boisson quelconque", "Qualsiasi bevanda Una bevanda qualsiasi"], ["Enquêter", "Indagare"], ["Un témoin", "Un testimone"], ["Un témoignage", "Un testimonianze"], ["Garder. Restez calme Reste calme", "Mantenere. Mantenga la calma Mantieni la calma"], ["La livreur livreuse", "Il consegnatore la consegnatrice"], ["Le coupable", "Il colpevole"], ["Le chauffeur le pilote le cycliste", "L’autista il pilota il ciclista"], ["Enlevez vos chaussures Enlève", "Si tolga le scarpe Togliti"], ["Sans arrêt", "Sanza sosta"], ["Vous en êtes sûr, tu en es sûr", "Ne àsecuro? Ne sei securo?"], ["La livraison à domicile", "La consegna a domicilio"], ["Livrer", "Consegnare"], ["Avec livraison", "Con consegna"], ["Capable de", "In grado di"], ["Le moyen les moyens", "Il mezzo i mezzi"], ["Livrer. Est-ce que vous livrez à domicile", "Consegnare. Consegnate a domicilio?"], ["Je vous en prie", "La prego"], ["A l’extérieur a l’intérieur", "All’ aperto al chiuso"], ["Les employés", "I dipendenti"], ["Favorable défavorable", "Favorevole contrario"], ["Le coussin l’oreiller", "Il cuscino"], ["Le problème mis de côté L’argent mis de côté", "Il problema messo da parte I soldi messi da parte"], ["Tout ce que", "Tutto quello che Tutto ciò che"], ["L'installation", "L'impianto"], ["La restauration", "Il rinnovo"], ["Il n'y a plus de place", "Non ci sta più niente"], ["Archiplein", "Strapieno a"], ["Je me suis trompé de date", "Ho sbagliato data"], ["Cà fait impression", "Fa bella (=/brutta) figura"], ["Peu importe, ce n'est pas grave", "Fa lo stesso/non importa"], ["C'est pareil, ça m'est égal", "Fa lo stesso/non importa"], ["Se déshabiller", "Spogliarsi"], ["Cueillir, récolter", "Cogliere (colgo, colgli, coglie, cogliamo, cogliete, cologono)"], ["Choisir, enlever", "Scegliere, togliere"], ["Dans le passé", "In passato"], ["Passer (le sucre)", "Mi passi lo zucchero"], ["Une casserole, une poêle, une passoire", "Una pentola, una padella, uno scolapasta o un colapasta"], ["Égoutter les pâtes", "Scolare la pasta"], ["Un court-circuit", "Un corto circuito"], ["J'ai mal aux fesses, au cul", "Mi fa male il sedere, il culo"], ["Le siège (assoir)", "Il sedile"], ["À l'intérieur, extérieur", "Al chiuso, all'aperto"], ["tu es auusi grand que moi", "Sei (tanto) alto quanto me"], ["Le bœuf (vivant), bœuf comestible, veau, porc (viande)", "Il bue, il manzo, il vitello, il maiale"], ["J'ai 3 enfants, 2 garçons et 1 fille", "Ho 3 figli, 2 maschi (maschio) una femmina (e )"], ["Bonne chance", "In bocca al lupo"], ["Al primo colpo", "Du premier coup"], ["Une amende PV", "Una multa"], ["Pour stationnement interdit", "Per divieto di sosta"], ["Quand j'étais jeune", "Da ragazzo, da giovane"], ["S'entendre, s'accorder, s'intégrer", "Affiatarsi, affitiato"], ["Un couple uni", "Una coppia affitata"], ["Nous nous entendons bien", "Ci affitiamo,,"], ["Je me suis bien intégré dans le groupe de mes nouveaux amis", "Mi sono molto affitiato con i miei nuovi amici"], ["Habituel", "Solito"], ["Faire de l'exercice", "Fare del moto"], ["Re regarde Les matchs à la télé", "Guardo Le partite alla tivù"], ["Je n'en pratique aucun", "Non ne pratico nessuno"], ["Le survêtement et les chaussures de sport", "La tuta e le scarpe da ginnastisca"], ["Laisse tomber!", "Ma va'là!"], ["Npus le faisons tous seuls", "Lo facciamo da noi"], ["Les verdures rissolés", "Il soffritto di verdure"], ["Un morceau, un petit morceau, un tout petit morceauxEn tout petits morceaux", "Un pezzo, un pezzetto, un pezzettinoA pezzettini"], ["On coupe en tout petits morceaux, en fines lamelles et en petits cubes", "Si tagliano a pezzettini, a fettine sottili et a cubetti"], ["Basilic, laurier, sauge, romarin, persil", "Basilico, alloro, salvia, rosmarino, prezzemolo"], ["ça pue", "Puzza!"], ["Apprendre (enseigner)Apprendre (recevoir)", "InsegnareImparare"], ["Avec peu d'efforts", "Con poca fatica"], ["Ça me donne envie", "Mi viene voglia"], ["Les épices", "Le spezie, i sapori"], ["Quand je veux", "Quando mi pare"], ["Il fait toujours ce qu'il veut", "Fa sempre quello gli pare (quello che vuole)"], ["Je suis au chômage", "Sono disoccupato"], ["Je ne suis pas pressé", "Non ho fretta"], ["Il faut mieux que tu prennes", "Ti (le) conviene prendere"], ["heureusement que", "Meno male che"], ["Faire attention", "Fare caso"], ["Quand on est jeune on fait bcp de voyages", "Quando si è giovanni si fanno tanti viaggi"], ["La consultation médicale à à domicile, au cabinetCabinet médical", "La visita a domicilio, la visita in ambulatorialeUn ambulatorio"], ["Un cauchemard", "Un incubo"], ["Pendant ce temps malheureusement", "Nel fratempo purtroppo"], ["Un traitement", "Una medicina, un farmaco"], ["La tension artérielle", "La pressione"], ["Me voilà au point de départ", "Eccomi al punto di prima"], ["La médecin", "A medicina"], ["Trouver le sommeil", "prendere sonno"], ["Se mettre en arrêt maladie", "Mettersi in malattia"], ["Il s'est mis an arrêt maladie", "Si è messo in malattia"], ["Il est fauché", "È in bolletta, è al verde"], ["Un rhume", "Un raffreddore"], ["Je suis obligé, de rentrer à la maison, j'ai été obligé", "Mi tocca tornare a casa, mi è toccato"], ["Il n'y a pas moyen de", "Non c'è verso di"], ["Presque", "Quasi"], ["On y vaa", "Ci si va"], ["C'est près d'ici", "È qui vicino"], ["En face de, dans, devant, derrière, à côté de, près de, autour de, au milieu de", "Di fronte a, dentro a, davanti a, dientro a, accanto a, vicino a, intorno a, in mezzo a"], ["Une critique", "Una recensione"], ["Quelle barbe!", "Che pizza! Che barba!"], ["Un écrivain", "Un scrittore"], ["Le paysan", "Il contadino a"], ["La ferme", "La fattoria"], ["Près d'ici", "Qui vicino"], ["À peine", "Malapena"], ["Sur le dos", "Sulla schiena"], ["On se parle, on s'habille, on se comprend", "Ci si parla, ci si veste, ci si capisce"], ["On ne s'entend pas", "Non ci si sente"], ["si ça ne tenait qu'à moi", "Se fosse per me"], ["Et C'est tout", "E Chi s'è visto s'è visto"], ["Le boucan", "il baccano"], ["Donner un coup d'œil", "Dare un'occhiata"], ["A l'esorit", "In mente"], ["Depuis logntemps", "Da un pezzo"], ["Pendant des heures et des heures", "Per ore e ore"], ["Même pas", "Nemmeno"], ["La séance", "La seduta le sedute"], ["Le casque", "La cuffia"], ["Le truc les affaires C’est mes affaires Tu es si grand beau Par cœur En face de tiUn face du glacier", "La roba È la mia roba Sei così grande bello A memoria Di fronte a teDi fronte della gelateria"], ["Il ne faut pas payer (interdiction)Il n'est pas nécessaire de payer (pas obligatoire)", "Non bisogna pagareNon occorre pagare"], ["Il suffit", "Basta anche"], ["Pendant pendnat", "Mentre + verbe conjuguéNel+ verbe infinitifDurante + nomQuando"], ["La brosse à dents", "Lo spazzolino"], ["Le dentifrice", "Il dentifricio"], ["Haut parleur", "La vivavoce"], ["Une série, une suite de choses Une foule de choses à faire", "Una sfilza Une sfilza di cose da fare"], ["Il ne pense qu’à lui", "Pensa solo a sé"], ["De rien. Il n’y a pas de quoi", "Non c’è di che"], ["Un voleur", "Un rapinatore une rapinatrice"], ["J’ai du mal à respirer", "Faccio fatica a respirare"], ["Une brochure", "Prendi un opuscolo"], ["Tableau de bord", "Il cruscotto"], ["Le mollet", "Il polpaccio"], ["Àttendre avec impatience", "Aspettare con ansia"], ["Sur place", "In loco"], ["À distance", "Da remoto"], ["Le point fort et faible", "Il punto forte e debole"], ["Cultivé", "Colto"], ["L âme", "L anima"], ["La suggestion", "Il suggerimento"], ["La satisfaction", "La soddisfazione"], ["Autant que", "Tanto quanto"], ["Descends Tout de suiteLà Bonne resolution", "Scendi al volo Il buon proposito"], ["L'âme", "L'anima"], ["On s'en fiche", "Chi se ne frega"], ["De rien", "Non c'è di cheFigurati Si figuri"], ["Le jaune d’œuf", "Il tuorlo"], ["Bête idiot", "Pirla"], ["La colère", "La rabbia"], ["Le gros sac", "La sacca"], ["Une sacoche. Un sac en bandoulière", "Una borsa a tracolla. Una tracolla"], ["Le vestiaire", "lo spogliatoio"], ["Épeler", "Sillabare"], ["Le débarras", "Il ripostiglio"], ["Une photo d’identité", "Una fototessera"], ["Un document qui donne l’autorisation de faire qqch", "Un permesso"], ["Poli impoli", "Educato maleducato"], ["se retrouver", "Ritrovarsi (ritroviamoci, ci retroviamo)RiunirsiRiuniamociCi riuniamo"], ["Se coifferSe détendre S’approcherLa calculatriceSe remettre en forme", "Pettinarsi Rilassarsi AvvicinarsiLa calcolatriceTornare in forma"], ["Un malentendu", "Un malinteso"], ["Il doit y avoir une erreur On doit y aller", "I deve essere uno sbaglio Ci deve andare via"], ["S’enfuir", "Scappare scappato"], ["Le sommet", "La vetta il summit"], ["Le pigeon", "Il picciono"], ["Déchirer", "Strappare"], ["Attaquer", "Attacare"], ["Entre temps", "Frattempo"], ["Le rouge à lèvres", "Il rossetto"], ["Le tuyau d'arrosage", "La manichetta"], ["C'est de la folie", "Questa à una follia"], ["Cultivé=/iggnorant", "Colto/ignorante"], ["Affectueux/non affectaux", "Affettuoso/freddo"], ["Agréable/insupportable", "Piacevole/insopportabile"], ["Le soit-disant", "Il cosiddetto"], ["Le pied", "Il piede"], ["Le doigt les doigts", "La dita, le dite"], ["Le détenu", "Il carcerato la carcerata"], ["La bêtise", "La sciocchezza"], ["Un assaisonnement", "Un condimento"], ["L’offre d’emploi", "L’annuncio di lavoro"], ["Le travail à mi-temps", "Il lavoro a mezza giornata"], ["C’est n’importe quoi", "È una cavolata"], ["S’occuper", "Occuparsi"], ["s'occuper", "occuparsi di"], ["Admis", "Promosso"], ["Recale", "Bocciato"], ["décollage", "Il decollo"], ["Atterrissage", "Atterraggio"], ["Potager verger", "Giardino orto"], ["Réseaux sociaux", "Rete sociale"], ["La pince", "La pinza"], ["Le studio", "Il monolocale"], ["500€ de loyer par mis charges incluses", "In affito per mese, spese incluse"], ["Une demande une réponse", "Una domanda una risposta"], ["paraitre apparaitre disparaitre", "Apparire comparire scomparire"], ["Un mouchoir", "Un fazzoletto"], ["Le tri sélectif", "La raccolta differenziata"], ["La montée la descente", "La salita la discesa"], ["Le ferry", "Il traghetto"], ["Une remarque", "Una nota"], ["Une voyelle consonne", "Une vocale una consonante"], ["Hurler", "Urlare"], ["Oser", "Osare"], ["Une erreur", "Un sbaglio"], ["À condition de", "A patto di"], ["Non seulement", "Non soltanto"], ["Un débat", "Un dibattito"], ["La boîte mail", "La casella di posta elettronica"], ["A l’autre bout du monde", "All’altro capo del mondo (del pianeta)"], ["Le propriétaire", "Il titolare"], ["In prix plutôt raisonnable", "Un prezzo piuttosto ragionevole"], ["Coûteux", "Costoso"], ["Et ainsi de suite", "Chi più ne ha, più ne metta"], ["Le cépage", "Il vitigno"], ["La vigne", "La vigna"], ["Le vignoble", "Il vigneto"], ["Un appareil ménager", "Un elletrodomestico"], ["Réussir un examen j’ai réussi", "Superare un esame ho superato"], ["Je me débrouille", "Me la cavo"], ["Notre passé glorieux en somme", "Il nostro passato glorioso insomma"], ["Zut", "Accidenti"], ["Je ne m’étais pas aperçu", "Non mi ero accorto"], ["Tirer coup de feu", "Sparare"], ["Si toutefois c’est vrai", "Sempre che sia vero"], ["Pendant des heures", "Ore ed ore"], ["Bronzage", "Abbronzatura"], ["Faire la tête", "Fare (tenere) il muso"], ["Plein à craquer", "Strapieno"], ["Allez (tutoiement)", "Ma dai"]];
+const CAT_MAP = {"📚 Autres": ["Bonne nouvelle", "Mauvaise nouvelle", "La boite", "écouter", "laisser", "Acheter", "presser", "Je suis perdu", "Oublier", "Demander", "penser", "Décevoirdeçu", "L'été", "plage", "jeune", "Le quartier", "choisir", "aimer", "S'habiller", "meilleur", "pire", "La provision, la réserve", "accepter", "réserver", "savoir", "Paraitre sembler", "arbre", "refuser", "A cote de", "En baisse", "En hausse", "Se tromper", "La prison", "Les ciseaux", "améliorer", "Fais moi voir", "Le chiffre", "pleurer", "décevoir", "rester", "vide", "plein", "Envoyer", "offrir", "Un cadeau", "Inexpliqué", "Pertinent", "Le motif", "Sembler paraitre", "Jallais dire", "initialement", "Petit cheval", "Justeb excatement", "L'image", "Remarquer s'apercevoir", "Je me raseJe suis rasé", "objet", "revenir", "La lumière", "une souris", "Peindre", "deviner", "J'avais raison", "Fermeture", "Mais", "Se permettre", "Diminuer", "J'aurai 60 ans dans 3 mois", "aider", "Se passer, arriver", "Laisse (laissez) un message", "Le signal", "Une image", "Ranger", "Le linge", "Eteindre", "Je m en vais", "L attente", "Une augmentation", "Avec le sourire", "Le cousin cousine", "neiger", "La neige", "essayer", "Etre fou", "surement", "Suivre mener", "Douteux se", "Les doutes", "La décision", "Peser", "Revoir repasser", "Entre", "Tu me plaitLei gli piace", "Pendant", "Douter", "Je doute de toi", "S'assoir", "trinquer", "craindre", "Je crains que", "espérer", "Surprendre étonner", "Lire", "Mettre", "Conseil", "Danser", "Symptome", "L'amitié", "Entendre écouter", "Le mariage", "En faveur de", "La presse", "Le cadeau", "RDV", "Au milieu", "Faire les courses", "Je vais faire les courses", "Je vais aller faire les courses", "Le T shirt", "La chanson", "La confiance", "Avoir confiance", "J'ai perdu la confiance", "Falloir", "Être capable, réussir", "Profiter deProfite de tes vac", "Aucun e, personne", "Animal( aux", "Trouver", "De toutes façons", "pleuvoir", "pleuvieux", "Petit e", "Moyen nne", "Le juge", "L'accusé", "Il me semble", "J'estime", "J'espère", "Je crains", "Il est vrai que", "Je suis sûr e que", "Je souhaite", "Il elle s'aperçoit", "Le ciel", "Y avoir", "Il fera beau", "Il fera mauvais", "Les lunettes", "Yeux", "Garde", "Je reviendrai lundi", "Dans qq mois", "Le répondeur (téléphonique)", "Différent", "Gaucher", "Droitier", "Je reste en attente de", "Jusqu'à", "Tout de suite, sur le champ, rapidement", "Il elle me rend fou", "Apprendre", "Je t'en prieJe vous en prie", "Âne", "Le code", "Certain e", "Traverser", "Monter", "S'amuser", "Grandir", "Orage", "Le bonheur", "Détester", "Continuer", "Risquer", "Le risque", "La terreur", "À peine, dès que", "éternuer", "toucher", "nourrir", "Netoyer", "Ouvrir", "Se lever", "Attacher", "Enlever", "Un instant", "Les déchets", "La mairie", "Reconnaissant", "Tomber", "Heureux se", "Satisfait", "FalloirIl faut", "Il est nécessaire de", "Il est obligatoire de faire", "Les cendres", "La loi", "J'ai entendu que", "On se tient au courant", "Je me suis senti mal", "Sec sèche", "Pendant que tu y es", "Est-ce que tu (vous)pars partez?", "Par terre", "Le compte est bon", "Se produire se passer", "Le maire", "Bonne chanc", "En suite", "La demande", "L'évènement", "À cause de", "La pêche", "Acteuractrice", "Ça te dirait une pizzaÇa vous", "Allumer", "Descendre", "Avir raison", "Avoir tort", "Les fesses", "Déçu", "Se sentir", "Exténué", "Gagner", "Perdre", "Disparaitre", "D'action", "La pluie", "Les match de foot", "La faute", "Bavarder", "Être pressé", "La crise", "bouge toi", "Donner", "Se depecher", "Un appel", "loin", "Proche", "Conseiller", "Le journal cahier", "Cacher", "Le nouvel an", "Dessus", "Rechercher", "La recherche", "Maigrir", "Le marché", "Présent absent", "Le vaisseau spatiale", "Le service de navette", "Dessus sur", "Dessous sous", "En bas", "En haut", "Critique", "La nourriture", "Un morceau Détester", "Ignorer", "Nager", "Le manteau", "Commander", "Pourriez-vous me conseiller un restaurant dans la ville", "Devant", "Derrière", "Écharpe", "Agrandir étendre", "Respecter", "La construction bâtiment", "Il faut", "Prendre soin s’occuper de", "Régler arranger", "Périodiquement Systématiquement", "Les bottes", "Découvrir", "Convien vaut la salade", "Pas mal", "Je suis d’accord", "Ça te va", "A condition que Pourvu que", "Un bavardage BavardBavarder", "L’environnement", "Vache", "Le taux d’intérêt", "On dit on l'appelles", "Saoule", "Confier", "La poche", "ajouter", "Il faut que il me faut", "Les draps", "Le serveur", "La réputation", "Je crois que tu as raison", "A la suite de", "Plaisanter", "Tu plaisantes?", "Il faut que", "C’est ton votre tour C’est mon tour", "Abeille", "Excellent e", "La hauteur", "Le meilleur", "Le pire", "Disparaître", "Réfléchir", "Sombre", "Une couleur", "Sein", "Le nettoyage", "Panier corbeille", "Excuse-moi", "Regretter", "Paresseux", "Noleggiare", "Malheur", "Le reçu", "Un bon", "Un remboursement", "Crier", "Piquer", "Beau frère", "Belle sœur", "Je suis grand", "Faux incorrect", "En chèque", "Mouchoir", "Pâtisserie", "Pâtissier", "Charcuterie", "Charcutier", "Glacier", "Boulangerie", "Petit déjeuner A 19 hMidi16 h sedici Soir", "Le cochon", "Rendre restituer", "Baisse la musique", "La note", "L’oiseau", "On voit", "Le bouton", "Confirmer", "Annuler", "Arriver pouvoir réussir parvenir", "Un clavier", "L’écran", "L'amende", "Le passage (piéton)", "Le parcours itinéraire", "Appuyer sur, presser", "J’ai à peine mangé", "Le gain", "Je serai ravi", "En faveur", "Contre", "De côté", "Des économies", "Exigeant", "J’ai envie d’une pizza", "Une explication", "Le choix", "Ou", "Étant donné", "D’accord Désaccord", "Très mauvais Excellent", "Réconfortant Décourageant", "Encourageant", "La certitude", "Bavard", "Bavardage", "Mériter", "Récompenses", "S’apercevoir remarquer", "Assaisonner", "Chauffer", "A la gym", "La location", "Partager", "La sécurité", "Un trouble", "Le soutien", "L’opinion publique", "Demande", "Apprécier", "Un soda", "Il me faut", "Je refuse J’accepte", "Pour que", "Une boisson", "Il suffit que", "Un bon plan", "Tant que", "Asseyez-vous svp", "Hélas", "L’artiste", "Cuire", "Il y’a un instant", "Limbecile", "Obtenir", "Si j’avais du temps", "Agréable", "Raccrocher Réponds raccroche", "Elle est terrible!", "Étourdi", "Avoir envie de J’ai envie de", "J'ai envie de", "La place", "Dieci", "Horrible", "Je m'ennuie", "Maudit", "Le baton la canne de marche", "Un problème", "Je l'aime", "Une fois par an", "Habituer", "La partie", "Atteindre", "Se moquer", "Je suis occupé", "Faire semblant", "Je fais semblant", "Par avance", "Le problème", "Pendant ce temps", "Ronfler", "Une plainte", "Faire d’une pierre deux coups", "Se plaindre", "Tenir au courant", "Tiens-moi au courant", "Un coussin", "Les pantoufles", "Signaler", "Un sujet de discussion", "Hantée", "A part", "La hauteur La largeur", "La haut", "Là-bas", "Devenir", "Pour 6 moisPendant 2 ans", "Masculin féminin", "In punto", "Le trou", "La goutte", "La fleur", "Unee gomme papier", "Un chou", "Le bracelet", "La course compétition", "Chacun une", "Maigre gras", "Pâle", "Raide", "Un plan de ville", "Entre eux", "De temps en temps", "Une canéro photo", "Des fois", "Épais", "Ressentir", "Un lapsus une oie", "Avoir les boules", "La cachette", "Fou folle", "En tout lis", "Putain", "Mince la vache", "Il pleut", "Les bandes dessinées", "La déchèterie", "L’exigence les besoins", "Une gueule de bois", "Un vol agité", "Fêter", "A l’heure", "Un compte bancaire", "Un mensonge", "Tricher tromper trahir", "Mentir", "Attraper", "Asseyez-vous je vous en prie", "R dont la profession", "L’entrepreneur", "Expert", "On y est presque", "Goûter", "En plein air", "S’amuser", "Les mauvaise herbes", "Le chiffr d’affaires", "Un bouquet", "Une vue à couper le souffle", "Un rond", "C’est rond", "Sono colto", "Le puits", "Une gourde", "Une chanteuse", "Un ovale", "Écran", "Imprimante", "Un linge chiffon", "Le besoin l’exigence", "Les flics", "Le magazine la revue", "Faire des progrès, s’améliorerJe pense que je fais des progrès", "L’absence", "Pense y pensez y", "Un paquet", "Longueur largeur profondeur", "Tenir garder", "A été par lui", "Le Terrain", "La terre", "Les mollets", "Empoisonner", "Le poison", "Nocturnes", "Diurnes", "Le skieur", "Un chalet", "Une récompense", "La guitare Jouer de la guitare", "Rire", "Sur le net", "La session a expiré", "Le nom utilisateur", "Commander ordonner", "La touche", "La trêve accalmie", "La querelle dispute", "La personne âgé", "Le débat", "Fâché", "Sucré salé amer", "Un tire-bouchon", "La glace", "La coupe de cheveux", "Sèche cheveux", "Sen aller", "Vas ten", "S’ennuyer", "Raccrocher", "Je suis foutu", "La lessive linge", "Avoir le goût de, sentirLe vin à le goût de vinaigre Ce livre sent bon", "Une lessive produit", "La pate", "Le paquet", "La joue", "Piment", "Déclarer", "Au fait de toute façon", "Plonger", "En arrière", "En avant", "Corbeille", "Benne à ordures", "La crème fouettée", "J’en avais marre", "Je suis embauché", "Se coiffer", "Se relaxer", "Vulgaire", "Affreux", "Crêche", "AvancerReculer", "La tour les tours", "Amoureux Je suis tombé amoureux de toi", "Au lieu de", "Pourvu que", "Partout", "Chaque fois", "C’est degueulasse", "J’ai eu des hauts et des bas", "À la différence de. Contrairement à", "La vie nocturne", "J’ai dépensé 10€ tout rond", "C’est ça", "Tout à fait", "Le gaspillage", "Un service", "Contrairement a", "L’enquête", "Coupable", "C’est un plaisir de te revoir", "Un choix", "Tout type de", "Toute personne", "La vallée la plaine", "L’arrière pays", "Le score", "Tout le monde", "Tourne à gauche", "Faire demi tour", "Un rond point", "Un couple d'amis", "Chef doeuvre", "L'œuvre", "Les pates", "Un coup de fil", "Un glaçon", "Sois patient", "Au milieu de nulle part", "Ruisseau", "Une étape", "SuffireÇa te suffira", "Le sèche cheveux", "Le gendre", "Le cousin", "Le beau-frère", "La belle sœur", "Belle mère père", "La belle fille", "Le petit fils fille", "C'est du gâteau", "Mon diEU", "Faire marche arriere", "Tous es jours", "Tous les 2 jours", "Rêver", "La bonne personne", "Je je fais à ma façon", "Attendre", "Adapter", "Ni…ni", "Mauvais", "Très mauvais", "Pire Le pire", "Meilleur que le tien", "Mieux Le mieux", "Excellent", "E è l’aîné de leurs fils", "C’est la cadette", "Descendre (les escalliers)", "Mettre au courant", "Il a semblé à", "Il nous a semble", "Le couple", "Attaquer en justice", "Un gain", "La hausse, en hausse", "La baisse en baisse", "La bourse (monétaire)", "Les actions", "UNE mission", "Une sepillière", "Sourd muet aveugle", "Un vol", "Le chauffage", "Dans le langage courant", "Devant toi", "Derrière moi", "Chasser", "Fais-moi signe", "Tant que. Jusqu’à ce que", "Le prince la princesse", "Je dois y réfléchir", "Une cloison", "Un serrurier", "Mince", "Le passage piéton", "Par hasardTu n'as pas par hasard 10", "Une vie d'enfer", "Faire la lessive, repasser", "Le coût de la vie", "La femme au foyer", "La grève", "Rester debout, veiller tard", "Gagner de l’argent du temps des points", "Aller voir (visiter) qqun", "Une femme de compagnie", "Une personne âgée", "Âgé", "S’occuper de", "Chaleur étouffante", "Un témoin", "Un témoignage", "Garder. Restez calme Reste calme", "Le coupable", "Vous en êtes sûr, tu en es sûr", "La livraison à domicile", "Livrer", "Avec livraison", "Capable de", "Le moyen les moyens", "Livrer. Est-ce que vous livrez à domicile", "Je vous en prie", "A l’extérieur a l’intérieur", "Favorable défavorable", "L'installation", "La restauration", "Archiplein", "Je me suis trompé de date", "Cà fait impression", "Se déshabiller", "Cueillir, récolter", "Choisir, enlever", "Dans le passé", "Un court-circuit", "J'ai mal aux fesses, au cul", "Le siège (assoir)", "À l'intérieur, extérieur", "tu es auusi grand que moi", "J'ai 3 enfants, 2 garçons et 1 fille", "Bonne chance", "Al primo colpo", "Une amende PV", "S'entendre, s'accorder, s'intégrer", "Un couple uni", "Nous nous entendons bien", "Re regarde Les matchs à la télé", "Laisse tomber!", "Un morceau, un petit morceau, un tout petit morceauxEn tout petits morceaux", "On coupe en tout petits morceaux, en fines lamelles et en petits cubes", "ça pue", "Apprendre (enseigner)Apprendre (recevoir)", "Ça me donne envie", "Il faut mieux que tu prennes", "La consultation médicale à à domicile, au cabinetCabinet médical", "Un cauchemard", "Trouver le sommeil", "Presque", "On y vaa", "Une critique", "Un écrivain", "Le paysan", "La ferme", "À peine", "On se parle, on s'habille, on se comprend", "Et C'est tout", "Le boucan", "A l'esorit", "La séance", "Le casque", "Il suffit", "Haut parleur", "Un voleur", "J’ai du mal à respirer", "Une brochure", "Le mollet", "Àttendre avec impatience", "Sur place", "Cultivé", "L âme", "La suggestion", "La satisfaction", "L'âme", "On s'en fiche", "Bête idiot", "La colère", "Une sacoche. Un sac en bandoulière", "Le vestiaire", "Épeler", "Poli impoli", "se retrouver", "Se coifferSe détendre S’approcherLa calculatriceSe remettre en forme", "Un malentendu", "Il doit y avoir une erreur On doit y aller", "S’enfuir", "Le sommet", "Le pigeon", "Déchirer", "Attaquer", "Entre temps", "C'est de la folie", "Cultivé=/iggnorant", "Le détenu", "La bêtise", "Un assaisonnement", "L’offre d’emploi", "S’occuper", "s'occuper", "Recale", "décollage", "Atterrissage", "Potager verger", "Réseaux sociaux", "La pince", "paraitre apparaitre disparaitre", "Un mouchoir", "Le tri sélectif", "Le ferry", "Une remarque", "Une voyelle consonne", "Hurler", "Une erreur", "À condition de", "Un débat", "A l’autre bout du monde", "Le cépage", "La vigne", "Le vignoble", "Un appareil ménager", "Si toutefois c’est vrai", "Bronzage", "Plein à craquer"], "🗣️ Expressions": ["Quelle surprise", "Plus c'est, mieux c'est", "Vraiment", "Commencer (l'activité)", "Quel dommage", "Depuis peu", "Depuis longtemps", "Plus c'est mieux c'est", "La peur", "quitter", "Ça ne presse pas", "Bien fait", "Depuis quelques jours", "Peux tu m'aider", "recommencer", "Plus queMoins que", "Je ne crois plus", "Faire peur effrayer", "Depuis quelques mois", "Même", "Souvent", "Malheureusement", "Je n'ai plus besoin de ce plat", "Je n'ai plus confiance", "Même pas, pas un seul", "QuelquesAucun eQuleques amiesQuelques lives", "Quelqu'unPersonne", "Je (ne) pensa (pas)", "Je (ne) crois (pas)", "Je ne sais pas si", "Quelle malchance", "Pareil/ le la même", "Ce ne sont pas tes affaires", "Au moins", "Combien je vous dois", "Assez", "Donc", "Combien tu mesures", "Combien tu pèses", "Qui sait comment va Eric", "Un pari", "Parier", "Aller quelque part", "Dessous Ci-dessous", "Tu es vraiment doué", "À côté", "Plus…queMoins…queAutant que Autant que Aussi…que", "Anna est aussi grande que", "Profiter jouirProfitons", "Je n’en suis pas sur", "Il n’est pas revenu depuis 5 jours", "Annonce", "Toujours", "(Personne ne s’y attendait", "Excusez-moi", "Combien en voulez vous", "Remercier Je vous remercie", "Comment ça se fait Mais pourquoi", "Heureusement", "Juste à côté", "En liquide", "Je n’y arrive pas", "Quand même", "Un achat", "Un dommage", "Combien de temps", "Combien de temps tu pars", "J’ai hâte de", "Non plus", "Parfois", "Il n’y a rien de pire", "Le même", "Sinon", "Plus…queMoins que Aussi) queAutant que", "Mouillé", "Cependant", "Il n’y a pas de quoi", "Combien tu mesures Combien tu pèses", "Je le veux aussi", "GraveDont de quiPour laquelle", "Onze Douze Treize QuatorzeQuinze SeizeDix-septDix-huit Dix-neuf", "Superbe", "Je ne l'ai pas esquivé", "Aussi", "Je dors comme un loir", "L’annonce", "Une petite annonce", "S’évanouir Je m’évanouis", "Beaucoup de (fois)", "Les équipes en compétition", "La banquier iere", "Pouvez-vous me prévenir quand on arrive", "Sur lequelDontLequel, laquellePour le(la)quel", "Déjà désormaispresque", "Pas vraiment", "En plus", "A lui même", "Plus que toi (moins que)Plus gentil que", "Aussi…que", "Allez-Vous en", "Le film m’a beaucoup plu", "Non plus même pas", "Le film m’a plus", "PersonneAucunAucun problèmeRien n’est comme avant Je ne savais même pas Même pas", "C’est un peu loin", "Le meilleur Le plus mauvais Le plus grandExcellentLe mieux Le pire", "Je parie que je suis perdu", "Au cas où", "Aussi également", "Quelques étapes supplémentaires", "Plus que je pensais", "Plus que jimmaginais", "Plus grand", "C’è n’est pas juste", "c'est quoi ce bordel", "Taisez-vous et restez tranquille", "Ne t’inquiète pas", "Quel bordel", "S'occuper de quelqu'unJe m'occupe de ma belle-mèreS'occuper des enfants", "Prévisions météo On prévoit du brouillard", "Tu es toujours parti", "Plus tôt", "Tout ce que", "Il n'y a plus de place", "Quand j'étais jeune", "Je n'en pratique aucun", "Npus le faisons tous seuls", "Avec peu d'efforts", "Quand je veux", "Il fait toujours ce qu'il veut", "Je ne suis pas pressé", "heureusement que", "Faire attention", "Pendant ce temps malheureusement", "Il n'y a pas moyen de", "C'est près d'ici", "Quelle barbe!", "Près d'ici", "On ne s'entend pas", "Depuis logntemps", "Même pas", "Pendant pendnat", "De rien. Il n’y a pas de quoi", "Autant que", "De rien", "Et ainsi de suite", "Réussir un examen j’ai réussi", "Je me débrouille", "Je ne m’étais pas aperçu", "Allez (tutoiement)"], "🏥 Santé": ["Semaine passée", "Le client", "montrer", "inconnu", "Je me lèveJe suis levé", "Je m'habilleJe suis habillé", "Je m'endorsJe suis endormie", "Je me déshabilleJe suis déshabillé", "Je me couche", "Un oeilJeter un coup d’œil", "Je suis parti depuis 1 semaine (début d'une action et non une durée)", "Je vis à l'hotel depuis 1 semaine (action commencée dans le passée et non finie)", "Qu est ce qui se passe", "Le roti", "Une ordonnance", "La proposiion", "proposer", "Les couverts", "Sposa sposo sposi", "Trinquonx aus=x époux", "docteur", "malade", "Infirmier ère", "La fièvre", "Le diagnostic", "Elle est enceinte", "Il est possible", "Stressé e", "Je suppose", "Nuage nuageux", "Douleur", "L'autostop", "Sac à dos", "Épaule", "Médicament", "Le comprimé", "dégoûtant", "coude", "tousser", "Embrasser", "Ennuyeux", "Il est debout", "Qu'est-ce qui se passe", "La fatigue", "A linterieur Qu’est-ce qu’il y a dans le sac", "Coupe ongle", "Donner un coup de mainDonne un…", "Mal de ventre", "En cachette", "Dépêche toi", "Déplacer", "Le poste", "Que me conseillez-vous", "Cancer", "C’est vrai, c’est vraiment ça", "La blessure", "Le facteur", "Remplacer", "Connaître Reconnaître NaîtreAugmenter Croire grandir", "Un petit truc", "Soutien gorge", "Exposition art", "Exposition geo", "Boucherie", "Boucher", "On mange la pizza On mange les huîtres", "La réponse", "Si j’étais (phrase principale au condSi je suis Si je suis (phrase princ au futur", "Si j’avais été", "Tenir garder Je te garde une place", "A propos", "Si j’étais toi je ne fumerais pas", "Un doigt les doigts", "A l’esprit en tête", "Délicieux", "Prendre garde à qu’un qqch", "Prendre garde à", "Elle se fait passer pour un médecin", "Des bouchons d’oreille", "Amuse bouche", "Je t’écris à propos de notre voyage", "Stressé", "Stressant", "Bien cuite, médium, saignante", "Je n’ai pas fermé l’œil", "Que est-ce que tu fais la , en train de faire", "Maintenant", "AdditionnerSoustraire Une additionUne soustraction", "Arroser", "Malgré", "Poser des questions", "J’ai en tête", "Si j’étais toi", "Le dos", "Tu as besoin de quelque chose", "Un mot vulgaire Gros mot", "La crème (cosmétique", "Le genoux", "La hanche Le brasLes brasÀ l’arrièreDerrière Contraindre obliger", "PuerQuelque chose pue", "c'est fatigaunt", "L’incident", "Tu te moques de moi Perdre gacher du temps", "Trottoir", "Poser mettreProposerExposerOpposer", "Ça me rend malade", "À la suite d’un accident", "J’ai le cœur brisé", "Répondre correctement", "N attente", "Un gros mot", "Déplacer un objet un rdv", "Bordel", "Ravi de te connaître. Tout le plaisir est pour moi", "La fin de semaine", "Qu’est ce que tu fais dans la vie", "Fatigant", "Sans arrêt", "Les employés", "Pour stationnement interdit", "Un traitement", "La tension artérielle", "La médecin", "Se mettre en arrêt maladie", "Il s'est mis an arrêt maladie", "Un rhume", "En face de, dans, devant, derrière, à côté de, près de, autour de, au milieu de", "Sur le dos", "si ça ne tenait qu'à moi", "Donner un coup d'œil", "Le truc les affaires C’est mes affaires Tu es si grand beau Par cœur En face de tiUn face du glacier", "Une série, une suite de choses Une foule de choses à faire", "Le gros sac", "Une photo d’identité", "Le rouge à lèvres", "Le tuyau d'arrosage", "Affectueux/non affectaux", "Le soit-disant", "Le pied", "Le doigt les doigts", "Admis", "Une demande une réponse", "Oser", "In prix plutôt raisonnable", "Coûteux", "Notre passé glorieux en somme", "Zut", "Faire la tête"], "🏠 Maison": ["Je suis voltesolé.e", "Touche (téléphone)", "Une chambre", "Un réveil objet", "Je m'excuse, je suis désolé", "Une petite maison", "Le réveilRéveille toi", "Je me lave les dents", "Je me réveilleJe suis réveillé", "Je prends ma douche", "Je vais au litJe suis au lit", "Brosse (à dents)", "miroir", "Le réveil", "Le tableau", "Je dois m en aller de la maison", "Porter un toast, trinquer", "Chaise", "Il faut 2 tables", "Soleil ensoleillé", "Tu devras te débrouiller tout seul", "Comportement conduite", "Dans la salle", "Quel soulagement", "Savon", "L'argent", "Rassuré", "Le soulagement", "Habituellement", "D’habitude", "Évier", "Lavabo", "Armoire", "Étagère", "Avoir besoin servir falloir Il faut 2 tables", "La maison est aussi grande que", "Un comptable", "Les serviettes", "Les rideaux", "Un tapis", "Table de nuit", "Tiroir", "Poubelle", "Sous-sol", "Matelas", "Porter des vêtements", "Serviette de table", "Le placard", "Confortable Inconfortable", "La mesure d’un meuble", "Un cadre", "Avez-vous une table pour deux", "Le mur intérieur", "Le mur", "Siete comodi", "Je les porte", "Une couverture", "ServietteTorchonPutain! S’enfuir s’échapperC’est cool Le cambriolage", "Un guichet portillon", "Le salon", "Une bonne résolution", "Le plafond", "Confortable", "Inconfortable", "Ranger (sa chambre", "Maçon", "Déménager", "Le salon de coii", "Un peigne", "Le linge de maison", "N’importe lequel", "Peu importe Ça m’est égal", "La clef les clefs", "Tout seul", "Se comporter", "Murmure", "L’aspirateur", "AdaptéAttendre attenduC’est fouLa baffeAu fait tu as éteint la lumière Le papier toilette", "Le tableau de bord", "Copropriétaire", "Descendre les poubelles", "Un balai", "La vitre", "Ça m’est égal, peu importe", "Un maçon", "Un mur", "La serrure", "Le ménage (à la maison)", "'égalité", "Le bureau (table)", "Rentrer à la maison", "N’importe qui", "N’importe quelle personne Une personne quelconque", "N’importe quelle boisson Une boisson quelconque", "Enlevez vos chaussures Enlève", "Le coussin l’oreiller", "Le problème mis de côté L’argent mis de côté", "Peu importe, ce n'est pas grave", "Habituel", "Les verdures rissolés", "Je suis obligé, de rentrer à la maison, j'ai été obligé", "La brosse à dents", "Le dentifrice", "Il ne pense qu’à lui", "Tableau de bord", "Descends Tout de suiteLà Bonne resolution", "Le débarras", "Agréable/insupportable", "C’est n’importe quoi", "Le studio", "500€ de loyer par mis charges incluses", "La montée la descente", "Non seulement", "Le propriétaire"], "💼 Travail": ["répondre", "La réunion commence dans 5 mn", "Charger les bagages", "secrétaire", "Dépense frais cout", "La secrétaire", "Prêter", "Il n'y a pas un seul client dans l'hôtelIl n'y a aucun client", "Je n'ai aucun diplôme", "Elle est en congé mat", "La perte", "Embaucher", "Un employé", "Un prêt", "L’entreprise", "Le salaire", "Le vendeur", "Les congés.", "Employé", "L’entretien d’embauche", "Ja paie par virement bancaire", "Le bureau", "Le collègue", "Il faut 3 heures", "Le prêt bancaire", "Le prêt", "Un succès", "J’ai hâte d’aller en vacances", "Un bureau", "Les heures supplémentaires", "La décharge", "Tout est pris en charge Je prends tout en charge", "Les factures", "Il faut aller Il faut 2 heures Il a fallu", "Un électricien", "Un plombier", "Un charpentier", "Un artisan", "Heuresement", "Le la journaliste", "La livreur livreuse", "Je suis au chômage", "Pendant des heures et des heures", "Pendant des heures"], "🚗 Transport": ["Arrêter l'activité", "Rester, s'arrêter", "Voler", "Je suis coincé dans les embouteillages depuis 10 h ce matin", "La voiture me plaitLes voitures me plaisent", "Avion", "Frapper", "L'entraineur", "Plus de sport et une alimentation saine", "Le chauffeur", "Le feu rouge", "Le survêtement de sport combinaison", "Expliquer", "Descendre monter", "Permis de conduire Licence", "CraindreUne feuille de papier", "Une feuille arbre", "Enveloppe", "Arrêtez !", "Location de voiture", "Arrêter", "Démarrer la voiture", "Tous les deux, les deux", "Le portrait", "Retourner", "Tremblement de terre", "Arrêtez", "Voiture wagon", "A l’heure Ponctuel En avance En retard", "Plier", "Le coiffeur", "Le coffre", "Le rapport", "Emmener", "Tourner", "Embouteillage", "La poussière Enlever la poussière Il nous faut plus de tempsÇa ne m’intéresse pas Une blague Rentrer", "Le rétroviseur", "La portière", "Art de rueLe pire moment de ma vie Une journée très mauvaise Perdre rater", "Le coffre (voiture)", "Retourner chercher qqun", "Enquêter", "Le chauffeur le pilote le cycliste", "C'est pareil, ça m'est égal", "Faire de l'exercice", "Le survêtement et les chaussures de sport", "Quand on est jeune on fait bcp de voyages", "Me voilà au point de départ", "Il ne faut pas payer (interdiction)Il n'est pas nécessaire de payer (pas obligatoire)", "À distance", "Un document qui donne l’autorisation de faire qqch", "Tirer coup de feu"], "🍽️ Cuisine": ["Donner un pourboire", "Disparition", "couteau", "fourchette", "cuiller", "Ne travaille pas", "CuillerPetite cuiller", "Un mail", "Un bonbon", "Une adresse", "Le poisson", "Bon travail", "Un œuf des œufs Les œuf", "En général Une blague La santé Le salutLa bêtise C’est n’importe quoi Une blague SalirPrier", "Cuisiner", "Vaisselle", "Le canard", "Le raisin", "Selon moi", "Poissonnerie", "Poissonnier", "Fromagerie", "Primeur légumes", "Veau bœuf", "Canard", "Lapin", "l'agneau", "Huitre moule", "Le fromage bleu", "Un œuf, des œufs", "Un bol (grand, petit", "Une tasse", "Poêle", "Casserole fait tou", "Passoire", "Faible", "Quelle est ta taille", "Les frites", "L'œuf", "Une des framboise", "Une aubergine", "Un poireau", "Les haricots", "Les petits pois", "Un mouton", "Un bélier", "Un agneau", "Quelle cuisson ?", "Sauvage", "La taille (buste )", "Ruggero dont le travail…", "Le portail (internet)", "Les boulettes de viande", "À la sauce", "Le fruit confit", "Le niveau", "Une paille", "La bonne heureLe bon poids", "La cafetière", "Bazar pagaille bordel", "Un lave-vaisselle, un lave-linge", "La vaisselle", "A quelle heure tu termines le travail, à midi et demi", "Travailler tard", "Passer (le sucre)", "Une casserole, une poêle, une passoire", "Égoutter les pâtes", "Le bœuf (vivant), bœuf comestible, veau, porc (viande)", "Je me suis bien intégré dans le groupe de mes nouveaux amis", "Basilic, laurier, sauge, romarin, persil", "Les épices", "Il est fauché", "Le point fort et faible", "Le jaune d’œuf", "Le travail à mi-temps", "La boîte mail"]};
+
+
+// ═══════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════
+let allCards = VOCAB.slice();
+let cards = allCards.slice();
+let index = 0;
+let flipped = false;
+let autoTimer = null;
+let isAutoplaying = false;
+let speechRate = 0.9;
+let quizReversed = false;
+let quizAnswered = false;
+let quizScore = 0;
+let quizTotal = 0;
+let activeCat = 'all';
+let isNight = false;
+let audioUnlocked = false;
+let tblPage = 0;
+const TBL_SIZE = 30;
+let tblFiltered = [];
+let touchStartX = 0, touchStartY = 0;
+const SRS = [1,2,4,8,16,32,64];
+
+// ═══════════════════════════════════════════════
+//  STORAGE
+// ═══════════════════════════════════════════════
+function load(k,d){ try{ const v=localStorage.getItem(k); return v?JSON.parse(v):d; }catch(e){ return d; } }
+function save(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }
+
+let progress = load('vp', {});
+let streakData = load('vs', {days:0, last:''});
+isNight = load('vn', false);
+
+// ═══════════════════════════════════════════════
+//  NIGHT MODE
+// ═══════════════════════════════════════════════
+function toggleNight(){ isNight=!isNight; save('vn',isNight); applyNight(); }
+function applyNight(){
+  document.body.classList.toggle('night', isNight);
+  document.getElementById('btn-night').textContent = isNight ? '☀️' : '🌙';
+}
+
+// ═══════════════════════════════════════════════
+//  STREAK
+// ═══════════════════════════════════════════════
+function today(){ return new Date().toISOString().slice(0,10); }
+function checkStreak(){
+  const t = today();
+  const yest = new Date(Date.now()-86400000).toISOString().slice(0,10);
+  if(streakData.last === t) return;
+  streakData.days = (streakData.last === yest) ? streakData.days+1 : 1;
+  streakData.last = t;
+  save('vs', streakData);
+  showStreak();
+}
+function showStreak(){
+  const el = document.getElementById('streak-bar');
+  if(streakData.days >= 2){ el.textContent='🔥 Streak : '+streakData.days+' jours consécutifs !'; el.style.display='flex'; }
+  else el.style.display='none';
+}
+
+// ═══════════════════════════════════════════════
+//  TABS
+// ═══════════════════════════════════════════════
+const TABS = ['flashcard','quiz','stats','add','search','conj'];
+function switchTab(tab){
+  TABS.forEach(function(t){ document.getElementById('tab-'+t).classList.toggle('hidden', t!==tab); });
+  document.querySelectorAll('.tab').forEach(function(el){
+    el.classList.toggle('active', el.dataset.tab===tab);
+  });
+  // Scroll active tab into view
+  var activeTab = document.querySelector('.tab.active');
+  if (activeTab) activeTab.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+  if(isAutoplaying && tab!=='flashcard') stopAutoplay();
+  if(tab==='quiz') nextQuiz();
+  if(tab==='stats') renderStats();
+  if(tab==='add'){ tblPage=0; renderTable(); }
+  if(tab==='search'){ document.getElementById('search-q').value=''; document.getElementById('search-results').innerHTML='<em style="color:#aaa;font-style:italic;">Tapez pour rechercher…</em>'; }
+}
+
+// ═══════════════════════════════════════════════
+//  STATS BAR
+// ═══════════════════════════════════════════════
+function getStatus(fr){ const p=progress[fr]; if(!p) return 'unseen'; return p.known?'known':'unknown'; }
+
+function updateStatsBar(){
+  let known=0,unknown=0,unseen=0;
+  allCards.forEach(function(pair){ const s=getStatus(pair[0]); if(s==='known')known++; else if(s==='unknown')unknown++; else unseen++; });
+  document.getElementById('sb-known').textContent=known;
+  document.getElementById('sb-unknown').textContent=unknown;
+  document.getElementById('sb-unseen').textContent=unseen;
+  if(known===allCards.length && allCards.length>0) launchConfetti();
+}
+
+// ═══════════════════════════════════════════════
+//  CATEGORIES
+// ═══════════════════════════════════════════════
+function buildCatChips(){
+  const el = document.getElementById('cat-chips');
+  el.innerHTML = '';
+  const allBtn = document.createElement('button');
+  allBtn.className='cat-chip active'; allBtn.textContent='🌍 Tous';
+  allBtn.onclick = function(){ setCat('all'); };
+  el.appendChild(allBtn);
+  Object.keys(CAT_MAP).forEach(function(cat){
+    const btn = document.createElement('button');
+    btn.className='cat-chip';
+    btn.textContent = cat+' ('+CAT_MAP[cat].length+')';
+    btn.onclick = function(){ setCat(cat); };
+    el.appendChild(btn);
+  });
+}
+function setCat(cat){
+  activeCat = cat;
+  document.querySelectorAll('.cat-chip').forEach(function(el,i){
+    el.classList.toggle('active', i===0 ? cat==='all' : Object.keys(CAT_MAP)[i-1]===cat);
+  });
+  applyFilter();
+}
+
+// ═══════════════════════════════════════════════
+//  FILTER
+// ═══════════════════════════════════════════════
+function applyFilter(){
+  const mode = document.getElementById('filter-mode').value;
+  let pool = activeCat==='all' ? allCards.slice() :
+    allCards.filter(function(pair){ return CAT_MAP[activeCat] && CAT_MAP[activeCat].indexOf(pair[0])>=0; });
+  if(mode!=='all') pool = pool.filter(function(pair){ return getStatus(pair[0])===mode; });
+  if(pool.length===0) pool = allCards.slice();
+  cards = pool; index=0; showCard(false);
+}
+
+// ═══════════════════════════════════════════════
+//  FLASHCARD
+// ═══════════════════════════════════════════════
+function showCard(autoSpeak){
+  if(!cards.length) return;
+  const fr=cards[index][0], it=cards[index][1];
+  document.getElementById('word-fr').textContent=fr;
+  document.getElementById('word-it').textContent=it;
+  document.getElementById('cur').textContent=index+1;
+  document.getElementById('tot').textContent=cards.length;
+  flipped=false;
+  document.getElementById('card').classList.remove('flipped');
+  document.getElementById('progress-fill').style.width=(((index+1)/cards.length)*100)+'%';
+  const p=progress[fr];
+  const badge=document.getElementById('srs-badge');
+  badge.textContent = (p && p.srs>0) ? '⭐'.repeat(Math.min(p.srs,5)) : '';
+  if(autoSpeak) speak('fr');
+}
+function flipCard(){ flipped=!flipped; document.getElementById('card').classList.toggle('flipped',flipped); if(flipped) speak('it'); }
+function nextCard(){ if(isAutoplaying)stopAutoplay(); index=(index+1)%cards.length; showCard(false); }
+function prevCard(){ if(isAutoplaying)stopAutoplay(); index=(index-1+cards.length)%cards.length; showCard(false); }
+function shuffleCards(){
+  if(isAutoplaying)stopAutoplay();
+  for(var i=cards.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=cards[i];cards[i]=cards[j];cards[j]=t; }
+  index=0; showCard(false);
+}
+function markCard(known){
+  checkStreak();
+  const fr=cards[index][0];
+  const p=progress[fr]||{known:false,seen:false,srs:0};
+  p.seen=true; p.known=known;
+  p.srs=known?Math.min((p.srs||0)+1,SRS.length-1):0;
+  p.next=Date.now()+SRS[p.srs]*86400000;
+  progress[fr]=p; save('vp',progress); updateStatsBar();
+  const card=document.getElementById('card');
+  card.classList.add(known?'swipe-right':'swipe-left');
+  setTimeout(function(){
+    card.classList.remove('swipe-right','swipe-left');
+    if(index<cards.length-1){ index++; showCard(false); } else showCard(false);
+  },370);
+}
+
+// ═══════════════════════════════════════════════
+//  SPEECH
+// ═══════════════════════════════════════════════
+function speak(lang, cb){
+  if(!window.speechSynthesis){ if(cb)cb(); return; }
+  const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream;
+  if(isIOS&&!audioUnlocked){ document.getElementById('ios-banner').style.display='flex'; if(cb)cb(); return; }
+  const text = lang==='fr' ? document.getElementById('word-fr').textContent
+                           : document.getElementById('word-it').textContent;
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang=lang==='fr'?'fr-FR':'it-IT'; u.rate=speechRate;
+  if(cb) u.onend=cb;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+function speakQuiz(){
+  if(!window.speechSynthesis) return;
+  const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream;
+  if(isIOS&&!audioUnlocked){ document.getElementById('ios-banner').style.display='flex'; return; }
+  const text=document.getElementById('quiz-word').textContent;
+  const lang=quizReversed?'it-IT':'fr-FR';
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang=lang; u.rate=speechRate;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+function speakText(text, lang){
+  if(!window.speechSynthesis) return;
+  const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream;
+  if(isIOS&&!audioUnlocked){ document.getElementById('ios-banner').style.display='flex'; return; }
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang=lang; u.rate=speechRate;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+function updateSpeed(v){ speechRate=parseFloat(v); document.getElementById('speed-label').textContent=v+'×'; }
+
+// ── iOS unlock ──
+function unlockAudio(){
+  const u=new SpeechSynthesisUtterance(' '); u.volume=0;
+  window.speechSynthesis.speak(u);
+  audioUnlocked=true;
+  document.getElementById('ios-banner').style.display='none';
+}
+
+// ═══════════════════════════════════════════════
+//  AUTOPLAY
+// ═══════════════════════════════════════════════
+function toggleAutoplay(){ isAutoplaying?stopAutoplay():startAutoplay(); }
+function startAutoplay(){
+  if(!cards.length) return;
+  isAutoplaying=true;
+  const btn=document.getElementById('btn-auto');
+  btn.textContent='⏹ Arrêter'; btn.classList.add('active');
+  runStep();
+}
+function stopAutoplay(){
+  isAutoplaying=false;
+  if(autoTimer){clearTimeout(autoTimer);autoTimer=null;}
+  window.speechSynthesis.cancel();
+  const btn=document.getElementById('btn-auto');
+  btn.textContent='▶ Lecture auto'; btn.classList.remove('active');
+}
+function runStep(){
+  if(!isAutoplaying) return;
+  showCard(false);
+  speak('fr', function(){
+    if(!isAutoplaying) return;
+    autoTimer=setTimeout(function(){
+      if(!isAutoplaying) return;
+      flipped=true; document.getElementById('card').classList.add('flipped');
+      speak('it', function(){
+        if(!isAutoplaying) return;
+        var delay=parseInt(document.getElementById('card-delay').value,10)*1000;
+        autoTimer=setTimeout(function(){
+          if(!isAutoplaying) return;
+          flipped=false; document.getElementById('card').classList.remove('flipped');
+          setTimeout(function(){
+            if(!isAutoplaying) return;
+            if(index<cards.length-1){index++;runStep();}else stopAutoplay();
+          },650);
+        },delay);
+      });
+    },3000);
+  });
+}
+
+// ═══════════════════════════════════════════════
+//  SWIPE
+// ═══════════════════════════════════════════════
+function initSwipe(){
+  const z=document.getElementById('card');
+  z.addEventListener('touchstart',function(e){ touchStartX=e.touches[0].clientX; touchStartY=e.touches[0].clientY; },{passive:true});
+  z.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-touchStartX;
+    var dy=e.changedTouches[0].clientY-touchStartY;
+    if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>50){ markCard(dx>0); }
+    else if(dy<-50&&Math.abs(dy)>Math.abs(dx)){ flipCard(); }
+  },{passive:true});
+}
+
+// ═══════════════════════════════════════════════
+//  QUIZ
+// ═══════════════════════════════════════════════
+function toggleQuizDir(){ quizReversed=!quizReversed; document.getElementById('quiz-dir-lbl').textContent=quizReversed?'FR → IT':'IT → FR'; nextQuiz(); }
+function resetQuiz(){ quizScore=0;quizTotal=0; document.getElementById('qs-score').textContent=0; document.getElementById('qs-total').textContent=0; nextQuiz(); }
+function nextQuiz(){
+  quizAnswered=false;
+  document.getElementById('quiz-result').textContent='';
+  const pool=cards.length>=4?cards:allCards;
+  const qi=Math.floor(Math.random()*pool.length);
+  const fr=pool[qi][0], it=pool[qi][1];
+  const question=quizReversed?it:fr, answer=quizReversed?fr:it;
+  document.getElementById('quiz-question').textContent=quizReversed?'Quelle est la traduction française ?':'Quelle est la traduction italienne ?';
+  document.getElementById('quiz-word').textContent=question;
+  document.getElementById('qs-score').textContent=quizScore;
+  document.getElementById('qs-total').textContent=quizTotal;
+  const wrongs=[]; const used=new Set([qi]);
+  while(wrongs.length<3){ var r=Math.floor(Math.random()*pool.length); if(used.has(r))continue; used.add(r); wrongs.push(quizReversed?pool[r][0]:pool[r][1]); }
+  const choices=[answer].concat(wrongs).sort(function(){return Math.random()-.5;});
+  const el=document.getElementById('quiz-choices'); el.innerHTML='';
+  choices.forEach(function(c){
+    var btn=document.createElement('button'); btn.className='quiz-btn'; btn.textContent=c;
+    btn.addEventListener('click',function(){ answerQuiz(btn,c,answer,fr,it); });
+    el.appendChild(btn);
+  });
+  speakQuiz();
+}
+function answerQuiz(btn,chosen,answer,fr,it){
+  if(quizAnswered) return; quizAnswered=true; quizTotal++;
+  var correct=chosen===answer;
+  if(correct) quizScore++;
+  btn.classList.add(correct?'correct':'wrong');
+  document.querySelectorAll('.quiz-btn').forEach(function(b){ if(b.textContent===answer) b.classList.add(correct?'correct':'reveal'); });
+  document.getElementById('quiz-result').textContent=correct?'✅ Bravo !':'❌ '+answer;
+  document.getElementById('qs-score').textContent=quizScore;
+  document.getElementById('qs-total').textContent=quizTotal;
+  progress[fr]={known:correct,seen:true,srs:(progress[fr]&&progress[fr].srs)||0,next:(progress[fr]&&progress[fr].next)||0};
+  save('vp',progress); updateStatsBar(); checkStreak();
+  setTimeout(function(){
+    document.getElementById('word-fr').textContent=fr;
+    document.getElementById('word-it').textContent=it;
+    speakText(quizReversed?fr:it, quizReversed?'fr-FR':'it-IT');
+  },400);
+}
+
+// ═══════════════════════════════════════════════
+//  STATS PAGE
+// ═══════════════════════════════════════════════
+function renderStats(){
+  var known=0,unknown=0,unseen=0;
+  allCards.forEach(function(pair){ var s=getStatus(pair[0]); if(s==='known'){known++;} else if(s==='unknown'){unknown++;} else unseen++; });
+  var seen=known+unknown;
+  document.getElementById('st-total').textContent=allCards.length;
+  document.getElementById('st-seen').textContent=seen;
+  document.getElementById('st-known').textContent=known;
+  document.getElementById('st-unknown2').textContent=unknown;
+  document.getElementById('st-pct').textContent=(allCards.length?Math.round(known/allCards.length*100):0)+'%';
+  document.getElementById('st-streak').textContent='🔥'+streakData.days;
+  var bad=allCards.filter(function(pair){ return getStatus(pair[0])==='unknown'; });
+  var list=document.getElementById('unknown-list');
+  if(bad.length===0){ list.innerHTML='<em style="color:#aaa">Aucun pour l\'instant 🎉</em>'; return; }
+  list.innerHTML='';
+  bad.forEach(function(pair){
+    var chip=document.createElement('span'); chip.className='word-chip';
+    chip.textContent=pair[0]; chip.title=pair[1];
+    chip.onclick=function(){ jumpToWord(pair[0]); };
+    list.appendChild(chip);
+  });
+}
+function jumpToWord(fr){
+  applyFilter();
+  var idx=cards.findIndex(function(p){ return p[0]===fr; });
+  if(idx>=0){ index=idx; showCard(false); }
+  switchTab('flashcard');
+}
+function resetStats(){
+  if(!confirm('Réinitialiser toutes les statistiques ?')) return;
+  progress={}; save('vp',progress); updateStatsBar(); renderStats();
+}
+
+// ═══════════════════════════════════════════════
+//  ADD WORDS
+// ═══════════════════════════════════════════════
+function addOne(){
+  var fr=document.getElementById('add-fr').value.trim();
+  var it=document.getElementById('add-it').value.trim();
+  if(!fr||!it){ alert('Entrez les deux mots'); return; }
+  allCards.push([fr,it]); cards.push([fr,it]);
+  document.getElementById('add-fr').value=''; document.getElementById('add-it').value='';
+  showFeedback('✅ "'+fr+'" ajouté !');
+  updateStatsBar(); tblPage=0; renderTable();
+}
+function parseSep(line){
+  for(var i=0;i<[';','=','\t',' - '].length;i++){
+    var sep=[';','=','\t',' - '][i];
+    var idx=line.indexOf(sep);
+    if(idx>0){ var fr=line.slice(0,idx).trim(),it=line.slice(idx+sep.length).trim(); if(fr&&it)return[fr,it]; }
+  }
+  return null;
+}
+function addBulk(){
+  var raw=document.getElementById('add-bulk').value;
+  var lines=raw.split('\n').map(function(l){return l.trim();}).filter(Boolean);
+  var added=0;
+  lines.forEach(function(line){ var p=parseSep(line); if(p){allCards.push(p);cards.push(p);added++;} });
+  document.getElementById('add-bulk').value='';
+  showFeedback('✅ '+added+' mots ajoutés !');
+  updateStatsBar(); tblPage=0; renderTable();
+}
+function showFeedback(msg){
+  var el=document.getElementById('add-feedback'); el.textContent=msg;
+  setTimeout(function(){el.textContent='';},2500);
+}
+
+// ═══════════════════════════════════════════════
+//  TABLE
+// ═══════════════════════════════════════════════
+function renderTable(){
+  var q=(document.getElementById('tbl-filter').value||'').toLowerCase().trim();
+  tblFiltered=allCards.filter(function(pair){
+    return !q||pair[0].toLowerCase().includes(q)||pair[1].toLowerCase().includes(q);
+  });
+  document.getElementById('vocab-count').textContent=allCards.length;
+  var start=tblPage*TBL_SIZE;
+  var page=tblFiltered.slice(start,start+TBL_SIZE);
+  var tbody=document.getElementById('vocab-tbody');
+  tbody.innerHTML='';
+  page.forEach(function(pair){
+    var realIdx=allCards.findIndex(function(p){return p[0]===pair[0]&&p[1]===pair[1];});
+    var s=getStatus(pair[0]); var dot=s==='known'?'🟢':s==='unknown'?'🔴':'⚪';
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td>'+dot+' '+pair[0]+'</td><td>'+pair[1]+'</td><td style="text-align:center;white-space:nowrap;"></td>';
+    var goBtn=document.createElement('button'); goBtn.className='btn-go'; goBtn.textContent='📖';
+    goBtn.onclick=(function(fr){return function(){jumpToWord(fr);};})(pair[0]);
+    var delBtn=document.createElement('button'); delBtn.className='btn-del'; delBtn.textContent='🗑';
+    delBtn.onclick=(function(idx){return function(){deleteWord(idx);};})(realIdx);
+    tr.cells[2].appendChild(goBtn); tr.cells[2].appendChild(document.createTextNode(' ')); tr.cells[2].appendChild(delBtn);
+    tbody.appendChild(tr);
+  });
+  var total=tblFiltered.length;
+  document.getElementById('tbl-info').textContent=(start+1)+'–'+Math.min(start+TBL_SIZE,total)+' sur '+total+' mots';
+}
+function tblPrev(){ if(tblPage>0){tblPage--;renderTable();} }
+function tblNext(){ if((tblPage+1)*TBL_SIZE<tblFiltered.length){tblPage++;renderTable();} }
+function deleteWord(idx){
+  if(idx<0||idx>=allCards.length) return;
+  var fr=allCards[idx][0];
+  if(!confirm('Supprimer "'+fr+'" ?')) return;
+  allCards.splice(idx,1);
+  var ci=cards.findIndex(function(p){return p[0]===fr;});
+  if(ci>=0) cards.splice(ci,1);
+  tblPage=0; renderTable(); updateStatsBar();
+}
+
+// ═══════════════════════════════════════════════
+//  SEARCH
+// ═══════════════════════════════════════════════
+// ── Fuzzy search helpers ──
+function levenshtein(a, b) {
+  var m = a.length, n = b.length;
+  var dp = [];
+  for (var i = 0; i <= m; i++) { dp[i] = [i]; }
+  for (var j = 0; j <= n; j++) { dp[0][j] = j; }
+  for (var i = 1; i <= m; i++) {
+    for (var j = 1; j <= n; j++) {
+      if (a[i-1] === b[j-1]) dp[i][j] = dp[i-1][j-1];
+      else dp[i][j] = 1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
+    }
+  }
+  return dp[m][n];
+}
+
+function normalize(s) {
+  return s.toLowerCase()
+    .replace(/[àáâä]/g,'a').replace(/[èéêë]/g,'e')
+    .replace(/[ìíîï]/g,'i').replace(/[òóôö]/g,'o')
+    .replace(/[ùúûü]/g,'u').replace(/[ç]/g,'c')
+    .replace(/[ñ]/g,'n').replace(/'/g,' ').trim();
+}
+
+function fuzzyScore(query, text) {
+  var q = normalize(query);
+  var t = normalize(text);
+  // Exact match
+  if (t === q) return 100;
+  // Contains match
+  if (t.includes(q)) return 90;
+  // Word starts with query
+  var words = t.split(/\s+/);
+  for (var i = 0; i < words.length; i++) {
+    if (words[i].startsWith(q)) return 80;
+  }
+  // Levenshtein on full string
+  var dist = levenshtein(q, t);
+  var maxLen = Math.max(q.length, t.length);
+  var sim = 1 - dist / maxLen;
+  if (sim > 0.65) return Math.round(sim * 70);
+  // Levenshtein on each word
+  var bestWord = 0;
+  for (var i = 0; i < words.length; i++) {
+    if (words[i].length < 2) continue;
+    var d = levenshtein(q, words[i]);
+    var s = 1 - d / Math.max(q.length, words[i].length);
+    if (s > bestWord) bestWord = s;
+  }
+  if (bestWord > 0.65) return Math.round(bestWord * 60);
+  return 0;
+}
+
+function highlightMatch(text, query) {
+  var q = query.toLowerCase();
+  var t = text.toLowerCase();
+  var idx = t.indexOf(q);
+  if (idx >= 0) {
+    return text.slice(0,idx) +
+      '<mark style="background:#fff3a0;border-radius:3px;padding:0 2px;">' +
+      text.slice(idx, idx+q.length) + '</mark>' +
+      text.slice(idx+q.length);
+  }
+  return text;
+}
+
+function doSearch(){
+  var q = document.getElementById('search-q').value.trim();
+  var el = document.getElementById('search-results');
+  if (q.length < 1) {
+    el.innerHTML = '<em style="color:#aaa;font-style:italic;">Tapez pour rechercher…</em>';
+    return;
+  }
+
+  // Score every card
+  var scored = allCards.map(function(pair) {
+    var scoreFr = fuzzyScore(q, pair[0]);
+    var scoreIt = fuzzyScore(q, pair[1]);
+    return { pair: pair, score: Math.max(scoreFr, scoreIt) };
+  }).filter(function(item){ return item.score > 0; });
+
+  // Sort by score descending
+  scored.sort(function(a,b){ return b.score - a.score; });
+
+  if (scored.length === 0) {
+    el.innerHTML = '<em style="color:#aaa;font-style:italic;">Aucun résultat — essayez un autre mot</em>';
+    return;
+  }
+
+  el.innerHTML = '';
+
+  // Show quality indicator
+  var info = document.createElement('div');
+  info.style.cssText = 'font-size:.78rem;color:#aaa;margin-bottom:8px;text-align:center;font-style:italic;';
+  info.textContent = scored.length + ' résultat' + (scored.length>1?'s':'') +
+    (scored[0].score < 80 ? ' — résultats approximatifs' : '');
+  el.appendChild(info);
+
+  scored.slice(0, 50).forEach(function(item) {
+    var pair = item.pair;
+    var div = document.createElement('div'); div.className = 'sr-item';
+
+    // Match quality badge
+    var badge = '';
+    if (item.score >= 90) badge = '<span style="font-size:.7rem;background:#e8f5e8;color:var(--green);border-radius:50px;padding:1px 6px;margin-right:6px;">✓</span>';
+    else if (item.score >= 70) badge = '<span style="font-size:.7rem;background:#fff3e0;color:#e67e00;border-radius:50px;padding:1px 6px;margin-right:6px;">~</span>';
+    else badge = '<span style="font-size:.7rem;background:#fbe8e8;color:var(--it);border-radius:50px;padding:1px 6px;margin-right:6px;">?</span>';
+
+    var left = document.createElement('span');
+    left.innerHTML = badge +
+      '<span class="sr-fr">' + highlightMatch(pair[0], q) + '</span>' +
+      ' &nbsp;→&nbsp; ' +
+      '<span class="sr-it">' + highlightMatch(pair[1], q) + '</span>';
+
+    var btns = document.createElement('div'); btns.className = 'sr-btns';
+
+    var listenBtn = document.createElement('button'); listenBtn.className = 'btn-sm'; listenBtn.textContent = '🔊';
+    listenBtn.onclick = (function(fr){ return function(){ speakText(fr,'fr-FR'); }; })(pair[0]);
+
+    var goBtn = document.createElement('button'); goBtn.className = 'btn-sm'; goBtn.textContent = '📖';
+    goBtn.onclick = (function(fr){ return function(){ jumpToWord(fr); }; })(pair[0]);
+
+    btns.appendChild(listenBtn); btns.appendChild(goBtn);
+    div.appendChild(left); div.appendChild(btns);
+    el.appendChild(div);
+  });
+
+  if (scored.length > 50) {
+    var more = document.createElement('div');
+    more.style.cssText = 'text-align:center;color:#aaa;font-size:.8rem;margin-top:8px;';
+    more.textContent = '+ ' + (scored.length-50) + ' autres — affinez la recherche';
+    el.appendChild(more);
+  }
+}
+
+// ═══════════════════════════════════════════════
+//  CONFETTI
+// ═══════════════════════════════════════════════
+function launchConfetti(){
+  var canvas=document.getElementById('confetti-canvas');
+  var ctx=canvas.getContext('2d');
+  canvas.width=window.innerWidth; canvas.height=window.innerHeight;
+  var colors=['#c9a84c','#1a3a5c','#8B1A1A','#2a7a2a','#f7c59f','#7ea8d8'];
+  var parts=[];
+  for(var i=0;i<180;i++) parts.push({x:Math.random()*canvas.width,y:-10,vx:(Math.random()-.5)*4,vy:Math.random()*3+2,color:colors[Math.floor(Math.random()*colors.length)],size:Math.random()*8+4,rot:Math.random()*360,rs:(Math.random()-.5)*8});
+  var frame=0;
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    parts.forEach(function(p){ p.x+=p.vx;p.y+=p.vy;p.rot+=p.rs; ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.fillStyle=p.color;ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size);ctx.restore(); });
+    if(++frame<180) requestAnimationFrame(draw);
+    else ctx.clearRect(0,0,canvas.width,canvas.height);
+  }
+  draw();
+}
+
+// ═══════════════════════════════════════════════
+//  KEYBOARD
+// ═══════════════════════════════════════════════
+document.addEventListener('keydown',function(e){
+  var activeTab=document.querySelector('.tab.active');
+  if(!activeTab) return;
+  var tab=activeTab.dataset.tab;
+  if(tab==='flashcard'){
+    if(e.key==='ArrowRight'||e.key==='ArrowDown') nextCard();
+    else if(e.key==='ArrowLeft'||e.key==='ArrowUp') prevCard();
+    else if(e.key===' '){e.preventDefault();flipCard();}
+    else if(e.key==='k'||e.key==='K') markCard(true);
+    else if(e.key==='x'||e.key==='X') markCard(false);
+  } else if(tab==='quiz'){
+    if(e.key==='Enter'||e.key==='ArrowRight') nextQuiz();
+  }
+});
+
+// ═══════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════
+applyNight();
+showStreak();
+buildCatChips();
+cards=allCards.slice();
+showCard(false);
+updateStatsBar();
+initSwipe();
+tblFiltered=allCards.slice();
+renderTable();
+
+// ═══════════════════════════════════════════════
+//  PWA — MANIFEST + SERVICE WORKER
+// ═══════════════════════════════════════════════
+
+// Inline manifest (so it works from a single HTML file)
+(function() {
+  var manifest = {
+    name: "Vocabolario Français–Italiano",
+    short_name: "Vocabolario",
+    description: "Flashcards FR-IT avec voix, quiz et statistiques",
+    start_url: ".",
+    display: "standalone",
+    orientation: "portrait",
+    background_color: "#1a3a5c",
+    theme_color: "#1a3a5c",
+    icons: [
+      { src: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFhM2E1YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3R5bGU9InN0b3AtY29sb3I6IzJhNWE4YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM4QjFBMUEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDx0ZXh0IHg9IjI1NiIgeT0iMjAwIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIxNjAiIGZvbnQtd2VpZ2h0PSJib2xkIgogICAgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPkZSPC90ZXh0PgogIDxsaW5lIHgxPSI4MCIgeTE9IjI1NiIgeDI9IjQzMiIgeTI9IjI1NiIgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjYiLz4KICA8dGV4dCB4PSIyNTYiIHk9IjM0MCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMTYwIiBmb250LXdlaWdodD0iYm9sZCIKICAgIGZpbGw9IiNmNWMwNjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPklUPC90ZXh0Pgo8L3N2Zz4=", sizes: "512x512", type: "image/svg+xml", purpose: "any maskable" }
+    ]
+  };
+  var blob = new Blob([JSON.stringify(manifest)], {type:'application/json'});
+  var url = URL.createObjectURL(blob);
+  document.getElementById('pwa-manifest').setAttribute('href', url);
+})();
+
+// Inline Service Worker for offline support
+(function() {
+  if (!('serviceWorker' in navigator)) return;
+  var swCode = [
+    'var CACHE="vocabolario-v1";',
+    'self.addEventListener("install",function(e){',
+    '  e.waitUntil(caches.open(CACHE).then(function(c){',
+    '    return c.addAll(["./","./index.html"]);',
+    '  }));',
+    '  self.skipWaiting();',
+    '});',
+    'self.addEventListener("activate",function(e){',
+    '  e.waitUntil(caches.keys().then(function(keys){',
+    '    return Promise.all(keys.filter(function(k){return k!==CACHE;}).map(function(k){return caches.delete(k);}));',
+    '  }));',
+    '  self.clients.claim();',
+    '});',
+    'self.addEventListener("fetch",function(e){',
+    '  e.respondWith(caches.match(e.request).then(function(r){',
+    '    return r||fetch(e.request).catch(function(){return caches.match("./");});',
+    '  }));',
+    '});'
+  ].join('\n');
+  var blob = new Blob([swCode], {type:'application/javascript'});
+  var swUrl = URL.createObjectURL(blob);
+  navigator.serviceWorker.register(swUrl, {scope: '/'}).catch(function(){});
+})();
+
+// iOS install banner
+(function() {
+  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  var isStandalone = window.navigator.standalone === true;
+  var dismissed = localStorage.getItem('pwa_dismissed');
+  if (isIOS && !isStandalone && !dismissed) {
+    setTimeout(function() {
+      var banner = document.createElement('div');
+      banner.id = 'install-banner';
+      banner.style.cssText = 'position:fixed;bottom:70px;left:50%;transform:translateX(-50%);' +
+        'background:white;border-radius:16px;padding:14px 18px;box-shadow:0 4px 30px rgba(0,0,0,.25);' +
+        'z-index:9000;max-width:320px;width:90%;font-family:Georgia,serif;text-align:center;' +
+        'animation:slideUp .4s ease;';
+      var bh = [];
+      bh.push('<div style="font-size:1.5rem;margin-bottom:6px;">&#128242;</div>');
+      bh.push('<div style="font-weight:bold;color:#1a3a5c;margin-bottom:4px;">Installer l&#39;application</div>');
+      bh.push('<div style="font-size:.85rem;color:#666;margin-bottom:12px;">');
+      bh.push('Appuyez sur <strong>Partager &#x2B06;</strong> puis<br>');
+      bh.push('<strong>Sur l&#39;&#233;cran d&#39;accueil</strong></div>');
+      bh.push('<button onclick="this.parentNode.remove();localStorage.setItem(\'pwa_dismissed\',1)" ');
+      bh.push('style="background:#1a3a5c;color:white;border:none;border-radius:50px;padding:8px 20px;');
+      bh.push('font-family:Georgia,serif;font-size:.9rem;cursor:pointer;min-height:40px;">Compris !</button>');
+      banner.innerHTML = bh.join('');
+      document.body.appendChild(banner);
+    }, 3000);
+  }
+})();
+
+// Chrome/Android install prompt
+var deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', function(e) {
+  e.preventDefault();
+  deferredPrompt = e;
+  var btn = document.createElement('button');
+  btn.style.cssText = 'position:fixed;bottom:80px;right:16px;background:#1a3a5c;color:white;' +
+    'border:none;border-radius:50px;padding:10px 18px;font-family:Georgia,serif;font-size:.9rem;' +
+    'z-index:9000;box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;min-height:44px;';
+  btn.textContent = '📲 Installer l\'app';
+  btn.onclick = function() {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(function() { btn.remove(); deferredPrompt=null; });
+  };
+  document.body.appendChild(btn);
+});
+
+// Splash screen dismiss
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var s = document.getElementById('splash');
+    if (s) { s.classList.add('fade'); setTimeout(function(){ s.remove(); }, 500); }
+  }, 1200);
+});
+
+
+// ═══════════════════════════════════════════════
+//  EXPORT / IMPORT
+// ═══════════════════════════════════════════════
+
+function exportProgress() {
+  var data = {
+    version: 1,
+    date: new Date().toISOString(),
+    progress: progress,
+    streak: streakData
+  };
+  var json = JSON.stringify(data, null, 2);
+  var blob = new Blob([json], {type: 'application/json'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  var dateStr = new Date().toISOString().slice(0,10);
+  a.href = url; a.download = 'vocabolario-progression-' + dateStr + '.json';
+  a.click(); URL.revokeObjectURL(url);
+  showBackupFeedback('✅ Progression exportée !');
+}
+
+function importProgress(input) {
+  var file = input.files[0]; if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      var data = JSON.parse(e.target.result);
+      if (!data.progress) { showBackupFeedback('❌ Fichier invalide'); return; }
+      // Merge: keep best result for each word
+      var imported = data.progress;
+      var merged = 0;
+      Object.keys(imported).forEach(function(fr) {
+        if (!progress[fr]) {
+          progress[fr] = imported[fr]; merged++;
+        } else {
+          // Keep "known" if either device says known
+          if (imported[fr].known && !progress[fr].known) {
+            progress[fr] = imported[fr]; merged++;
+          }
+        }
+      });
+      // Merge streak: keep highest
+      if (data.streak && data.streak.days > streakData.days) {
+        streakData = data.streak;
+        save('vs', streakData); showStreak();
+      }
+      save('vp', progress);
+      updateStatsBar(); renderStats();
+      showBackupFeedback('✅ ' + merged + ' mots fusionnés !');
+    } catch(err) {
+      showBackupFeedback('❌ Erreur de lecture du fichier');
+    }
+    input.value = '';
+  };
+  reader.readAsText(file);
+}
+
+function exportVocab() {
+  var data = {
+    version: 1,
+    date: new Date().toISOString(),
+    vocab: allCards
+  };
+  var json = JSON.stringify(data, null, 2);
+  var blob = new Blob([json], {type: 'application/json'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  var dateStr = new Date().toISOString().slice(0,10);
+  a.href = url; a.download = 'vocabolario-mots-' + dateStr + '.json';
+  a.click(); URL.revokeObjectURL(url);
+  showBackupFeedback('✅ ' + allCards.length + ' mots exportés !');
+}
+
+function importVocab(input) {
+  var file = input.files[0]; if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      var added = 0;
+      var text = e.target.result;
+      // Try JSON format first
+      if (file.name.endsWith('.json')) {
+        var data = JSON.parse(text);
+        var list = data.vocab || data;
+        if (Array.isArray(list)) {
+          list.forEach(function(pair) {
+            if (Array.isArray(pair) && pair.length >= 2) {
+              var fr = pair[0].trim(), it = pair[1].trim();
+              if (fr && it && !allCards.find(function(p){return p[0]===fr;})) {
+                allCards.push([fr, it]); added++;
+              }
+            }
+          });
+        }
+      } else {
+        // Text/CSV: one pair per line, separator ; = tab
+        var lines = text.split('\n');
+        lines.forEach(function(line) {
+          line = line.trim(); if (!line) return;
+          var pair = parseSep(line);
+          if (pair && !allCards.find(function(p){return p[0]===pair[0];})) {
+            allCards.push(pair); added++;
+          }
+        });
+      }
+      cards = allCards.slice();
+      tblPage = 0; renderTable(); updateStatsBar();
+      showBackupFeedback('✅ ' + added + ' mots importés !');
+    } catch(err) {
+      showBackupFeedback('❌ Erreur de lecture du fichier');
+    }
+    input.value = '';
+  };
+  reader.readAsText(file);
+}
+
+function showBackupFeedback(msg) {
+  var el = document.getElementById('backup-feedback');
+  if (!el) return;
+  el.textContent = msg;
+  setTimeout(function(){ el.textContent = ''; }, 3000);
+}
+
+
+// ═══════════════════════════════════════════════
+//  CONJUGAISON
+// ═══════════════════════════════════════════════
+const VERBS = [["écouter", "ascoltare"], ["répondre", "rispondere"], ["laisser", "lasciare"], ["Acheter", "comprare"], ["presser", "premere"], ["Demander", "chiedere"], ["penser", "pensare"], ["choisir", "scegliere"], ["aimer", "amare"], ["accepter", "accetare"], ["réserver", "prenotare"], ["savoir", "sapere"], ["Paraitre sembler", "sembrare"], ["refuser", "rifiutare"], ["Commencer (l'activité)", "avviare"], ["Arrêter l'activité", "chiudere"], ["Donner un pourboire", "dare"], ["Se tromper", "sbagliare"], ["quitter", "lasciare"], ["améliorer", "migliorare"], ["montrer", "mostrare"], ["pleurer", "piangere"], ["rester", "rimanere"], ["Envoyer", "inviare"], ["offrir", "regalare"], ["Sembler paraitre", "parere"], ["Voler", "rubare"], ["Remarquer s'apercevoir", "accorgere"], ["revenir", "tornare"], ["Peindre", "dipingere"], ["deviner", "indovinare"], ["Diminuer", "diminuire"], ["Charger les bagages", "caricare"], ["aider", "aiutare"], ["recommencer", "ricominciare"], ["Se passer, arriver", "succedere"], ["Ranger", "riordinare"], ["Eteindre", "spegnere"], ["Porter un toast, trinquer", "brindare"], ["neiger", "nevicare"], ["essayer", "provare"], ["Etre fou", "essere"], ["Suivre mener", "seguire"], ["Peser", "pesare"], ["Revoir repasser", "ripassare"], ["Douter", "dubitare"], ["trinquer", "brindare"], ["craindre", "temere"], ["espérer", "sperare"], ["Surprendre étonner", "sorprendere"], ["Lire", "leggere"], ["Mettre", "mettere"], ["Danser", "ballare"], ["Entendre écouter", "sentire"], ["Faire les courses", "fare"], ["Prêter", "prestare"], ["Falloir", "servire"], ["Être capable, réussir", "riescere"], ["Trouver", "trovare"], ["pleuvoir", "piovere"], ["Apprendre", "imparare"], ["Traverser", "attraversare"], ["Monter", "salire"], ["Grandir", "crescere"], ["Détester", "odiare"], ["Continuer", "seguitare"], ["Risquer", "rischiare"], ["éternuer", "starnutire"], ["tousser", "tossire"], ["nourrir", "nutrire"], ["Netoyer", "pulire"], ["Ouvrir", "aprire"], ["Embrasser", "abbracciare"], ["Tomber", "cadere"], ["Frapper", "bussare"], ["Se produire se passer", "succedere"], ["Allumer", "ascendere"], ["Descendre", "scendere"], ["Avir raison", "avere"], ["Avoir tort", "avere"], ["Gagner", "vincere"], ["Perdre", "perdere"], ["Disparaitre", "sparire"], ["Bavarder", "chiacchiere"], ["Être pressé", "essere"], ["Aller quelque part", "andare"], ["Donner", "dare"], ["Donner un coup de mainDonne un…", "dare"], ["Conseiller", "consigliere"], ["Cacher", "nascondere"], ["Rechercher", "ricercare"], ["Maigrir", "dimagrire"], ["Déplacer", "spostare"], ["Embaucher", "assumere"], ["Expliquer", "spiegare"], ["Ignorer", "ignorare"], ["Nager", "nuotare"], ["Commander", "ordinare"], ["Agrandir étendre", "ampliare"], ["Respecter", "rispettare"], ["Prendre soin s’occuper de", "provvedere"], ["Régler arranger", "sistemare"], ["Découvrir", "scoprire"], ["Profiter jouirProfitons", "godere"], ["Confier", "affidare"], ["Remplacer", "sostituire"], ["ajouter", "aggiungere"], ["Plaisanter", "scherzere"], ["Connaître Reconnaître NaîtreAugmenter Croire grandir", "conoscere"], ["Descendre monter", "portare"], ["Disparaître", "scomparire"], ["Remercier Je vous remercie", "ringraziare"], ["Arrêter", "smetere"], ["Crier", "gridare"], ["Piquer", "pungere"], ["Porter des vêtements", "indossare"], ["Pâtissier", "pasticciere"], ["Rendre restituer", "restituire"], ["Baisse la musique", "abbassare"], ["Confirmer", "confermare"], ["Annuler", "annullare"], ["Arriver pouvoir réussir parvenir", "riuscire"], ["Appuyer sur, presser", "premere"], ["Démarrer la voiture", "avviare"], ["Tenir garder Je te garde une place", "tenere"], ["Mériter", "meritare"], ["Assaisonner", "condire"], ["Chauffer", "scaldare"], ["Partager", "condividere"], ["Apprécier", "gradire"], ["Retourner", "rimandare"], ["Cuire", "cuocere"], ["Obtenir", "ottenere"], ["Raccrocher Réponds raccroche", "riattaccare"], ["Prendre garde à qu’un qqch", "badare"], ["Prendre garde à", "badare"], ["Habituer", "assuefare"], ["Atteindre", "raggiungere"], ["Se moquer", "prendere"], ["Arrêtez", "smettere"], ["Ronfler", "russare"], ["Faire d’une pierre deux coups", "prendere"], ["Tenir au courant", "aggiornare"], ["Signaler", "segnalare"], ["S’évanouir Je m’évanouis", "svenire"], ["Devenir", "diventare"], ["Ressentir", "provare"], ["Fêter", "festeggiare"], ["Plier", "piegare"], ["Tricher tromper trahir", "ingannare"], ["Mentir", "mentire"], ["Goûter", "assagiare"], ["Ranger (sa chambre", "sistemare"], ["Arroser", "innaffiare"], ["Déménager", "traslocare"], ["Poser des questions", "fare"], ["Faire des progrès, s’améliorerJe pense que je fais des progrès", "fare"], ["Tenir garder", "tenere"], ["Empoisonner", "avvelenare"], ["Rire", "ridere"], ["Commander ordonner", "ordinare"], ["Raccrocher", "riagganciare"], ["Avoir le goût de, sentirLe vin à le goût de vinaigre Ce livre sent bon", "sapere"], ["Déclarer", "dichiarare"], ["AvancerReculer", "andare"], ["Emmener", "portare"], ["Tourner", "svoltare"], ["Faire demi tour", "fare"], ["L’aspirateur", "l’aspirapolvere"], ["AdaptéAttendre attenduC’est fouLa baffeAu fait tu as éteint la lumière Le papier toilette", "adattoattendere"], ["Faire marche arriere", "fare"], ["Rêver", "sognare"], ["Répondre correctement", "rispondere"], ["Descendre (les escalliers)", "scendere"], ["Descendre les poubelles", "portare"], ["Mettre au courant", "aggiornare"], ["Attaquer en justice", "fare"], ["Chasser", "cacciare"], ["Déplacer un objet un rdv", "spostare"], ["Ravi de te connaître. Tout le plaisir est pour moi", "piacere"], ["Retourner chercher qqun", "tornare"], ["S'occuper de quelqu'unJe m'occupe de ma belle-mèreS'occuper des enfants", "stare"], ["Faire la lessive, repasser", "fare"], ["Rester debout, veiller tard", "stare"], ["Gagner de l’argent du temps des points", "guadagnare"], ["Aller voir (visiter) qqun", "andare"], ["S’occuper de", "stare"], ["Rentrer à la maison", "rincasare"], ["Travailler tard", "lavorare"], ["Enquêter", "indagare"], ["Livrer", "consegnare"], ["Cueillir, récolter", "cogliere"], ["Égoutter les pâtes", "scolare"], ["Faire de l'exercice", "fare"], ["Apprendre (enseigner)Apprendre (recevoir)", "insegnareimparare"], ["Faire attention", "fare"], ["Trouver le sommeil", "prendere"], ["Donner un coup d'œil", "dare"], ["Àttendre avec impatience", "aspettare"], ["Épeler", "sillabare"], ["S’enfuir", "scappare"], ["Déchirer", "strappare"], ["Attaquer", "attacare"], ["paraitre apparaitre disparaitre", "apparire"], ["Hurler", "urlare"], ["Oser", "osare"], ["Réussir un examen j’ai réussi", "superare"], ["Tirer coup de feu", "sparare"], ["Faire la tête", "fare"]];
+
+// Italian conjugation engine
+function conjugate(inf) {
+  inf = inf.toLowerCase().trim();
+  var stem, group;
+  if (inf.endsWith('are'))      { stem = inf.slice(0,-3); group = 'are'; }
+  else if (inf.endsWith('ere')) { stem = inf.slice(0,-3); group = 'ere'; }
+  else if (inf.endsWith('ire')) { stem = inf.slice(0,-3); group = 'ire'; }
+  else return null;
+
+  // Irregular verbs
+  var irreg = {
+    'essere': {
+      pres:  ['sono','sei','è','siamo','siete','sono'],
+      imp:   ['ero','eri','era','eravamo','eravate','erano'],
+      fut:   ['sarò','sarai','sarà','saremo','sarete','saranno'],
+      cond:  ['sarei','saresti','sarebbe','saremmo','sareste','sarebbero'],
+      subp: ['sia', 'sia', 'sia', 'siamo', 'siate', 'siano'],
+      suba: ['sia stato/a', 'sia stato/a', 'sia stato/a', 'siamo stati/e', 'siate stati/e', 'siano stati/e']
+    },
+    'avere': {
+      pres:  ['ho','hai','ha','abbiamo','avete','hanno'],
+      imp:   ['avevo','avevi','aveva','avevamo','avevate','avevano'],
+      fut:   ['avrò','avrai','avrà','avremo','avrete','avranno'],
+      cond:  ['avrei','avresti','avrebbe','avremmo','avreste','avrebbero'],
+      subp: ['abbia', 'abbia', 'abbia', 'abbiamo', 'abbiate', 'abbiano'],
+      suba: ['abbia avuto', 'abbia avuto', 'abbia avuto', 'abbiamo avuto', 'abbiate avuto', 'abbiano avuto']
+    },
+    'andare': {
+      pres:  ['vado','vai','va','andiamo','andate','vanno'],
+      imp:   ['andavo','andavi','andava','andavamo','andavate','andavano'],
+      fut:   ['andrò','andrai','andrà','andremo','andrete','andranno'],
+      cond:  ['andrei','andresti','andrebbe','andremmo','andreste','andrebbero'],
+      subp: ['vada', 'vada', 'vada', 'andiamo', 'andiate', 'vadano'],
+      suba: ['sia andato/a', 'sia andato/a', 'sia andato/a', 'siamo andati/e', 'siate andati/e', 'siano andati/e']
+    },
+    'fare': {
+      pres:  ['faccio','fai','fa','facciamo','fate','fanno'],
+      imp:   ['facevo','facevi','faceva','facevamo','facevate','facevano'],
+      fut:   ['farò','farai','farà','faremo','farete','faranno'],
+      cond:  ['farei','faresti','farebbe','faremmo','fareste','farebbero'],
+      subp: ['faccia', 'faccia', 'faccia', 'facciamo', 'facciate', 'facciano'],
+      suba: ['abbia fatto', 'abbia fatto', 'abbia fatto', 'abbiamo fatto', 'abbiate fatto', 'abbiano fatto']
+    },
+    'dare': {
+      pres:  ['do','dai','dà','diamo','date','danno'],
+      imp:   ['davo','davi','dava','davamo','davate','davano'],
+      fut:   ['darò','darai','darà','daremo','darete','daranno'],
+      cond:  ['darei','daresti','darebbe','daremmo','dareste','darebbero'],
+      subp: ['dia', 'dia', 'dia', 'diamo', 'diate', 'diano'],
+      suba: ['abbia dato', 'abbia dato', 'abbia dato', 'abbiamo dato', 'abbiate dato', 'abbiano dato']
+    },
+    'stare': {
+      pres:  ['sto','stai','sta','stiamo','state','stanno'],
+      imp:   ['stavo','stavi','stava','stavamo','stavate','stavano'],
+      fut:   ['starò','starai','starà','staremo','starete','staranno'],
+      cond:  ['starei','staresti','starebbe','staremmo','stareste','starebbero'],
+      subp: ['stia', 'stia', 'stia', 'stiamo', 'stiate', 'stiano'],
+      suba: ['sia stato/a', 'sia stato/a', 'sia stato/a', 'siamo stati/e', 'siate stati/e', 'siano stati/e']
+    },
+    'venire': {
+      pres:  ['vengo','vieni','viene','veniamo','venite','vengono'],
+      imp:   ['venivo','venivi','veniva','venivamo','venivate','venivano'],
+      fut:   ['verrò','verrai','verrà','verremo','verrete','verranno'],
+      cond:  ['verrei','verresti','verrebbe','verremmo','verreste','verrebbero'],
+      subp: ['venga', 'venga', 'venga', 'veniamo', 'veniate', 'vengano'],
+      suba: ['sia venuto/a', 'sia venuto/a', 'sia venuto/a', 'siamo venuti/e', 'siate venuti/e', 'siano venuti/e']
+    },
+    'uscire': {
+      pres:  ['esco','esci','esce','usciamo','uscite','escono'],
+      imp:   ['uscivo','uscivi','usciva','uscivamo','uscivate','uscivano'],
+      fut:   ['uscirò','uscirai','uscirà','usciremo','uscirete','usciranno'],
+      cond:  ['uscirei','usciresti','uscirebbe','usciremmo','uscireste','uscirebbero'],
+      subp: ['esca', 'esca', 'esca', 'usciamo', 'usciate', 'escano'],
+      suba: ['sia uscito/a', 'sia uscito/a', 'sia uscito/a', 'siamo usciti/e', 'siate usciti/e', 'siano usciti/e']
+    },
+    'potere': {
+      pres:  ['posso','puoi','può','possiamo','potete','possono'],
+      imp:   ['potevo','potevi','poteva','potevamo','potevate','potevano'],
+      fut:   ['potrò','potrai','potrà','potremo','potrete','potranno'],
+      cond:  ['potrei','potresti','potrebbe','potremmo','potreste','potrebbero'],
+      subp: ['possa', 'possa', 'possa', 'possiamo', 'possiate', 'possano'],
+      suba: ['abbia potuto', 'abbia potuto', 'abbia potuto', 'abbiamo potuto', 'abbiate potuto', 'abbiano potuto']
+    },
+    'volere': {
+      pres:  ['voglio','vuoi','vuole','vogliamo','volete','vogliono'],
+      imp:   ['volevo','volevi','voleva','volevamo','volevate','volevano'],
+      fut:   ['vorrò','vorrai','vorrà','vorremo','vorrete','vorranno'],
+      cond:  ['vorrei','vorresti','vorrebbe','vorremmo','vorreste','vorrebbero'],
+      subp: ['voglia', 'voglia', 'voglia', 'vogliamo', 'vogliate', 'vogliano'],
+      suba: ['abbia voluto', 'abbia voluto', 'abbia voluto', 'abbiamo voluto', 'abbiate voluto', 'abbiano voluto']
+    },
+    'sapere': {
+      pres:  ['so','sai','sa','sappiamo','sapete','sanno'],
+      imp:   ['sapevo','sapevi','sapeva','sapevamo','sapevate','sapevano'],
+      fut:   ['saprò','saprai','saprà','sapremo','saprete','sapranno'],
+      cond:  ['saprei','sapresti','saprebbe','sapremmo','sapreste','saprebbero'],
+      subp: ['sappia', 'sappia', 'sappia', 'sappiamo', 'sappiate', 'sappiano'],
+      suba: ['abbia saputo', 'abbia saputo', 'abbia saputo', 'abbiamo saputo', 'abbiate saputo', 'abbiano saputo']
+    },
+    'dovere': {
+      pres:  ['devo','devi','deve','dobbiamo','dovete','devono'],
+      imp:   ['dovevo','dovevi','doveva','dovevamo','dovevate','dovevano'],
+      fut:   ['dovrò','dovrai','dovrà','dovremo','dovrete','dovranno'],
+      cond:  ['dovrei','dovresti','dovrebbe','dovremmo','dovreste','dovrebbero'],
+      subp: ['debba', 'debba', 'debba', 'dobbiamo', 'dobbiate', 'debbano'],
+      suba: ['abbia dovuto', 'abbia dovuto', 'abbia dovuto', 'abbiamo dovuto', 'abbiate dovuto', 'abbiano dovuto']
+    },
+    'dire': {
+      pres:  ['dico','dici','dice','diciamo','dite','dicono'],
+      imp:   ['dicevo','dicevi','diceva','dicevamo','dicevate','dicevano'],
+      fut:   ['dirò','dirai','dirà','diremo','direte','diranno'],
+      cond:  ['direi','diresti','direbbe','diremmo','direste','direbbero'],
+      subp: ['dica', 'dica', 'dica', 'diciamo', 'diciate', 'dicano'],
+      suba: ['abbia detto', 'abbia detto', 'abbia detto', 'abbiamo detto', 'abbiate detto', 'abbiano detto']
+    },
+    'rimanere': {
+      pres:  ['rimango','rimani','rimane','rimaniamo','rimanete','rimangono'],
+      imp:   ['rimanevo','rimanevi','rimaneva','rimanevamo','rimanevate','rimanevano'],
+      fut:   ['rimarrò','rimarrai','rimarrà','rimarremo','rimarrete','rimarranno'],
+      cond:  ['rimarrei','rimarresti','rimarrebbe','rimarremmo','rimarreste','rimarrebbero'],
+      subp: ['rimanga', 'rimanga', 'rimanga', 'rimaniamo', 'rimaniate', 'rimangano'],
+      suba: ['sia rimasto/a', 'sia rimasto/a', 'sia rimasto/a', 'siamo rimasti/e', 'siate rimasti/e', 'siano rimasti/e']
+    },
+    'scegliere': {
+      pres:  ['scelgo','scegli','sceglie','scegliamo','scegliete','scelgono'],
+      imp:   ['sceglievo','sceglievi','sceglieva','sceglievamo','sceglievate','sceglievano'],
+      fut:   ['sceglierò','sceglierai','sceglierà','sceglieremo','sceglierete','sceglieranno'],
+      cond:  ['sceglierei','sceglieresti','sceglierebbe','sceglieremmo','scegliereste','sceglierebbero'],
+      subp: ['scelga', 'scelga', 'scelga', 'scegliamo', 'scegliate', 'scelgano'],
+      suba: ['abbia scelto', 'abbia scelto', 'abbia scelto', 'abbiamo scelto', 'abbiate scelto', 'abbiano scelto']
+    }
+  };
+
+  if (irreg[inf]) return irreg[inf];
+
+  // Regular conjugation
+  var pres, imp, fut, cond;
+  if (group === 'are') {
+    pres  = [stem+'o',stem+'i',stem+'a',stem+'iamo',stem+'ate',stem+'ano'];
+    // Handle -care/-gare/-ciare/-giare
+    if (stem.endsWith('c') || stem.endsWith('g')) {
+      pres[1] = stem+'hi'; pres[2] = stem+'a'; pres[3] = stem+'hiamo';
+    }
+    if (stem.endsWith('ci') || stem.endsWith('gi')) {
+      pres[1] = stem.slice(0,-1)+'i'; pres[2] = stem.slice(0,-1)+'a';
+    }
+    imp   = [stem+'avo',stem+'avi',stem+'ava',stem+'avamo',stem+'avate',stem+'avano'];
+    var futStem = inf.slice(0,-1); // remove e from -are → parl+erò
+    fut   = [futStem+'ò',futStem+'ai',futStem+'à',futStem+'emo',futStem+'ete',futStem+'anno'];
+    cond  = [futStem+'ei',futStem+'esti',futStem+'ebbe',futStem+'emmo',futStem+'este',futStem+'ebbero'];
+  } else if (group === 'ere') {
+    pres  = [stem+'o',stem+'i',stem+'e',stem+'iamo',stem+'ete',stem+'ono'];
+    imp   = [stem+'evo',stem+'evi',stem+'eva',stem+'evamo',stem+'evate',stem+'evano'];
+    var futStem2 = inf.slice(0,-1);
+    fut   = [futStem2+'ò',futStem2+'ai',futStem2+'à',futStem2+'emo',futStem2+'ete',futStem2+'anno'];
+    cond  = [futStem2+'ei',futStem2+'esti',futStem2+'ebbe',futStem2+'emmo',futStem2+'este',futStem2+'ebbero'];
+  } else { // ire
+    pres  = [stem+'o',stem+'i',stem+'e',stem+'iamo',stem+'ite',stem+'ono'];
+    // -isc- verbs (finire, capire...)
+    var iscVerbs = ['fin','cap','prefer','grad','rest','sped','obb','pul','cost','sug','gest','forn','imp'];
+    var isIsc = iscVerbs.some(function(v){ return stem.startsWith(v); });
+    if (isIsc) {
+      pres = [stem+'isco',stem+'isci',stem+'isce',stem+'iamo',stem+'ite',stem+'iscono'];
+    }
+    imp   = [stem+'ivo',stem+'ivi',stem+'iva',stem+'ivamo',stem+'ivate',stem+'ivano'];
+    var futStem3 = inf.slice(0,-1);
+    fut   = [futStem3+'ò',futStem3+'ai',futStem3+'à',futStem3+'emo',futStem3+'ete',futStem3+'anno'];
+    cond  = [futStem3+'ei',futStem3+'esti',futStem3+'ebbe',futStem3+'emmo',futStem3+'este',futStem3+'ebbero'];
+  }
+  // Subjonctif présent (regular)
+  var subp;
+  if (group === 'are') {
+    subp = [stem+'i',stem+'i',stem+'i',stem+'iamo',stem+'iate',stem+'ino'];
+    if (stem.endsWith('c') || stem.endsWith('g')) {
+      subp = [stem+'hi',stem+'hi',stem+'hi',stem+'hiamo',stem+'hiate',stem+'hino'];
+    }
+  } else if (group === 'ere') {
+    subp = [stem+'a',stem+'a',stem+'a',stem+'iamo',stem+'iate',stem+'ano'];
+  } else {
+    var isIsc2 = iscVerbs.some(function(v){ return stem.startsWith(v); });
+    if (isIsc2) {
+      subp = [stem+'isca',stem+'isca',stem+'isca',stem+'iamo',stem+'iate',stem+'iscano'];
+    } else {
+      subp = [stem+'a',stem+'a',stem+'a',stem+'iamo',stem+'iate',stem+'ano'];
+    }
+  }
+  // Subjonctif passé = avere/essere + participe passé
+  // Simple approximation: abbia + participio
+  var part;
+  if (group === 'are') part = stem + 'ato';
+  else if (group === 'ere') part = stem + 'uto';
+  else part = stem + 'ito';
+  var aux = 'abbia';
+  var suba = [aux+' '+part, aux+' '+part, aux+' '+part,
+    'abbiamo '+part, 'abbiate '+part, 'abbiano '+part];
+
+  return { pres:pres, imp:imp, fut:fut, cond:cond, subp:subp, suba:suba };
+}
+
+const PRONOUNS = ['io','tu','lui/lei','noi','voi','loro'];
+const TENSES = [
+  { key:'pres', label:'Présent',       it:'Presente' },
+  { key:'imp',  label:'Imparfait',     it:'Imperfetto' },
+  { key:'fut',  label:'Futur',         it:'Futuro' },
+  { key:'cond', label:'Conditionnel',  it:'Condizionale' },
+  { key:'subp', label:'Subj. présent', it:'Congiuntivo presente' },
+  { key:'suba', label:'Subj. passé',   it:'Congiuntivo passato' }
+];
+
+var conjState = {
+  verbIdx: 0,
+  tense: 'pres',
+  pronIdx: 0,
+  score: 0,
+  total: 0,
+  forms: null,
+  answered: false
+};
+
+function buildTenseTabs() {
+  var el = document.getElementById('tense-tabs');
+  el.innerHTML = '';
+  TENSES.forEach(function(t) {
+    var btn = document.createElement('button');
+    btn.className = 'tense-tab' + (t.key === conjState.tense ? ' active' : '');
+    btn.textContent = t.label;
+    btn.onclick = (function(key){ return function(){ setTense(key); }; })(t.key);
+    el.appendChild(btn);
+  });
+}
+
+function setTense(key) {
+  conjState.tense = key;
+  document.querySelectorAll('.tense-tab').forEach(function(b, i) {
+    b.classList.toggle('active', TENSES[i].key === key);
+  });
+  loadConjVerb();
+}
+
+function loadConjVerb() {
+  if (!VERBS.length) return;
+  var pair = VERBS[conjState.verbIdx];
+  var fr = pair[0], inf = pair[1];
+  var forms = conjugate(inf);
+  if (!forms || !forms[conjState.tense]) {
+    conjState.verbIdx = (conjState.verbIdx + 1) % VERBS.length;
+    loadConjVerb(); return;
+  }
+  conjState.forms = forms[conjState.tense];
+  conjState.pronIdx = Math.floor(Math.random() * 6);
+  conjState.answered = false;
+
+  document.getElementById('cj-verb').textContent = inf;
+  document.getElementById('cj-fr').textContent = fr;
+  var tenseObj = TENSES.filter(function(t){ return t.key===conjState.tense; })[0];
+  document.getElementById('cj-tense-label').textContent = tenseObj.it + ' — ' + tenseObj.label;
+  document.getElementById('cj-feedback').textContent = '';
+  document.getElementById('cj-input').value = '';
+  document.getElementById('cj-input').className = 'conj-input';
+  document.getElementById('cj-input').focus();
+
+  // Build full conjugation table
+  var tbody = document.getElementById('cj-table');
+  tbody.innerHTML = '';
+  PRONOUNS.forEach(function(pron, i) {
+    var tr = document.createElement('tr');
+    if (i === conjState.pronIdx) tr.className = 'highlight';
+    var td1 = document.createElement('td'); td1.textContent = pron;
+    var td2 = document.createElement('td');
+    if (i === conjState.pronIdx) {
+      td2.textContent = '?';
+      td2.style.color = 'var(--gold)'; td2.style.fontSize = '1.2rem';
+    } else {
+      td2.textContent = conjState.forms[i];
+    }
+    tr.appendChild(td1); tr.appendChild(td2);
+    tbody.appendChild(tr);
+  });
+
+  // Speak verb
+  speakText(inf + ', ' + PRONOUNS[conjState.pronIdx], 'it-IT');
+}
+
+function checkConj() {
+  if (conjState.answered) return;
+  var val = document.getElementById('cj-input').value.trim().toLowerCase();
+  var answer = conjState.forms[conjState.pronIdx].toLowerCase();
+  // Accept if typed correctly
+  if (val === answer) {
+    conjState.answered = true;
+    conjState.score++; conjState.total++;
+    document.getElementById('cj-input').className = 'conj-input correct';
+    document.getElementById('cj-feedback').textContent = '✅ Bravo !';
+    document.getElementById('cj-feedback').style.color = 'var(--green)';
+    document.getElementById('cj-score').textContent = conjState.score;
+    document.getElementById('cj-total').textContent = conjState.total;
+    // Reveal full table
+    revealTable();
+    speakText(answer, 'it-IT');
+    setTimeout(function(){ nextConj(); }, 1500);
+  }
+}
+
+function revealTable() {
+  var rows = document.getElementById('cj-table').rows;
+  if (rows[conjState.pronIdx]) {
+    rows[conjState.pronIdx].cells[1].textContent = conjState.forms[conjState.pronIdx];
+    rows[conjState.pronIdx].cells[1].style.color = '';
+    rows[conjState.pronIdx].cells[1].style.fontSize = '';
+  }
+}
+
+function showConjHint() {
+  if (conjState.answered) return;
+  conjState.answered = true;
+  conjState.total++;
+  var answer = conjState.forms[conjState.pronIdx];
+  document.getElementById('cj-input').value = answer;
+  document.getElementById('cj-input').className = 'conj-input wrong';
+  document.getElementById('cj-feedback').textContent = '❌ ' + answer;
+  document.getElementById('cj-feedback').style.color = 'var(--it)';
+  document.getElementById('cj-score').textContent = conjState.score;
+  document.getElementById('cj-total').textContent = conjState.total;
+  revealTable();
+  speakText(answer, 'it-IT');
+}
+
+function nextConj() {
+  if (!conjState.answered) {
+    // Count as wrong if skipped without answering
+    conjState.total++;
+    document.getElementById('cj-total').textContent = conjState.total;
+  }
+  conjState.verbIdx = Math.floor(Math.random() * VERBS.length);
+  loadConjVerb();
+}
+
+function shuffleConj() {
+  conjState.verbIdx = Math.floor(Math.random() * VERBS.length);
+  loadConjVerb();
+}
+
+function resetConj() {
+  conjState.score = 0; conjState.total = 0;
+  document.getElementById('cj-score').textContent = 0;
+  document.getElementById('cj-total').textContent = 0;
+  loadConjVerb();
+}
+
+// Init conjugation tab when switched
+var _origSwitchTab = switchTab;
+switchTab = function(tab) {
+  _origSwitchTab(tab);
+  if (tab === 'conj') {
+    buildTenseTabs();
+    conjState.verbIdx = Math.floor(Math.random() * VERBS.length);
+    loadConjVerb();
+  }
+};
+
+</script>
+</body>
+</html>
